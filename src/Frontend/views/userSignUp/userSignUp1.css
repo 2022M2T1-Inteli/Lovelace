@@ -95,6 +95,22 @@
        background-color: white;
        margin-bottom: 200px;
        margin-right: 300px;
-       
-
+    }
+    .nav-img{
+        border-color: white;
+        position: relative;
+        left: 70px;
+        top: 30px;
+        filter: 100%;
+    }
+    .nav-img2{
+        border-color: white;
+        position: relative;
+        left: 55px;
+        top: 100px;
+    }
+    .nav-img3{
+        position:relative;
+        left:40px;
+        top:150px;
     }
