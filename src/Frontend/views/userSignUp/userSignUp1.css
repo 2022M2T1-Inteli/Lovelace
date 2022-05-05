@@ -6,6 +6,8 @@
        background-color:var();
        width: 100%;
        max-width: 350px;
+       position: relative;
+       top: 30px
    }
    nav ul {
        padding: 0;
@@ -27,6 +29,8 @@
    }
    html{
        background-color:#F3C423;
+       position:sticky;
+       overflow: auto;
    }
    .flex-item{
        height:auto;
@@ -42,9 +46,10 @@
    .font-nav{
    font-family:sans-serif;
    font: size 24px;
-   font-style: bold;
+   font-weight: bold;
    text-transform: capitalize;
    text-decoration: none;
+   color:white;
    }
    .font-title{
        font-family:sans-serif;
@@ -53,6 +58,8 @@
        text-transform: uppercase;
        text-decoration:none;
        text-align: center;
+       color:#F3C423;
+      
    }
    .button{
        font-size: 20px;
@@ -61,7 +68,49 @@
        text-transform: uppercase;
        font-weight: 600;
        background-color: white;
-       padding: 15px,30px,15px,30px;
        border-color: white;
-       border-radius: 10%;
+       text-align: center;
+       border-width: 10px;
+       border-style: solid;
+       border-left: 30px;
+       border-right: 100px;
+       margin-left: auto;
+       margin-top: 1em;
+       cursor:pointer;
+       color:#F3C423;
+       position:relative;
+       left: 1000px;
+       top: 300PX;
+
    }
+   .cadastro-box{
+       border-color: white;
+       border-style: solid;  
+       display: flex; 
+       position: relative;
+       left: 300px;
+       bottom: 230px;
+       align-content: center;
+       z-index: -1;
+       background-color: white;
+       margin-bottom: 200px;
+       margin-right: 300px;
+    }
+    .nav-img{
+        border-color: white;
+        position: relative;
+        left: 70px;
+        top: 30px;
+        filter: 100%;
+    }
+    .nav-img2{
+        border-color: white;
+        position: relative;
+        left: 55px;
+        top: 100px;
+    }
+    .nav-img3{
+        position:relative;
+        left:40px;
+        top:150px;
+    }
