@@ -1,23 +1,32 @@
+
+* {
+    margin: 1;
+    padding: 1;
+    box-sizing: inherit;
+}
+
 html {
     font-family: 'Nunito', sans-serif;
-    background-color: #F3C42E;
+    background-color: var(--color-primary);
     height: 100%;
+    font-size: 62.5%;
+    box-sizing: border-box;
 }
 .container {
     margin: 2rem;
     background-color: #ffffff;
     border-radius: 10px;
-    width: 79rem;
-    height: 37.5rem;
-    padding: 3rem 6rem; 
+    width: 148rem;
+    height: 72rem;
+    padding: 3rem 12rem; 
     box-shadow: 0 0 4rem rgba(0, 0, 0, 0.7);
 }
 .imageContainer{
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 35rem;
     float: left;
-    margin: 3rem 4rem;
+    margin: 5rem 2rem;
 }
 .h1 {
     font-family: 'Inter', 'sans-serif';
@@ -26,26 +35,26 @@ html {
     color: #530084;
 }
 .titulo {
-    font-size: 28px;
+    font-size: 2.8rem;
     font-weight: 900;
 }
 .sub {
-    font-size: 24px;
+    font-size: 2.4rem;
 }
 .color {
     color: #F3C42E;
 }
 .div {
-    margin: 1rem 0 1rem 30rem;
-    border: solid #F3C42E;
+    margin: 4rem 0 1rem 52rem;
+    border: 0.3rem solid #F3C42E;
     border-radius: 0.3rem;
     padding: 1rem;
-    padding-bottom: 1.5rem;
-    box-shadow: 0.5rem 0.5rem 0.4rem rgba(0, 0, 0, 0.16);
+    padding-bottom: 3rem;
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.4);
 }
 .btn {
     font-family: 'Nunito', 'sans-serif';
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
     padding: 0.6rem 6rem;
     outline: none;
@@ -55,8 +64,29 @@ html {
     color: #ffffff;
 }
 .txt {
-    padding-left: 22rem;
+    padding-left: 38rem;
 }
 .img {
-    padding-left: 3rem;
+    padding-left: 8rem;
+    width: 27rem; 
+    height: 22.2rem;
 }
+:root {
+    --color-primary: #F3C42E;
+    --color-primary-light: #fad96e;
+    --color-primary-dark: #b38802;
+    --color-secondary: #530084;
+    --color-grey-light-1: #faf9f9;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+    --shadow-dark: 0 2rem 6rem rgba(0,0,0,0.3);
+    --shadow-light: 0 2rem 5rem rgba(0,0,0,0.06);
+    --color-white: #fff;
+    --color-black: #000;
+    --border-radius: 3px;
+}
+   
