@@ -7,7 +7,7 @@
        width: 100%;
        max-width: 350px;
        position: relative;
-       top: 30px
+       top: 15px
    }
    nav ul {
        padding: 0;
@@ -22,20 +22,19 @@
        padding:0%;
        display:block;
        text-decoration: none;
-       transition:background;
        }
    nav ul li a :hover{
        background-color:var(--cor-secundaria)
    }
    html{
        background-color:#F3C423;
-       position:sticky;
-       overflow: auto;
+       width: auto;
+       height: auto;
    }
    .flex-item{
        height:auto;
        width:auto;
-       margin: 30px;
+       margin: 10px;
    }
    .column{
        flex-direction: column;
@@ -50,6 +49,7 @@
    text-transform: capitalize;
    text-decoration: none;
    color:white;
+   margin-bottom: 70px;
    }
    .font-title{
        font-family:sans-serif;
@@ -59,7 +59,8 @@
        text-decoration:none;
        text-align: center;
        color:#F3C423;
-      
+       padding: 5px 500px 100px 500px;
+       background-color: white;
    }
    .button{
        font-size: 20px;
@@ -70,47 +71,56 @@
        background-color: white;
        border-color: white;
        text-align: center;
-       border-width: 10px;
-       border-style: solid;
-       border-left: 30px;
-       border-right: 100px;
-       margin-left: auto;
-       margin-top: 1em;
        cursor:pointer;
        color:#F3C423;
-       position:relative;
-       left: 1000px;
-       top: 300PX;
-
+       right: 10px;
+       padding: 10px 80px;
+       border-radius: 3px;
+       box-shadow: var(--shadow-dark);
+       position: relative;
+       top: 0px;
+       left: 950px;
+       box-shadow: rgb(136, 136, 136) 0px 3px 5px;
    }
    .cadastro-box{
        border-color: white;
        border-style: solid;  
        display: flex; 
        position: relative;
-       left: 300px;
-       bottom: 230px;
+       left: 200px;
+       bottom: 525px;
        align-content: center;
        z-index: -1;
        background-color: white;
-       margin-bottom: 200px;
-       margin-right: 300px;
+       margin-bottom: 20px;
+       box-shadow: rgb(136, 136, 136) 0px 5px 5px;
     }
     .nav-img{
         border-color: white;
         position: relative;
-        left: 70px;
-        top: 30px;
-        filter: 100%;
+        left: 5px;
+        top: 0px;
+        max-width: 80px;
+        width: auto;
+        display: flex;
+        align-items: flex-start;
     }
     .nav-img2{
         border-color: white;
         position: relative;
-        left: 55px;
-        top: 100px;
+        left: 5px;
+        top: 0px;
+        max-width: 80px;
+        width: auto;
+        display: flex;
+        align-items: flex-start;
     }
     .nav-img3{
         position:relative;
-        left:40px;
-        top:150px;
+        left:5px;
+        top:0px;
+        max-width: 80px;
+        width: auto;
+        display: flex;
+        align-items: flex-start;
     }
