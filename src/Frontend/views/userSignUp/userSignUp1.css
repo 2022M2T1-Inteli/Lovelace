@@ -23,9 +23,6 @@
        display:block;
        text-decoration: none;
        }
-   nav ul li a :hover{
-       background-color:var(--cor-secundaria)
-   }
    html{
        background-color:#F3C423;
        width: auto;
