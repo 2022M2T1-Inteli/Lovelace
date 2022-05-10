@@ -1,0 +1,139 @@
+nav{
+    background-color:var();
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+    top: 15px
+}
+nav ul {
+    padding: 0;
+    list-style-type: none;
+}
+nav ul li{
+    border-bottom: 1px solid var ();
+    display: block;
+}
+nav ul li a{
+    color:rgb(255, 255, 255);
+    padding:0%;
+    display:block;
+    text-decoration: none;
+    }
+html{
+    background-color:#F3C423;
+    width: auto;
+    height: auto;
+}
+.flex-item{
+    height:auto;
+    width:auto;
+    margin: 10px;
+}
+.column{
+    flex-direction: column;
+}
+.flex-container{
+    display:flex
+}
+.font-nav{
+font-family:sans-serif;
+font: size 24px;
+font-weight: bold;
+text-transform: capitalize;
+text-decoration: none;
+color:white;
+margin-bottom: 70px;
+}
+.font-title{
+    font-family:sans-serif;
+    font-size:  20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration:none;
+    text-align: center;
+    color:#F3C423;
+    background-color: white;
+}
+.button{
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: white;
+    border-color: white;
+    text-align: center;
+    cursor:pointer;
+    color:#F3C423;
+    right: 10px;
+    padding: 10px 80px;
+    border-radius: 0.8rem;
+    position: relative;
+    top: 0px;
+    left: 950px;
+    box-shadow:  rgba(0,0,0,0.12) 0.8rem 0.8rem 0.43rem;
+}
+.cadastro-box{
+    border-color: white;
+    border-style: solid;  
+    position: absolute;
+    left: 200px;
+    top: 45px;
+    z-index: -1;
+    background-color: white;
+    margin-bottom: 20px;
+    box-shadow: rgba(0,0,0,0.12) 0.8rem 0.8rem 0.43rem;
+    padding: 0px 380px 120px;
+    border-radius: 00.8rem;
+ }
+ .cadastro-box2{
+     position:absolute;
+     top: 270px;
+     border-color: white;
+    border-style: solid;  
+    left: 200px;
+    z-index: -1;
+    background-color: white;
+    margin-bottom: 20px;
+    box-shadow: rgba(0,0,0,0.12) 0.8rem 0.8rem 0.43rem;
+    padding: 0px 385px 130px;
+    border-radius: 00.8rem;
+ }
+ .nav-img{
+     border-color: white;
+     position: relative;
+     left: 5px;
+     top: 0px;
+     max-width: 80px;
+     width: auto;
+     display: flex;
+     align-items: flex-start;
+ }
+ .nav-img2{
+     border-color: white;
+     position: relative;
+     left: 5px;
+     top: 0px;
+     max-width: 80px;
+     width: auto;
+     display: flex;
+     align-items: flex-start;
+ }
+ .nav-img3{
+     position:relative;
+     left:5px;
+     top:0px;
+     max-width: 80px;
+     width: auto;
+     display: flex;
+     align-items: flex-start;
+ }  
+ .box-input{
+    width: 33%;
+    width: 100px;
+    float: left; 
+    border-color: var(--color-primary);
+    border-radius: 0.8rem;
+    font-size: small;
+    font-family: 'Nunito'; 
+ }
