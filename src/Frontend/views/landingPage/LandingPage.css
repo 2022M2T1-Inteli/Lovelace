@@ -1,57 +1,91 @@
-
-* {
-    margin: 1;
-    padding: 1;
-    box-sizing: inherit;
-}
-
-html {
-    font-family: 'Nunito', sans-serif;
+body {
     background-color: var(--color-primary);
-    height: 100%;
-    font-size: 62.5%;
-    box-sizing: border-box;
 }
+
 .container {
-    margin: 2rem;
-    background-color: #ffffff;
-    border-radius: 10px;
-    width: 148rem;
-    height: 72rem;
-    padding: 3rem 12rem; 
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    width: 90vw;
+    height: 90vh;
     box-shadow: 0 0 4rem rgba(0, 0, 0, 0.7);
+    margin: 0 auto;
+    margin-top: 5vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 4rem;
 }
-.imageContainer{
+
+.imageContainer {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 35rem;
-    float: left;
-    margin: 5rem 2rem;
+    flex: 0 0 40%;
 }
+
+.imageContainer > img {
+    width: 70%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+.rightContainer {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2rem;
+}
+
 .h1 {
     font-family: 'Inter', 'sans-serif';
     letter-spacing: 0.01em;
     font-weight: 800;
     color: #530084;
 }
+
 .titulo {
     font-size: 2.8rem;
     font-weight: 900;
 }
+
 .sub {
     font-size: 2.4rem;
+    display: block;
 }
+
 .color {
-    color: #F3C42E;
+    color: #f3c42e;
 }
-.div {
-    margin: 4rem 0 1rem 52rem;
-    border: 0.3rem solid #F3C42E;
+
+.box {
+    border: 0.3rem solid #f3c42e;
     border-radius: 0.3rem;
-    padding: 1rem;
-    padding-bottom: 3rem;
+    padding: 2.4rem;
     box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.4);
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
+
+.boxImageContainer {
+    height: 20rem;
+    margin-right: 4rem;
+}
+
+.img {
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.txt {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1.6rem;
+    flex: 1;
+}
+
 .btn {
     font-family: 'Nunito', 'sans-serif';
     font-size: 2rem;
@@ -59,34 +93,14 @@ html {
     padding: 0.6rem 6rem;
     outline: none;
     border: none;
-    border-radius: 2px;
+    border-radius: 3px;
     background-color: #530084;
     color: #ffffff;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
 }
-.txt {
-    padding-left: 38rem;
+
+.btn:hover {
+    transform: scale(1.03);
 }
-.img {
-    padding-left: 8rem;
-    width: 27rem; 
-    height: 22.2rem;
-}
-:root {
-    --color-primary: #F3C42E;
-    --color-primary-light: #fad96e;
-    --color-primary-dark: #b38802;
-    --color-secondary: #530084;
-    --color-grey-light-1: #faf9f9;
-    --color-grey-light-2: #f4f2f2;
-    --color-grey-light-3: #f0eeee;
-    --color-grey-light-4: #ccc;
-    --color-grey-dark-1: #333;
-    --color-grey-dark-2: #777;
-    --color-grey-dark-3: #999;
-    --shadow-dark: 0 2rem 6rem rgba(0,0,0,0.3);
-    --shadow-light: 0 2rem 5rem rgba(0,0,0,0.06);
-    --color-white: #fff;
-    --color-black: #000;
-    --border-radius: 3px;
-}
-   
