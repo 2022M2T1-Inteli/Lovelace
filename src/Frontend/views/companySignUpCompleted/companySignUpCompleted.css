@@ -18,7 +18,7 @@
 .box {
     border-radius: 0.9rem;
     padding: 4rem;
-    box-shadow: 0 0 2.4rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 2.4rem var(--color-primary);
 
     text-align: center;
     flex: 0 0 30%;
