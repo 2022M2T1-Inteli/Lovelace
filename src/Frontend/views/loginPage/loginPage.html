@@ -1,57 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tela de login</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
-</head>
-
-
-
-<body>
-  <div class="bodyContainer">
-    <div class="pageContainer">
-
-      <div class="imageContainer">
-        <img class="gif" src="./fotobranca.gif">
-
-      </div>
-
-      <div class="container">
-        <div class="containerBody">
-          <h1 class="title">Login</h1>
-          <input class="input" type="text" placeholder="Nome">
-          <input class="input" type="password" placeholder="Senha">
-
-          <div class="checkboxContainer">
-            <input class="checkbox" id="checkbox2" type='checkbox' />
-            <label class="checkboxLabel" for="checkbox2">Eu concordo com os termos de uso</label>
-          </div>
-
-          <button class="btn">Login</button>
-
-          <p class="createAccountText">Não possui uma conta? <a>Criar conta</span></p>
-
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+        <link rel="stylesheet" href="../../styles/global.css" />
+        <link rel="stylesheet" href="./loginPage.css" />
+    </head>
+    <body>
+        <div class="pageContainer">
+            <div class="container">
+                <div class="imageContainer">
+                    <img src="../../assets/loginPage/login.gif" alt="Login Gif" />
+                </div>
+                <div class="rightContainer">
+                    <h1 class="title">Login</h1>
+                    <input type="text" placeholder="Email" class="textInput" />
+                    <input type="text" placeholder="Senha" class="textInput" />
+                    <div class="checkBoxContainer">
+                        <input type="checkbox" name="terms" id="terms" />
+                        <label for="terms">Eu concordo com os termos de uso</label>
+                    </div>
+                    <button class="btn">Login</button>
+                    <div class="noAccountContainer">
+                        <p class="noAccountText">Não possui uma conta?</p>
+                        <a href="" class="noAccountLink">Criar conta</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-    </div>
-
-  </div>
-
-  </div>
-
-
-  </div>
-  </fieldset>
-</body>
-
+    </body>
 </html>

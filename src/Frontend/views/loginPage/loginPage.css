@@ -1,0 +1,113 @@
+body {
+    background-color: var(--color-primary);
+}
+
+.pageContainer {
+    height: calc(100vh - 10rem);
+    margin: 5rem;
+    border-radius: 1rem;
+    background-color: var(--color-white);
+}
+
+.container {
+    height: 100%;
+    position: relative;
+}
+
+.imageContainer {
+    width: 50rem;
+    height: 40rem;
+
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.imageContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+.rightContainer {
+    box-shadow: 0 0 3rem var(--color-primary);
+    border-radius: var(--border-radius);
+    padding: 4rem 6rem;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2rem;
+    flex: 0 0 50%;
+
+    position: absolute;
+    width: 30%;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    font-size: 4rem;
+    text-align: center;
+    color: var(--color-primary);
+}
+
+.textInput {
+    font-size: 1.6rem;
+    padding: 1rem 1.2rem;
+    outline: none;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius);
+}
+
+.btn {
+    outline: none;
+    border: none;
+    background-color: var(--color-primary);
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-white);
+    padding: 1.2rem 0;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.checkBoxContainer {
+    display: flex;
+    align-items: center;
+    grid-gap: 1rem;
+    padding: 0 1rem;
+}
+
+.checkbox {
+    width: 4rem;
+    height: 4rem;
+}
+
+.checkBoxContainer > label {
+    font-size: 1.6rem;
+}
+
+.noAccountContainer {
+    display: flex;
+    align-items: center;
+    grid-gap: 1rem;
+    padding: 0 1rem;
+    font-size: 1.6rem;
+}
+
+.noAccountLink {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.noAccountLink:hover {
+    transform: scale(1.05);
+}
