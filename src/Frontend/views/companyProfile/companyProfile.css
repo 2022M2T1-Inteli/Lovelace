@@ -1,0 +1,72 @@
+.navbar {
+    width: 100%;
+    background-color: var(--color-primary);
+    padding: 1.6rem;
+}
+
+.navbarTitle {
+    color: var(--color-white);
+    font-size: 2.4rem;
+}
+
+.container {
+    padding: 6rem 8rem;
+}
+
+.title {
+    font-size: 4rem;
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 4rem;
+}
+
+.containerBody {
+    display: flex;
+    grid-gap: 8rem;
+}
+
+.left {
+    flex: 0 0 calc(50% - 4rem);
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2rem;
+}
+
+.textContainer {
+}
+
+.textTitle {
+    font-size: 2.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.text {
+    font-size: 1.6rem;
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+}
+
+.logo {
+    width: 100%;
+    height: 15rem;
+    object-fit: contain;
+}
+
+.like {
+    width: 30%;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.like:hover {
+    transform: scale(1.05);
+}

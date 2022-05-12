@@ -61,7 +61,7 @@ body {
 .box {
     border: 0.3rem solid #f3c42e;
     border-radius: 0.3rem;
-    padding: 2.4rem;
+    padding: 2.4rem 4rem;
     box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.4);
     width: 100%;
     display: flex;
@@ -99,6 +99,8 @@ body {
     cursor: pointer;
     width: 100%;
     transition: all 0.2s;
+    text-decoration: none;
+    text-align: center;
 }
 
 .btn:hover {

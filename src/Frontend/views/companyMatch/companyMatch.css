@@ -12,7 +12,7 @@
 .pageContainer {
     margin: 4rem 10rem;
     display: flex;
-    grid-gap: 8rem;
+    grid-gap: 6rem;
 }
 
 .filtersContainer {
@@ -103,13 +103,13 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-    grid-gap: 4rem;
+    grid-gap: 3rem;
 }
 
 .gridBox {
     display: flex;
     flex-direction: column;
-    grid-gap: 1.4rem;
+    grid-gap: 1rem;
     background-color: #f7f7f7;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
     padding: 2rem;
@@ -153,6 +153,8 @@
     cursor: pointer;
     transition: all 0.2s;
     font-size: 1.4rem;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn:hover {
