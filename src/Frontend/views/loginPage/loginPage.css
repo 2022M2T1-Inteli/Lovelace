@@ -99,6 +99,7 @@ body {
 .noAccountContainer {
     display: flex;
     align-items: center;
+    justify-content: center;
     grid-gap: 1rem;
     padding: 0 1rem;
     font-size: 1.6rem;
