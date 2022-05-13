@@ -7,12 +7,10 @@
 .navbarTitle {
     color: var(--color-white);
     font-size: 2.4rem;
-
 }
 
 .container {
     margin: 4rem 10rem;
-
 }
 
 .title {
@@ -29,7 +27,6 @@
     margin-bottom: 4rem;
 }
 
-
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
@@ -44,6 +41,12 @@
     background-color: #f7f7f7;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
     padding: 2rem;
+
+    transition: all 0.4s;
+}
+
+.gridBox:hover {
+    transform: scale(1.05);
 }
 
 .boxTitle {
