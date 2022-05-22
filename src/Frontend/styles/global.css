@@ -11,6 +11,27 @@ html {
     box-sizing: border-box;
 }
 
+/* 1200 px */
+@media only screen and (max-width: 75em) {
+    html {
+        font-size: 56.25%; /* 9 px */
+    }
+}
+
+/* 900 px */
+@media screen and (max-width: 56.25em) {
+    html {
+        font-size: 50%; /* 8 px */
+    }
+}
+
+/* 600 px */
+@media screen and (max-width: 37.5em) {
+    html {
+        font-size: 37.5%; /* 6 px */
+    }
+}
+
 body {
     background-color: var(--color-white);
     color: var(--color-grey-dark-2);
@@ -19,7 +40,7 @@ body {
 }
 
 :root {
-    --color-primary: #F3C42E;
+    --color-primary: #f3c42e;
     --color-primary-light: #fad96e;
     --color-primary-dark: #b38802;
     --color-secondary: #530084;
@@ -30,10 +51,9 @@ body {
     --color-grey-dark-1: #333;
     --color-grey-dark-2: #777;
     --color-grey-dark-3: #999;
-    --shadow-dark: 0 2rem 6rem rgba(0,0,0,0.3);
-    --shadow-light: 0 2rem 5rem rgba(0,0,0,0.06);
+    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+    --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
     --color-white: #fff;
     --color-black: #000;
     --border-radius: 3px;
 }
-   

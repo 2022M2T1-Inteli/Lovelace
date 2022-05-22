@@ -99,3 +99,14 @@
     background-color: var(--color-primary);
     color: var(--color-white);
 }
+
+/* 900 px */
+@media screen and (max-width: 56.25em) {
+    .container {
+        margin: 2rem 6rem;
+    }
+
+    .grid {
+        padding: 0 2rem;
+    }
+}

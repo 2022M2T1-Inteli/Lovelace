@@ -120,3 +120,17 @@
 .editButton:hover {
     transform: scale(1.05);
 }
+
+
+/* 600 px */
+@media screen and (max-width: 37.5em) {
+    .container {
+        padding: 6rem 4rem;
+    }
+
+    .skillContainer {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 2rem;
+    }
+}

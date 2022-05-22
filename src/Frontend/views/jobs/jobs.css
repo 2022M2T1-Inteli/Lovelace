@@ -35,8 +35,8 @@
     color: var(--color-white);
     font-size: 1.8rem;
     text-decoration: none;
-    transition: all .2s;
-
+    transition: all 0.2s;
+    margin-top: 2rem;
 }
 
 .createJobLink:hover {
@@ -57,7 +57,7 @@
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
     padding: 2rem;
 
-    transition: all .4s;
+    transition: all 0.4s;
 }
 
 .gridBox:hover {
@@ -75,8 +75,8 @@
 .badgeContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-    grid-gap: .8rem;
-    margin: .6rem 0;
+    grid-gap: 0.8rem;
+    margin: 0.6rem 0;
 }
 
 .badge {
@@ -113,7 +113,7 @@
 .icon {
     width: 2rem;
     height: 2rem;
-    transition: all .2s;
+    transition: all 0.2s;
     cursor: pointer;
 }
 
@@ -128,4 +128,18 @@
 .btn-yellow {
     background-color: var(--color-primary);
     color: var(--color-white);
+}
+
+/* 900 px */
+@media screen and (max-width: 56.25em) {
+    .pageContainer {
+        margin: 4rem 10rem;
+    }
+}
+
+/* 600 px */
+@media screen and (max-width: 37.5em) {
+    .pageContainer {
+        margin: 4rem;
+    }
 }

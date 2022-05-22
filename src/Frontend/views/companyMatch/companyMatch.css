@@ -189,3 +189,22 @@
     background-color: var(--color-primary);
     color: var(--color-white);
 }
+
+/* 900 px */
+@media screen and (max-width: 56.25em) {
+    .pageContainer {
+        margin: 4rem ;
+    }
+}
+
+/* 600 px */
+@media screen and (max-width: 37.5em) {
+    .pageContainer {
+        flex-direction: column;
+    }
+
+    .filtersContainer {
+        margin-top: 0;
+
+    }
+}

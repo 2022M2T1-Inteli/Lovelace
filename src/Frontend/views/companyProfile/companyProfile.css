@@ -29,7 +29,7 @@
     flex: 0 0 calc(50% - 4rem);
     display: flex;
     flex-direction: column;
-    grid-gap: 2rem;
+    grid-gap: 3rem;
 }
 
 .textContainer {
@@ -69,4 +69,15 @@
 
 .like:hover {
     transform: scale(1.05);
+}
+
+/* 900 px */
+@media screen and (max-width: 56.25em) {
+    .container {
+        padding: 6rem;
+    }
+    .containerBody {
+        flex-direction: column;
+        grid-gap: 5rem;
+    }   
 }

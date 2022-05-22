@@ -201,3 +201,11 @@ body {
 .select2-container--classic.select2-container--open .select2-dropdown {
     border: 1px solid var(--color-primary) !important;
 }
+
+/* 600 px */
+@media screen and (max-width: 37.5em) {
+    .pageContainer {
+        padding: 2rem 3rem;
+        grid-gap: 2rem;
+    }
+}

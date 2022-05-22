@@ -97,7 +97,7 @@ body {
 
 .inputContainer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     grid-gap: 2rem;
 }
 
@@ -130,7 +130,7 @@ body {
 
 .skillsContainer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     grid-gap: 2rem;
 }
 
@@ -213,4 +213,12 @@ body {
 
 .select:required:invalid {
     color: #ccc;
+}
+
+/* 600 px */
+@media screen and (max-width: 37.5em) {
+    .pageContainer {
+        padding: 2rem 3rem;
+        grid-gap: 2rem;
+    }
 }
