@@ -10,6 +10,7 @@
 }
 
 .container {
+    position: relative;
     padding: 6rem 8rem;
 }
 

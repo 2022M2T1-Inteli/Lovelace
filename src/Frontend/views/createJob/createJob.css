@@ -50,6 +50,7 @@ body {
     flex-direction: column;
     grid-gap: 2rem;
     flex: 1;
+    position: relative;
 }
 
 .box {

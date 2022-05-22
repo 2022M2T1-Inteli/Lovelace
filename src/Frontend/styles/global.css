@@ -57,3 +57,21 @@ body {
     --color-black: #000;
     --border-radius: 3px;
 }
+
+.backBtn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.backBtn:hover {
+    transform: scale(1.05);
+}
+
+.backBtn img {
+    width: 4rem;
+    height: 4rem;
+}

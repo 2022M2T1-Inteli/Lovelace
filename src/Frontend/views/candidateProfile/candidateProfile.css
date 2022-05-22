@@ -11,6 +11,7 @@
 
 .container {
     padding: 6rem 20%;
+    position: relative;
 }
 
 .title {

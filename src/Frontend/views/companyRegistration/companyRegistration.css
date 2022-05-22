@@ -57,6 +57,7 @@ body {
     padding: 3rem 4rem;
     background-color: var(--color-white);
     border-radius: var(--border-radius);
+    position: relative;
 }
 
 .boxTitle {

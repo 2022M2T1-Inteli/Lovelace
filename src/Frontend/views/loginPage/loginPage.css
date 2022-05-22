@@ -42,6 +42,7 @@ body {
     display: flex;
     flex-direction: column;
     grid-gap: 2rem;
+    position: relative;
     flex: 1 0 40%;
 }
 
@@ -137,3 +138,4 @@ body {
         flex-direction: column;
     }
 }
+
