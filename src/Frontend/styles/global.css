@@ -58,6 +58,7 @@ body {
     --border-radius: 3px;
 }
 
+/* BOTÃO DE VOLTAR */
 .backBtn {
     position: absolute;
     top: 2rem;
@@ -74,4 +75,63 @@ body {
 .backBtn img {
     width: 4rem;
     height: 4rem;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    background-color: var(--color-primary);
+    padding: 0 2rem;
+    height: 6rem;
+
+    display: flex;
+    /* align-items: center; */
+}
+
+.navbarTitle {
+    color: var(--color-white);
+    font-size: 2.4rem;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.navItem {
+    transition: all 0.2s;
+    padding: 0 2rem;
+}
+
+.navItem.active {
+    background-color: var(--color-white);
+}
+
+.navItem.active > a {
+    color: var(--color-primary);
+}
+
+.navItem:hover {
+    background-color: var(--color-white);
+}
+
+.navItem:hover > a {
+    color: var(--color-primary);
+}
+
+.navItem > a {
+    height: 100%;
+    display: flex;
+    grid-gap: 0.6rem;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 1.8rem;
+    color: var(--color-white);
+}
+
+.navIcon {
+    width: 5rem;
+    height: 5rem;
+    object-fit: scale-down;
 }

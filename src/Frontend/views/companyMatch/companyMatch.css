@@ -1,31 +1,4 @@
-.navbar {
-    width: 100%;
-    background-color: var(--color-primary);
-    padding: 1.6rem;
-
-    display: flex;
-    align-items: center;
-}
-
-.navbarTitle {
-    color: var(--color-white);
-    font-size: 2.4rem;
-    margin-right: auto;
-}
-
-.profileLink {
-    text-decoration: none;
-    font-size: 2rem;
-    color: var(--color-white);
-    font-weight: 700;
-    padding-right: 2rem;
-
-    transition: all .2s;
-}
-
-.profileLink:hover {
-    transform: scale(1.1);
-}
+/* PAGE */
 
 .pageContainer {
     margin: 4rem 10rem;
@@ -70,14 +43,13 @@
 
 .workPlaceSelect {
     width: 100%;
-    padding: 1rem .8rem;
+    padding: 1rem 0.8rem;
     border: 1px solid var(--color-grey-light-4);
     outline: none;
     border-radius: 3px;
     font-size: 1.4rem;
     color: var(--color-grey-dark-1);
 }
-
 
 .companiesContainer {
     flex: 1;
@@ -95,10 +67,9 @@
     border: 1px solid var(--color-grey-light-4);
     cursor: pointer;
     width: 100%;
-    transition: all .2s;
+    transition: all 0.2s;
     font-weight: 500;
     font-size: 1.4rem;
-
 }
 
 .remoteWorkButton:hover {
@@ -106,9 +77,9 @@
 }
 
 .remoteWorkButton.active {
-   color: var(--color-white);
-   background-color: var(--color-primary);
-   border: none;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border: none;
 }
 
 .title {
@@ -132,7 +103,7 @@
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
     padding: 2rem;
 
-    transition: all .4s;
+    transition: all 0.4s;
 }
 
 .gridBox:hover {
@@ -193,7 +164,7 @@
 /* 900 px */
 @media screen and (max-width: 56.25em) {
     .pageContainer {
-        margin: 4rem ;
+        margin: 4rem;
     }
 }
 
@@ -205,6 +176,5 @@
 
     .filtersContainer {
         margin-top: 0;
-
     }
 }
