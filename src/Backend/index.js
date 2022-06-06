@@ -15,11 +15,7 @@ app.use(cookieParser())
 
 // SETUP CROSS ORIGIN
 const cors = require('cors')
-app.use(
-    cors({
-        credentials: true,
-    })
-)
+app.use(cors())
 
 // PERMITE QUE A PASTA FRONTEND SEJA ACESSADA
 app.use(express.static(path.join(__dirname + '/../Frontend')))
@@ -29,6 +25,22 @@ app.get('/', (req, res) => {
     res.redirect('/views/landingPage/landingPage.html')
 })
 
+// LOGOUT DE EMPRESAS, USUÁRIAS E ADMINISTRADORES
+app.post('/logout', async (req, res) => {
+    try {
+        res.clearCookie('token', {
+            httpOnly: true,
+            secure: process.env.NODE_ENV !== 'development',
+            maxAge: 2 * 60 * 60 * 1000, // 2 HORAS
+            path: '/',
+            sameSite: process.env.NODE_ENV !== 'development' ? 'none' : 'lax',
+        })
+        res.send()
+    } catch (e) {
+        res.status(500).send()
+    }
+})
+
 // ROTAS DO USUÁRIO
 const userRoutes = require('./routers/user')
 app.use(userRoutes)
@@ -36,6 +48,10 @@ app.use(userRoutes)
 // ROTAS DA EMPRESA
 const companyRoutes = require('./routers/company')
 app.use(companyRoutes)
+
+// ROTAS DE ADMINISTRADOR
+const adminRoutes = require('./routers/admin')
+app.use(adminRoutes)
 
 // ROTAS DE VAGAS
 const jobRoutes = require('./routers/job')

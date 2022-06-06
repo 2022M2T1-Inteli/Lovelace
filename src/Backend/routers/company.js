@@ -23,11 +23,11 @@ const generateAuthToken = async (id) => {
 router.post('/company/signUp', async (req, res) => {
     try {
         const {
-            street,
-            cep,
-            neighborhood,
-            city,
-            state,
+            street, //
+            cep, //
+            neighborhood, //
+            city, //
+            state, //
             complement,
             email,
             name,
@@ -36,8 +36,9 @@ router.post('/company/signUp', async (req, res) => {
             phone2,
             openingDate,
             marketNiche,
-            companyPhilosophy,
-            badges,
+            companyPhilosophy, //
+            companyCulture, //
+            badges, //
             recruterFirstName,
             recruterSecondName,
             recruterRole,
@@ -73,7 +74,7 @@ router.post('/company/signUp', async (req, res) => {
 
         // INSERIR USUÁRIO
         const company = await db.run(
-            `INSERT INTO company (email, password, name, cnpj, phone, phone2, openingDate, companyAddressId, marketNiche, companyPhilosophy, badges, recruterId, isApproved) VALUES ('${email}', '${password}', '${name}', '${cnpj}', '${phone2}', '${phone}', '${openingDate}', '${companyAddress.lastID}', '${marketNiche}', '${companyPhilosophy}', '${badges}', '${recruter.lastID}', '0')`
+            `INSERT INTO company (email, password, name, cnpj, phone, phone2, openingDate, companyAddressId, marketNiche, companyPhilosophy, companyCulture, badges, recruterId, isApproved) VALUES ('${email}', '${password}', '${name}', '${cnpj}', '${phone2}', '${phone}', '${openingDate}', '${companyAddress.lastID}', '${marketNiche}', '${companyPhilosophy}', '${companyCulture}', '${badges}', '${recruter.lastID}', '0')`
         )
 
         // FECHAR O BANCO DE DADOS
@@ -92,7 +93,8 @@ router.post('/company/signUp', async (req, res) => {
         })
 
         // RESPOSTA
-        res.redirect('/views/companySignUpCompleted/companySignUpCompleted.html')
+        // res.redirect('/views/companySignUpCompleted/companySignUpCompleted.html')
+        res.send()
     } catch (err) {
         console.log(err)
         res.status(400).send(err.message)
@@ -142,24 +144,10 @@ router.post('/company/login', async (req, res) => {
         })
 
         // RESPOSTA
-        res.redirect('/views/companySignUpCompleted/companySignUpCompleted.html')
+        // res.redirect('/views/companySignUpCompleted/companySignUpCompleted.html')
+        res.send()
     } catch (err) {
         res.status(400).send(err.message)
-    }
-})
-
-router.post('/company/logout', companyAuth, async (req, res) => {
-    try {
-        res.clearCookie('token', {
-            httpOnly: true,
-            secure: process.env.NODE_ENV !== 'development',
-            maxAge: 2 * 60 * 60 * 1000,
-            path: '/',
-            sameSite: process.env.NODE_ENV !== 'development' ? 'none' : 'lax',
-        })
-        res.send()
-    } catch (e) {
-        res.status(500).send()
     }
 })
 

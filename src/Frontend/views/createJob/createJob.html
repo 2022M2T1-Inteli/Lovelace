@@ -24,40 +24,42 @@
                 </div>
             </div>
             <div class="boxesContainer stage0">
-                <a href="../jobs/jobs.html" class="backBtn">
-                    <img src="../../assets/icons/back.png" alt="Voltar"
-                /></a>
+                <a href="../jobs/jobs.html" class="backBtn"> <img src="../../assets/icons/back.png" alt="Voltar" /></a>
                 <div class="box">
                     <h4 class="boxTitle">Informações da vaga</h4>
                     <div class="inputContainer">
                         <div>
                             <p class="skillExplanation">Tipo de vaga:</p>
-                            <select class="select">
+                            <select class="select" id="jobType">
                                 <option selected disabled></option>
-                                <option value="WY">Presencial</option>
-                                <option>Integral</option>
-                                <option>Meio período</option>
-                                <option>Estágio</option>
+                                <option value="Integral">Integral</option>
+                                <option value="Meio período">Meio período</option>
+                                <option value="Estágio">Estágio</option>
+                                <option value="Menor aprendiz">Menor aprendiz</option>
+                                <option value="Freelancer">Freelancer</option>
+                                <option value="Freelancer">Menor aprendiz</option>
                             </select>
                         </div>
                         <div>
                             <p class="skillExplanation">Modelo de trabalho:</p>
-                            <select class="select">
+                            <select class="select" id="jobModel">
                                 <option selected disabled></option>
-                                <option value="WY">Presencial</option>
-                                <option>Remoto</option>
-                                <option>Híbrido</option>
+                                <option value="Presencial">Presencial</option>
+                                <option value="Remoto">Remoto</option>
+                                <option value="Híbrido">Híbrido</option>
                             </select>
                         </div>
                         <div>
                             <p class="skillExplanation">Área:</p>
-                            <select class="select">
+                            <select class="select" id="jobArea">
                                 <option selected disabled></option>
-                                <option value="WY">Programação</option>
-                                <option>Design</option>
-                                <option>Marketing</option>
+                                <option value="Programação">Programação</option>
+                                <option value="UX">UX</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Administração">Administração</option>
+                                <option value="Automação">Automação</option>
+                                <option value="Estruturação">Estruturação</option>
                             </select>
-
                         </div>
                     </div>
                 </div>
@@ -67,25 +69,31 @@
                         <div>
                             <p class="skillExplanation">Competências técnicas necessárias:</p>
                             <div class="skillInputContainer">
-                                <select class="skillSelect" name="skills[]" multiple style="width">
-                                    <option>Alabama</option>
-                                    <option value="WY">Wyoming</option>
-                                </select>
+                                <select
+                                    class="skillSelect"
+                                    name="skills[]"
+                                    multiple
+                                    id="hardSkills"
+                                    style="width"
+                                ></select>
                             </div>
                         </div>
                         <div>
                             <p class="skillExplanation">Competências interpessoais necessárias:</p>
                             <div class="skillInputContainer">
-                                <select class="skillSelect" name="skills[]" multiple style="width">
-                                    <option>Alabama</option>
-                                    <option value="WY">Wyoming</option>
-                                </select>
+                                <select
+                                    class="skillSelect"
+                                    name="skills[]"
+                                    multiple
+                                    id="softSkills"
+                                    style="width"
+                                ></select>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="buttonContainer">
-                    <button class="btn nextButton">Criar vaga</button>
+                    <button class="btn nextButton" id="createJobButton">Criar vaga</button>
                 </div>
             </div>
         </div>

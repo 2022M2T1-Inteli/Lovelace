@@ -1,5 +1,47 @@
 // Função executada quando a página é carregada
 $(document).ready(() => {
+    $('#finalButton').click(() => {
+        const form = {}
+
+        $('#companyAccount :input').each(function () {
+            var input = $(this)[0] // This is the jquery object of the input, do what you will
+            console.log(input)
+            form[input.name] = input.value
+        })
+
+        $('#companyInfo :input').each(function () {
+            var input = $(this)[0] // This is the jquery object of the input, do what you will
+            form[input.name] = input.value
+        })
+
+        $('#companyAddress :input').each(function () {
+            var input = $(this)[0] // This is the jquery object of the input, do what you will
+            form[input.name] = input.value
+        })
+
+        $('#companyRecruter :input').each(function () {
+            var input = $(this)[0] // This is the jquery object of the input, do what you will
+            form[input.name] = input.value
+        })
+
+        form.companyPhilosophy = $('#companyPhilosophy').val()
+        form.companyCulture = $('#companyCulture').val()
+        form.badges = $('#badges').val()
+        
+        $.ajax({
+            url: '/company/signUp',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(form),
+            success: function (res) {
+                window.location.replace('/views/companySignUpCompleted/companySignUpCompleted.html')
+            },
+            error: function (err) {
+                console.log(err)
+            },
+        })
+    })
+
     // Permitir a busca e a seleção múltipla do select
     $('.skillSelect').select2({
         allowClear: true,
@@ -128,7 +170,7 @@ const previousStage = () => {
                     {
                         opacity: 1,
                     },
-                    400,
+                    400
                 )
             }
         )

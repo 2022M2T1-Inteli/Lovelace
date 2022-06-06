@@ -5,6 +5,8 @@ const router = express.Router()
 const sqlite3 = require('sqlite3')
 const { open } = require('sqlite')
 
+const {adminAuth} = require('../middlewares/auth')
+
 router.get('/softSkills', async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
@@ -14,38 +16,12 @@ router.get('/softSkills', async (req, res) => {
         })
 
         // GET SOFT SKILLS
-        const softSkills = await db.all(`SELECT * FROM softSkills`)
+        const softSkills = await db.all(`SELECT * FROM skill WHERE type='1'`)
 
         // FECHAR O BANCO DE DADOS
         await db.close()
 
         res.send(softSkills)
-    } catch (err) {
-        res.status(400).send(err.message)
-    }
-})
-
-router.post('/softSkills/create', async (req, res) => {
-    try {
-        // CONECTAR AO BANCO DE DADOS
-        const db = await open({
-            filename: './database/bit.db',
-            driver: sqlite3.Database,
-        })
-
-        // CHECAR SE SKILL JÁ EXISTE
-        const existingSkill = await db.get(`SELECT * FROM softSkills WHERE name='${req.body.name}'`)
-        if (existingSkill) {
-            throw new Error('Competência já existe')
-        }
-
-        // GET SOFT SKILLS
-        await db.run(`INSERT INTO softSkills (name) VALUES ('${req.body.name}')`)
-
-        // FECHAR O BANCO DE DADOS
-        await db.close()
-
-        res.send()
     } catch (err) {
         res.status(400).send(err.message)
     }
@@ -60,7 +36,7 @@ router.get('/hardSkills', async (req, res) => {
         })
 
         // GET SOFT SKILLS
-        const hardSkills = await db.all(`SELECT * FROM hardSkills`)
+        const hardSkills = await db.all(`SELECT * FROM skill WHERE type='0'`)
 
         // FECHAR O BANCO DE DADOS
         await db.close()
@@ -71,7 +47,27 @@ router.get('/hardSkills', async (req, res) => {
     }
 })
 
-router.post('/hardSkills/create', async (req, res) => {
+router.get('/skills', async (req, res) => {
+    try {
+        // CONECTAR AO BANCO DE DADOS
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        // GET SOFT SKILLS
+        const hardSkills = await db.all(`SELECT * FROM skill`)
+
+        // FECHAR O BANCO DE DADOS
+        await db.close()
+
+        res.send(hardSkills)
+    } catch (err) {
+        res.status(400).send(err.message)
+    }
+})
+
+router.post('/skill/create', adminAuth, async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
@@ -80,13 +76,13 @@ router.post('/hardSkills/create', async (req, res) => {
         })
 
         // CHECAR SE SKILL JÁ EXISTE
-        const existingSkill = await db.get(`SELECT * FROM hardSkills WHERE name='${req.body.name}'`)
+        const existingSkill = await db.get(`SELECT * FROM skill WHERE name='${req.body.name}'`)
         if (existingSkill) {
             throw new Error('Competência já existe')
         }
 
-        // GET SOFT SKILLS
-        await db.run(`INSERT INTO hardSkills (name) VALUES ('${req.body.name}')`)
+        // INSERT SKILL
+        await db.run(`INSERT INTO skill (name, type) VALUES ('${req.body.name}', '${req.body.type}')`)
 
         // FECHAR O BANCO DE DADOS
         await db.close()
@@ -94,6 +90,25 @@ router.post('/hardSkills/create', async (req, res) => {
         res.send()
     } catch (err) {
         res.status(400).send(err.message)
+    }
+})
+
+
+router.delete('/skill/:id', adminAuth, async (req, res) => {
+    try {
+        // CONECTAR AO BANCO DE DADOS
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        await db.run(`DELETE FROM skill WHERE id='${req.params.id}'`)
+
+        await db.close()
+
+        res.send()
+    } catch (err) {
+        res.status(400).send()
     }
 })
 

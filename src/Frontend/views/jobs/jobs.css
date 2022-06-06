@@ -99,6 +99,14 @@
     margin-top: 1rem;
 }
 
+.iconsContainer button {
+    background: none;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+}
+
 .icon {
     width: 2rem;
     height: 2rem;

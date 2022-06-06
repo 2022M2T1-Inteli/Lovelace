@@ -23,11 +23,18 @@ router.get('/job', companyAuth, async (req, res) => {
         // GET VAGAS
         const jobs = await db.all(`SELECT * FROM job WHERE companyId='${req.company.id}'`)
 
+        const jobArray = []
+
+        for( job of jobs){
+           job.skills = await db.all(`SELECT * FROM skill INNER JOIN jobSkill ON skill.id=jobSkill.skillId WHERE jobSkill.jobId=${job.id}`)
+           jobArray.push(job)
+        }
+
         // FECHAR O BANCO DE DADOS
         await db.close()
 
         // RESPOSTA
-        res.send(jobs)
+        res.send(jobArray)
     } catch (err) {
         res.status(400).send(err.message)
     }
@@ -36,7 +43,7 @@ router.get('/job', companyAuth, async (req, res) => {
 // ROTA DE CRIAR VAGA
 router.post('/job/create', companyAuth, async (req, res) => {
     try {
-        const { type, workModel, area, hardSkills, softSkills } = req.body
+        const { type, workModel, area, skills } = req.body
 
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
@@ -50,13 +57,8 @@ router.post('/job/create', companyAuth, async (req, res) => {
         )
 
         // INSERIR COMPETÊNCIAS TÉCNICAS
-        for (let i = 0; i < hardSkills.length; i++) {
-            await db.run(`INSERT INTO jobHardSkill (hardSkillId, jobId) VALUES ('${hardSkills[i]}', '${job.lastID}')`)
-        }
-
-        // INSERIR COMPETÊNCIAS INTERPESSOAIS
-        for (let i = 0; i < softSkills.length; i++) {
-            await db.run(`INSERT INTO jobSoftSkill (softSkillId, jobId) VALUES ('${softSkills[i]}', '${job.lastID}')`)
+        for (let i = 0; i < skills.length; i++) {
+            await db.run(`INSERT INTO jobSkill (skillId, jobId) VALUES ('${skills[i]}', '${job.lastID}')`)
         }
 
         // FECHAR O BANCO DE DADOS
@@ -66,6 +68,116 @@ router.post('/job/create', companyAuth, async (req, res) => {
         res.redirect('/views/jobs/jobs.html')
     } catch (err) {
         res.status(400).send(err.message)
+    }
+})
+
+router.get('/job/:id/getUsers', companyAuth, async (req, res) => {
+    try {
+        // CONECTAR AO BANCO DE DADOS
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        // PEGAR UM JOB DA COMPANHIA SELECIONADA
+        const job = await db.get(
+            `SELECT * FROM job WHERE job.id='${req.params.id}' AND job.companyId='${req.company.id}'`
+        )
+        if (!job) {
+            throw new Error('Nenhuma vaga encontrada!')
+        }
+
+        // GET ALL SKILLS
+        const jobSkills = await db.all(
+            `SELECT * FROM jobSkill INNER JOIN job ON job.id = jobSkill.jobId WHERE jobId = '${job.id}'`
+        )
+
+        // GET TODAS AS CANDIDATAS QUE APLICARAM PARA A EMPRESA
+        const appliedUsers = db.all(
+            `SELECT * FROM userCompany INNER JOIN company ON company.id=userCompany.companyId WHERE company.id='${req.company.id}'`
+        )
+
+        const matchUserIds = []
+
+        for (user of appliedUsers) {
+            let equalSkills = []
+
+            // SKILLS DA USUÁRIA
+            const userSkills = await db.all(
+                `SELECT * FROM userSkill INNER JOIN user ON userSkill.userId=user.id WHERE user.id='${user.id}'`
+            )
+
+            for (userSkill of userSkills) {
+                for (jobSkill of jobSkills) {
+                    if (jobSkill.id == userSkill.id) {
+                        equalSkills.push(jobSkill.id)
+                    }
+                }
+            }
+
+            let matchPercentage = equalSkills.length / jobSkills.length
+
+            if (matchPercentage >= 0.5) {
+                matchUserIds.push(user.id)
+            }
+        }
+
+        let users = []
+        for (id of matchUserIds) {
+            const fetchedUser = db.get(`SELECT * FROM user WHERE id='${id}'`)
+            users.push(fetchedUser)
+        }
+
+        await db.close()
+
+        res.send(users)
+    } catch (err) {
+        res.status(400).send(err.message)
+    }
+})
+
+router.delete('/job/:id', companyAuth, async (req, res) => {
+    try {
+        // CONECTAR AO BANCO DE DADOS
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        await db.run(`DELETE FROM job WHERE id='${req.params.id}' AND companyId='${req.company.id}'`)
+
+        await db.run(`DELETE FROM jobSkill WHERE jobId='${req.params.id}'`)
+
+        await db.close()
+
+        res.send()
+    } catch (err) {
+        res.status(400).send()
+    }
+})
+
+router.get('/job/getUsers/:userId', companyAuth, async (req, res) => {
+    try {
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        const user = await db.get(
+            `SELECT id, firstName, lastName, country, aboutYou, email, phone FROM user WHERE id='${req.params.userId}'`
+        )
+
+        const userSkills = await db.all(
+            `SELECT * FROM userSkill INNER JOIN skill ON userSkill.skillId = skill.id WHERE userSkill.userId = '${req.params.userId}'`
+        )
+
+        user.skills = userSkills
+
+        await db.close()
+
+        res.send(user)
+    } catch (err) {
+        res.status(400).send()
     }
 })
 

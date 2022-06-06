@@ -117,6 +117,10 @@ body {
     color: var(--color-primary);
 }
 
+.navItem:hover > button {
+    color: var(--color-primary);
+}
+
 .navItem > a {
     height: 100%;
     display: flex;
@@ -130,8 +134,36 @@ body {
     color: var(--color-white);
 }
 
+.navItem > button {
+    height: 100%;
+    display: flex;
+    grid-gap: 0.6rem;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 1.8rem;
+    color: var(--color-white);
+    outline: none;
+    background: none;
+    border: none;
+    font-family: "Nunito", sans-serif;
+}
+
 .navIcon {
     width: 5rem;
     height: 5rem;
     object-fit: scale-down;
+}
+
+.errorBadge {
+    padding: 2rem;
+    font-size: 1.6rem;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    display: none;
 }

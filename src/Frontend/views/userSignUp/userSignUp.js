@@ -1,5 +1,65 @@
 // Função executada quando a página é carregada
 $(document).ready(() => {
+    $.ajax({
+        url: '/skills',
+        type: 'GET',
+        contentType: 'application/json',
+        success: function (res) {
+            let hardSkillOptions = ''
+            let softSkillOptions = ''
+            for (skill of res) {
+                if (skill.type == 0) {
+                    hardSkillOptions += `<option value="${skill.id}">${skill.name}</option>`
+                } else {
+                    softSkillOptions += `<option value="${skill.id}">${skill.name}</option>`
+                }
+            }
+
+            $('#hardSkills').html(hardSkillOptions)
+            $('#softSkills').html(softSkillOptions)
+        },
+        error: function (err) {
+            console.log(err)
+        },
+    })
+
+    $('#finalButton').click(() => {
+        const form = {}
+
+        $('#accountForm :input').each(function () {
+            var input = $(this)[0] // This is the jquery object of the input, do what you will
+            console.log(input)
+            form[input.name] = input.value
+        })
+
+        $('#infoForm :input').each(function () {
+            var input = $(this)[0] // This is the jquery object of the input, do what you will
+            form[input.name] = input.value
+        })
+
+        $('#addressForm :input').each(function () {
+            var input = $(this)[0] // This is the jquery object of the input, do what you will
+            form[input.name] = input.value
+        })
+
+        form.aboutYou = $('.aboutYou').val()
+
+        form.skills = $('#hardSkills').val().concat($('#softSkills').val())
+
+        $.ajax({
+            url: '/user/signUp',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(form),
+            success: function (res) {
+                window.location.replace('/views/companyMatch/companyMatch.html')
+            },
+            error: function (err) {
+                console.log(err)
+            },
+        })
+    })
+
     // Permitir a busca e a seleção múltipla do select
     $('.skillSelect').select2({
         allowClear: true,
@@ -128,7 +188,7 @@ const previousStage = () => {
                     {
                         opacity: 1,
                     },
-                    400,
+                    400
                 )
             }
         )

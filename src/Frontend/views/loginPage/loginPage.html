@@ -19,13 +19,25 @@
                         <img src="../../assets/icons/back.png" alt="Voltar"
                     /></a>
                     <h1 class="title">Login</h1>
-                    <input type="text" placeholder="Email" class="textInput" />
-                    <input type="text" placeholder="Senha" class="textInput" />
-                    <div class="checkBoxContainer">
-                        <input type="checkbox" name="terms" id="terms" />
-                        <label for="terms">Eu concordo com os termos de uso</label>
-                    </div>
-                    <a class="btn loginBtn">Login</a>
+
+                    <div class="errorBadge">Não foi possível entrar!</div>
+                    <!-- <form action="/user/login"  method="post"> -->
+                        <input type="text" required placeholder="Email" id="email" name="email" class="textInput" />
+                        <input
+                            type="password"
+                            required
+                            placeholder="Senha"
+                            id="password"
+                            name="password"
+                            class="textInput"
+                        />
+                        <div class="checkBoxContainer">
+                            <input type="checkbox" name="terms" id="terms" />
+                            <label for="terms">Eu concordo com os termos de uso</label>
+                        </div>
+                        <button type="submit" class="btn loginBtn">Login</button>
+                    <!-- </form> -->
+
                     <div class="noAccountContainer">
                         <p class="noAccountText">Não possui uma conta?</p>
                         <a href="" class="noAccountLink">Criar conta</a>

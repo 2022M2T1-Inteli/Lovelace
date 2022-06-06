@@ -138,6 +138,7 @@
 
 .boxText {
     font-size: 1.4rem;
+    word-wrap: break-word;
 }
 
 .btn {

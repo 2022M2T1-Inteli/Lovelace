@@ -46,6 +46,12 @@ body {
     flex: 1 0 40%;
 }
 
+.rightContainer form {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2rem;
+}
+
 .title {
     font-size: 4rem;
     text-align: center;
@@ -138,4 +144,3 @@ body {
         flex-direction: column;
     }
 }
-

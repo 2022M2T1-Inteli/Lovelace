@@ -15,7 +15,6 @@
     <body>
         <div class="pageContainer">
             <div class="iconsContainer">
-                
                 <div class="iconBox">
                     <div class="iconImageBox iconImageBox0 active">
                         <img src="../../../assets/companyRegistration/infoYellow.png" alt="Info" class="icon icon0" />
@@ -45,35 +44,50 @@
                     /></a>
                     <h4 class="boxTitle">Conta</h4>
                     <div class="inputContainer">
-                      
-                        <input type="text" class="input" placeholder="E-Mail" />
-                        <input type="text" class="input" placeholder="Senha" />
+                        <form id="companyAccount">
+                            <input type="text" class="input" placeholder="E-Mail" name="email" />
+                            <input type="password" class="input" placeholder="Senha" name="password" />
+                        </form>
                     </div>
                 </div>
                 <div class="box">
                     <h4 class="boxTitle">Informações da empresa</h4>
                     <div class="inputContainer">
-                        <input type="text" class="input" placeholder="Razão social" name="firstName" />
-                        <input type="text" class="input" placeholder="CNPJ" name="lastName" />
-                        <input type="text" class="input" placeholder="Data de abertura" />
-                       
-                        <input type="text" class="input" placeholder="Telefone" />
-                        <input type="text" class="input" placeholder="Telefone 2" />
-                        <input type="text" class="input" placeholder="Endereço" />
-                        <input type="text" class="input" placeholder="NIT/PIS/PASEP" />
-                        <input type="text" class="input" placeholder="Nicho de mercado" />
+                        <form id="companyInfo">
+                            <input type="text" class="input" placeholder="Nome da empresa" name="name" />
+                            <input type="text" class="input" placeholder="CNPJ" name="cnpj" />
+                            <input type="text" class="input" placeholder="Data de abertura" name="openingDate" />
+                            <input type="text" class="input" placeholder="Telefone" name="phone" />
+                            <input type="text" class="input" placeholder="Telefone 2" name="phone2" />
+                            <input type="text" class="input" placeholder="Nicho de mercado" name="marketNiche" />
+                        </form>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4 class="boxTitle">Endereço da empresa</h4>
+                    <div class="inputContainer">
+                        <form id="companyAddress">
+                            <input type="text" class="input" placeholder="Logradouro" name="street" />
+                            <input type="text" class="input" placeholder="CEP" name="cep" />
+                            <input type="text" class="input" placeholder="Bairro" name="neighborhood" />
+                            <input type="text" class="input" placeholder="Cidade" name="city" />
+                            <input type="text" class="input" placeholder="Estado" name="state" />
+                            <input type="text" class="input" placeholder="Complemento" name="complement" />
+                        </form>
                     </div>
                 </div>
                 <div class="box">
                     <h4 class="boxTitle">Informações do recrutador</h4>
 
                     <div class="inputContainer">
-                        <input type="text" class="input" placeholder="Nome"  />
-                        <input type="text" class="input" placeholder="Sobrenome"  />
-                        <input type="text" class="input" placeholder="Cargo" />
-                        <input type="text" class="input" placeholder="E-Mail" />
-                        <input type="text" class="input" placeholder="Telefone" />
-                        <input type="text" class="input" placeholder="País / Estado" />
+                        <form id="companyRecruter">
+                            <input type="text" class="input" placeholder="Nome" name="recruiterFirstName" />
+                            <input type="text" class="input" placeholder="Sobrenome" name="recruterSecondName" />
+                            <input type="text" class="input" placeholder="Cargo" name="recruterRole" />
+                            <input type="text" class="input" placeholder="E-Mail" name="recruterEmail" />
+                            <input type="text" class="input" placeholder="Telefone" name="recruterPhone" />
+                            <input type="text" class="input" placeholder="País / Estado" name="recruiterLocation" />
+                        </form>
                     </div>
                 </div>
                 <div class="buttonContainer">
@@ -85,25 +99,23 @@
                     <h4 class="boxTitle">Filosofia da empresa</h4>
                     <p class="skillExplanation">Filosofia da empresa:</p>
                     <textarea
-                    placeholder="Disserte sobre a filosofia da empresa."
-                    name=""
-                    id=""
-                    cols="30"
-                    rows="10"
-                    class="textarea"
-                ></textarea>
+                        placeholder="Disserte sobre a filosofia da empresa."
+                        id="companyPhilosophy"
+                        cols="30"
+                        rows="10"
+                        class="textarea"
+                    ></textarea>
                 </div>
                 <div class="box">
                     <h4 class="boxTitle">Cultura da empresa</h4>
                     <p class="skillExplanation">Cultura da empresa:</p>
                     <textarea
-                    placeholder="Disserte sobre a cultura da empresa."
-                    name=""
-                    id=""
-                    cols="30"
-                    rows="10"
-                    class="textarea"
-                ></textarea>
+                        placeholder="Disserte sobre a cultura da empresa."
+                        id="companyCulture"
+                        cols="30"
+                        rows="10"
+                        class="textarea"
+                    ></textarea>
                 </div>
                 <div class="buttonContainer">
                     <button class="btn backButton">Voltar</button>
@@ -116,25 +128,24 @@
                     <div class="textareaContainer">
                         <textarea
                             placeholder="Coloque aqui informações que você considera importante que as canditavas vejam."
-                            name=""
-                            id=""
+                            id="badges"
                             cols="30"
                             rows="10"
                             class="textarea"
                         ></textarea>
                     </div>
                 </div>
-                <div class="box">
+                <!-- <div class="box">
                     <h4 class="boxTitle">Logo da empresa</h4>
 
                     <div class="uploadContainer">
                         <input type="file" id="uploadInput" class="uploadInput" />
                         <label for="uploadInput" class="uploadBox"> Clique aqui para fazer o upload </label>
                     </div>
-                </div>
+                </div> -->
                 <div class="buttonContainer">
                     <button class="btn backButton">Voltar</button>
-                    <a class="btn" href="/views/companySignUpCompleted/companySignUpCompleted.html">Solicitar aprovação</a>
+                    <button class="btn" id="finalButton" type="button">Solicitar aprovação</button>
                 </div>
             </div>
         </div>

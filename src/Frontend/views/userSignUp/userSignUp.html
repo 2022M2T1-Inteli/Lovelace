@@ -8,7 +8,7 @@
         <title>Cadastro de Usuária</title>
 
         <link rel="stylesheet" href="../../../styles/global.css" />
-        
+
         <link rel="stylesheet" href="./userSignUp.css" />
     </head>
 
@@ -34,7 +34,7 @@
                     <div class="iconImageBox iconImageBox2">
                         <img src="../../assets/companyRegistration/uploadWhite.png" alt="Info" class="icon icon2" />
                     </div>
-                    <p class="iconTitle">Currículo</p>
+                    <p class="iconTitle">Sobre você</p>
                 </div>
             </div>
             <div class="boxesContainer stage0">
@@ -44,33 +44,39 @@
                     /></a>
                     <h4 class="boxTitle">Conta</h4>
                     <div class="inputContainer">
-                        <input type="text" class="input" placeholder="E-Mail" name="email" />
-                        <input type="text" class="input" placeholder="Senha" name="password" />
+                        <form id="accountForm">
+                            <input type="text" class="input" placeholder="E-Mail" name="email" />
+                            <input class="input" placeholder="Senha" name="password" type="password" />
+                        </form>
                     </div>
                 </div>
                 <div class="box">
                     <h4 class="boxTitle">Informações pessoais</h4>
                     <div class="inputContainer">
-                        <input type="text" class="input" placeholder="Primeiro nome" name="firstName" />
-                        <input type="text" class="input" placeholder="Sobrenome" name="lastName" />
-                        <input type="text" class="input" placeholder="Naturalidade" />
-                        <input type="text" class="input" placeholder="Telefone" />
-                        <input type="text" class="input" placeholder="Estado Civil" />
-                        <input type="text" class="input" placeholder="Data de Nascimento" />
-                        <input type="text" class="input" placeholder="CPF" />
-                        <input type="text" class="input" placeholder="RG" />
+                        <form id="infoForm">
+                            <input type="text" class="input" placeholder="Primeiro nome" name="firstName" />
+                            <input type="text" class="input" placeholder="Sobrenome" name="lastName" />
+                            <input type="text" class="input" placeholder="Naturalidade" name="country" />
+                            <input type="text" class="input" placeholder="Telefone" name="phone" />
+                            <input type="text" class="input" placeholder="Estado Civil" name="civilState" />
+                            <input type="text" class="input" placeholder="Data de Nascimento" name="birthDate" />
+                            <input type="text" class="input" placeholder="CPF" name="cpf" />
+                            <input type="text" class="input" placeholder="RG" name="rg" />
+                        </form>
                     </div>
                 </div>
                 <div class="box">
                     <h4 class="boxTitle">Endereço</h4>
 
                     <div class="inputContainer">
-                        <input type="text" class="input" placeholder="Logradouro" name="firstName" />
-                        <input type="text" class="input" placeholder="CEP" name="lastName" />
-                        <input type="text" class="input" placeholder="Bairro" />
-                        <input type="text" class="input" placeholder="Cidade" />
-                        <input type="text" class="input" placeholder="Estado" />
-                        <input type="text" class="input" placeholder="Complemento" />
+                        <form id="addressForm">
+                            <input type="text" class="input" placeholder="Logradouro" name="street" />
+                            <input type="text" class="input" placeholder="CEP" name="cep" />
+                            <input type="text" class="input" placeholder="Bairro" name="neighborhood" />
+                            <input type="text" class="input" placeholder="Cidade" name="city" />
+                            <input type="text" class="input" placeholder="Estado" name="state" />
+                            <input type="text" class="input" placeholder="Complemento" name="complement" />
+                        </form>
                     </div>
                 </div>
                 <div class="buttonContainer">
@@ -82,10 +88,7 @@
                     <h4 class="boxTitle">Competências técnicas</h4>
                     <p class="skillExplanation">Competências técnicas:</p>
                     <div class="skillInputContainer">
-                        <select class="skillSelect" name="skills[]">
-                            <option value="AL">Alabama</option>
-
-                            <option value="WY">Wyoming</option>
+                        <select class="skillSelect" id="hardSkills" name="skills[]" multiple>
                         </select>
                     </div>
                 </div>
@@ -93,10 +96,7 @@
                     <h4 class="boxTitle">Competências interpessoais</h4>
                     <p class="skillExplanation">Competências interpessoais:</p>
                     <div class="skillInputContainer">
-                        <select class="skillSelect" name="skills[]" multiple style="width">
-                            <option value="AL">Alabama</option>
-
-                            <option value="WY">Wyoming</option>
+                        <select class="skillSelect" id="softSkills" name="skills[]" multiple>
                         </select>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                     <div class="aboutYouContainer">
                         <textarea
                             placeholder="Descreva em poucas palavras o que você não poderia deixar de contar em uma apresentação sobre você."
-                            name=""
+                            name="aboutYou"
                             id=""
                             cols="30"
                             rows="10"
@@ -119,17 +119,17 @@
                         ></textarea>
                     </div>
                 </div>
-                <div class="box">
+                <!-- <div class="box">
                     <h4 class="boxTitle">Currículo</h4>
 
                     <div class="uploadContainer">
                         <input type="file" id="uploadInput" class="uploadInput" />
                         <label for="uploadInput" class="uploadBox"> Clique aqui para fazer o upload </label>
                     </div>
-                </div>
+                </div> -->
                 <div class="buttonContainer">
                     <button class="btn backButton">Voltar</button>
-                    <button class="btn nextButton">Criar conta</button>
+                    <button class="btn nextButton" id="finalButton">Criar conta</button>
                 </div>
             </div>
         </div>

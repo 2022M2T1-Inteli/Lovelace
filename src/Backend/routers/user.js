@@ -22,6 +22,19 @@ const generateAuthToken = async (id) => {
 // ROTA DE PEGAR MEU USUÁRIO
 router.get('/user/me', userAuth, async (req, res) => {
     try {
+        // CONECTAR AO BANCO DE DADOS
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        const mySkills = await db.all(
+            `SELECT * FROM skill INNER JOIN userSkill ON userSkill.skillId=skill.id WHERE userSkill.userId='${req.user.id}'`
+        )
+
+        req.user.skills = mySkills
+
+        await db.close()
         res.send(req.user)
     } catch (err) {
         res.status(400).send(err.message)
@@ -48,8 +61,7 @@ router.post('/user/signUp', async (req, res) => {
             cpf,
             rg,
             aboutYou,
-            hardSkills,
-            softSkills
+            skills,
         } = req.body
 
         // CONECTAR AO BANCO DE DADOS
@@ -77,14 +89,9 @@ router.post('/user/signUp', async (req, res) => {
             `INSERT INTO user (email, password, firstName, lastName, country, phone, civilState, birthDate, cpf, rg, aboutYou, userAddressId) VALUES ('${email}', '${password}', '${firstName}', '${lastName}', '${country}', '${phone}', '${civilState}', '${birthDate}', '${cpf}', '${rg}', '${aboutYou}', '${userAddress.lastID}')`
         )
 
-        // INSERIR COMPETÊNCIAS TÉCNICAS DO USUÁRIO
-        for (let i = 0; i < hardSkills.length; i++) {
-            await db.run(`INSERT INTO userHardSkill (hardSkillId, userId) VALUES ('${hardSkills[i]}', '${user.lastID}')`)
-        }
-
-        // INSERIR COMPETÊNCIAS INTERPESSOAIS DO USUÁRIO
-        for (let i = 0; i < softSkills.length; i++) {
-            await db.run(`INSERT INTO userSoftSkill (softSkillId, userId) VALUES ('${softSkills[i]}', '${user.lastID}')`)
+        // INSERIR COMPETÊNCIAS DO USUÁRIO
+        for (let i = 0; i < skills.length; i++) {
+            await db.run(`INSERT INTO userSkill (skillId, userId) VALUES ('${skills[i]}', '${user.lastID}')`)
         }
 
         // FECHAR O BANCO DE DADOS
@@ -105,7 +112,6 @@ router.post('/user/signUp', async (req, res) => {
         // RESPOSTA
         res.redirect('/views/companyMatch/companyMatch.html')
     } catch (err) {
-        console.log(err)
         res.status(400).send(err.message)
     }
 })
@@ -123,14 +129,14 @@ router.post('/user/login', async (req, res) => {
         const user = await db.get(`SELECT * FROM user WHERE email='${req.body.email}'`)
 
         if (!user) {
-            throw new Error('Não foi possivel entrar')
+            throw new Error('Não foi possível entrar')
         }
 
         // CHECAR SENHA
         const isMatch = await bcrypt.compare(req.body.password, user.password)
 
         if (!isMatch) {
-            throw new Error('Não foi possivel entrar')
+            throw new Error('Não foi possível entrar')
         }
 
         // FECHAR O BANCO DE DADOS
@@ -150,25 +156,13 @@ router.post('/user/login', async (req, res) => {
 
         // RESPOSTA
         res.redirect('/views/companyMatch/companyMatch.html')
+        // res.send()
     } catch (err) {
         res.status(400).send(err.message)
     }
 })
 
-router.post('/user/logout', userAuth, async (req, res) => {
-    try {
-        res.clearCookie('token', {
-            httpOnly: true,
-            secure: process.env.NODE_ENV !== 'development',
-            maxAge: 2 * 60 * 60 * 1000,
-            path: '/',
-            sameSite: process.env.NODE_ENV !== 'development' ? 'none' : 'lax',
-        })
-        res.send()
-    } catch (e) {
-        res.status(500).send()
-    }
-})
+
 
 router.get('/user/getCompanies', userAuth, async (req, res) => {
     try {
@@ -178,14 +172,193 @@ router.get('/user/getCompanies', userAuth, async (req, res) => {
             driver: sqlite3.Database,
         })
 
-        // const companies = db.all(`SELECT * FROM company WHERE `)
+        // PEGAR AS SKILLS DA USUÁRIA SELECIONADA
+        const userSkills = await db.all(
+            `SELECT userSkill.* FROM userSkill INNER JOIN user ON userSkill.userId=user.id WHERE user.id='${req.user.id}'`
+        )
+
+        // GET ALL JOBS
+        const jobs = await db.all(`SELECT id, companyId FROM job`)
+        let companiesIdMatch = []
+
+        //Loop para analisar um job por vez
+        for (job of jobs) {
+            let equalSkills = []
+
+            // SKILLS DO JOB
+            const jobSkills = await db.all(
+                `SELECT jobSkill.* FROM jobSkill INNER JOIN job ON jobSkill.jobId=job.id WHERE job.id = '${job.id}' `
+            )
+
+            if (jobSkills.length > 0) {
+                //Loop para analisar um jobSkill por vez
+                for (jobSkill of jobSkills) {
+                    //Loop para analisar individualmente cada userSkill
+                    for (userSkill of userSkills) {
+                        //Verirficar se a skill do usuário bate com a skill da oferta, se bater, armazenar o id da skill em um array
+                        if (jobSkill.skillId == userSkill.skillId) {
+                            equalSkills.push(jobSkill.id)
+                        }
+                    }
+                }
+            }
+
+            //Realizar a porcentagem de match das skills da usuária e do job
+            let matchPercentage = equalSkills.length / jobSkills.length
+            //Checagem se a taxa de match das skills supera 50%
+            if (matchPercentage >= 0.5) {
+                //Se superar, armazenamos a companyId em um array
+                if (!companiesIdMatch.includes(job.companyId)) {
+                    companiesIdMatch.push(job.companyId)
+                }
+            }
+        }
+
+        let companies = []
+        // GET COMPANIES ONE BY ONE
+        for (id of companiesIdMatch) {
+            //Pegamos todas as informações das empresas as quais possuem o mesmo id da company armazenada em um array anteriormente.
+            const fetchedCompany = await db.get(
+                `SELECT company.id, company.name, company.marketNiche, company.companyAddressId, company.companyPhilosophy, address.state, address.city FROM company INNER JOIN address ON company.companyAddressId=address.id WHERE company.id='${id}'`
+            )
+            companies.push(fetchedCompany)
+        }
 
         // FECHAR O BANCO DE DADOS
+        await db.close()
+        //Mandamos como resposta apenas as companies que possuem um match de 70% ou mais com as skills da usuária
+
+        res.send(companies)
+    } catch (err) {
+        res.status(400).send(err.message)
+    }
+})
+
+router.get('/user/getCompanies/:id', userAuth, async (req, res) => {
+    try {
+        //Abrir banco de dados
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        const isLiked = await db.get(
+            `SELECT * FROM userCompany WHERE userCompany.companyId='${req.params.id}' AND userCompany.userId= '${req.user.id}'`
+        )
+
+        const company = await db.get(`SELECT * FROM company WHERE id = ${req.params.id}`)
+
+        await db.close()
+
+        res.send({ company, isLiked: isLiked ? true : false })
+    } catch (err) {
+        res.status(400).send(err.message)
+    }
+})
+
+router.get('/user/likeCompany/:id', userAuth, async (req, res) => {
+    try {
+        //Abrir banco de dados
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        const ifLiked = await db.get(`SELECT * FROM userCompany WHERE userId='${req.user.id}'`)
+        if (ifLiked) {
+            throw new Error('Like já realizado!')
+        }
+
+        await db.run(`INSERT INTO userCompany (userId, companyId) VALUES ('${req.user.id}', '${req.params.id}')`)
+
         await db.close()
 
         res.send()
     } catch (err) {
-        res.status(400).send(err.message)
+        res.status(400).send()
+    }
+})
+
+router.delete('/user/likeCompany/:id', userAuth, async (req, res) => {
+    try {
+        //Abrir banco de dados
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        await db.run(`DELETE FROM userCompany WHERE userId='${req.user.id}' AND companyId='${req.params.id}'`)
+
+        await db.close()
+
+        res.send()
+    } catch (err) {
+        res.status(400).send()
+    }
+})
+
+router.patch('/user/edit', userAuth, async (req, res) => {
+    try {
+        const {
+            street,
+            cep,
+            neighborhood,
+            city,
+            state,
+            complement,
+            email,
+            firstName,
+            lastName,
+            country,
+            phone,
+            civilState,
+            birthDate,
+            cpf,
+            rg,
+            aboutYou,
+        } = req.body
+
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        await db.run(
+            `UPDATE user SET email = '${email}', firstName = '${firstName}', lastName = '${lastName}', country = '${country}', phone = '${phone}', civilState = '${civilState}', birthDate = '${birthDate}', cpf = '${cpf}', rg = '${rg}', aboutYou = '${aboutYou}', userAddressId = '${userAddress.lastID} WHERE id = ${req.user.id}'`
+        )
+
+        await db.run(
+            `UPDATE address SET street ='${street}', cep= '${cep}', neighborhood= '${neighborhood}', city= '${city}', state= '${state}', complement= '${complement}' WHERE id= '${req.user.userAddressId}'`
+        )
+
+        await db.close()
+
+        res.send()
+    } catch (err) {
+        res.status(400).send()
+    }
+})
+
+router.post('/user/editSkills', userAuth, async (req, res) => {
+    try {
+        const { skills } = req.body
+
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        await db.run(`DELETE FROM userSkill WHERE userId='${req.user.id}'`)
+
+        for (skill of skills) {
+            await db.run(`INSERT INTO userSkill (skillId, userId) VALUES ('${skill}', '${req.user.id}')`)
+        }
+
+        await db.close()
+
+        res.send()
+    } catch (err) {
+        res.status(400).send()
     }
 })
 
