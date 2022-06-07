@@ -19,56 +19,34 @@
                 <a href="/views/userProfile/userProfile.html">Perfil</a>
             </div>
             <div class="navItem">
-                <a href="/views/landingPage/landingPage.html">Logout</a>
+                <button id="logoutButton">Logout</button>
             </div>
         </div>
         <div class="container">
             <a href="../companyMatch/companyMatch.html" class="backBtn">
                 <img src="../../assets/icons/back.png" alt="Voltar"
             /></a>
-            <div class="title">Vanessa do Mato</div>
-            <p class="subTitle">25 anos</p>
-            <p class="subTitle mb-2">Minas Gerais / Belo Horizonte</p>
+            <div class="title" id="name"></div>
+            <p class="subTitle" id="birthDate"></p>
+            <p class="subTitle mb-2" id="location"></p>
 
             <div class="containerBody">
                 <div class="sectionContainer">
                     <p class="textTitle">História</p>
-                    <p class="text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                        and more recently with desktop publishing software like Aldus PageMaker including versions of
-                        Lorem Ipsum.
-                    </p>
+                    <p class="text" id="history"></p>
                 </div>
                 <div class="sectionContainer skillContainer">
                     <div class="flex-50">
                         <p class="textTitle">Competências técnicas</p>
                         <div class="skills">
-                            <div class="badgeContainer">
-                                <span class="badge badge-yellow">Html</span>
-                                <span class="badge badge-yellow">Css</span>
-                                <span class="badge badge-yellow">Javascript</span>
-                                <span class="badge badge-yellow">Typescript</span>
-                                <span class="badge badge-yellow">Jquery</span>
-                                <span class="badge badge-yellow">React</span>
-                            </div>
+                            <div class="badgeContainer" id="hardSkills"></div>
                         </div>
                     </div>
 
                     <div class="flex-50">
                         <p class="textTitle">Competências interpessoais</p>
                         <div class="skills">
-                            <div class="badgeContainer">
-                                <span class="badge badge-blue">Html</span>
-                                <span class="badge badge-blue">Css</span>
-                                <span class="badge badge-blue">Javascript</span>
-                                <span class="badge badge-blue">Typescript</span>
-                                <span class="badge badge-blue">Jquery</span>
-                                <span class="badge badge-blue">React</span>
-                            </div>
+                            <div class="badgeContainer" id="softSkills"></div>
                         </div>
                     </div>
                 </div>
@@ -76,32 +54,32 @@
                     <p class="textTitle">Informações</p>
                     <div class="grid">
                         <div class="contactGroup">
-                            <label for="" class="contactLabel">Email:</label>
-                            <span class="contact">contato@braziliansintech.com</span>
+                            <label for="" class="contactLabel">Email: <span></span></label>
+                            <span class="contact" id="email"></span>
                         </div>
                         <div class="contactGroup">
                             <label for="" class="contactLabel">Telefone:</label>
-                            <span class="contact">+55 31 99999-9999</span>
+                            <span class="contact" id="phone"></span>
                         </div>
                         <div class="contactGroup">
                             <label for="" class="contactLabel">Naturalidade:</label>
-                            <span class="contact">Brasileira</span>
+                            <span class="contact" id="country"></span>
                         </div>
                         <div class="contactGroup">
                             <label for="" class="contactLabel">Estado Civil:</label>
-                            <span class="contact">Casada</span>
+                            <span class="contact" id="civilState"></span>
                         </div>
                         <div class="contactGroup">
                             <label for="" class="contactLabel">Data de nascimento:</label>
-                            <span class="contact">03/12/1963</span>
+                            <span class="contact" id="birthDate"></span>
                         </div>
                         <div class="contactGroup">
                             <label for="" class="contactLabel">CPF:</label>
-                            <span class="contact">155.155.155-99</span>
+                            <span class="contact" id="cpf"></span>
                         </div>
                         <div class="contactGroup">
                             <label for="" class="contactLabel">RG:</label>
-                            <span class="contact">MG-60.798.651</span>
+                            <span class="contact" id="rg"></span>
                         </div>
                     </div>
                 </div>
@@ -110,38 +88,42 @@
                     <div class="grid">
                         <div class="contactGroup">
                             <label for="" class="contactLabel">Logradouro:</label>
-                            <span class="contact">Rua Oswald Bulamart</span>
+                            <span class="contact" id="street"></span>
                         </div>
                         <div class="contactGroup">
                             <label for="" class="contactLabel">CEP:</label>
-                            <span class="contact">30964-898</span>
+                            <span class="contact" id="cep"></span>
                         </div>
                         <div class="contactGroup">
                             <label for="" class="contactLabel">Bairro:</label>
-                            <span class="contact">Cidade Nova</span>
+                            <span class="contact" id="neighborhood"></span>
                         </div>
                         <div class="contactGroup">
                             <label for="" class="contactLabel">Cidade:</label>
-                            <span class="contact">Rio de Janeiro</span>
+                            <span class="contact" id="city"></span>
                         </div>
                         <div class="contactGroup">
                             <label for="" class="contactLabel">Estado:</label>
-                            <span class="contact">Rio de Janeiro</span>
+                            <span class="contact" id="state"></span>
                         </div>
                         <div class="contactGroup">
                             <label for="" class="contactLabel">Complemento:</label>
-                            <span class="contact">Perto da oficina do seu zé</span>
-                        </div>
-                        <div class="contactGroup">
-                            <label for="" class="contactLabel">RG:</label>
-                            <span class="contact">MG-60.798.651</span>
+                            <span class="contact" id="complement"></span>
                         </div>
                     </div>
                 </div>
                 <div class="editButtonContainer">
-                    <a href="" class="editButton">Editar</a>
+                    <a href="" class="editButton" id="editButton">Editar</a>
                 </div>
             </div>
         </div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+        <script src="../../global/global.js"></script>
+        <script src="./userProfile.js"></script>
     </body>
 </html>

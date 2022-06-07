@@ -25,9 +25,11 @@ router.get('/job', companyAuth, async (req, res) => {
 
         const jobArray = []
 
-        for( job of jobs){
-           job.skills = await db.all(`SELECT * FROM skill INNER JOIN jobSkill ON skill.id=jobSkill.skillId WHERE jobSkill.jobId=${job.id}`)
-           jobArray.push(job)
+        for (job of jobs) {
+            job.skills = await db.all(
+                `SELECT * FROM skill INNER JOIN jobSkill ON skill.id=jobSkill.skillId WHERE jobSkill.jobId=${job.id}`
+            )
+            jobArray.push(job)
         }
 
         // FECHAR O BANCO DE DADOS
@@ -79,7 +81,7 @@ router.get('/job/:id/getUsers', companyAuth, async (req, res) => {
             driver: sqlite3.Database,
         })
 
-        // PEGAR UM JOB DA COMPANHIA SELECIONADA
+        // PEGAR O JOB DA COMPANHIA SELECIONADA
         const job = await db.get(
             `SELECT * FROM job WHERE job.id='${req.params.id}' AND job.companyId='${req.company.id}'`
         )
@@ -93,24 +95,24 @@ router.get('/job/:id/getUsers', companyAuth, async (req, res) => {
         )
 
         // GET TODAS AS CANDIDATAS QUE APLICARAM PARA A EMPRESA
-        const appliedUsers = db.all(
-            `SELECT * FROM userCompany INNER JOIN company ON company.id=userCompany.companyId WHERE company.id='${req.company.id}'`
+        const appliedUsers = await db.all(
+            `SELECT userCompany.* FROM userCompany INNER JOIN company ON company.id=userCompany.companyId WHERE company.id='${req.company.id}'`
         )
 
         const matchUserIds = []
 
-        for (user of appliedUsers) {
+        for (companyUser of appliedUsers) {
             let equalSkills = []
 
             // SKILLS DA USUÁRIA
             const userSkills = await db.all(
-                `SELECT * FROM userSkill INNER JOIN user ON userSkill.userId=user.id WHERE user.id='${user.id}'`
+                `SELECT userSkill.* FROM userSkill INNER JOIN user ON userSkill.userId=user.id WHERE user.id='${companyUser.userId}'`
             )
 
             for (userSkill of userSkills) {
                 for (jobSkill of jobSkills) {
-                    if (jobSkill.id == userSkill.id) {
-                        equalSkills.push(jobSkill.id)
+                    if (jobSkill.skillId == userSkill.skillId) {
+                        equalSkills.push(jobSkill.skillId)
                     }
                 }
             }
@@ -118,13 +120,13 @@ router.get('/job/:id/getUsers', companyAuth, async (req, res) => {
             let matchPercentage = equalSkills.length / jobSkills.length
 
             if (matchPercentage >= 0.5) {
-                matchUserIds.push(user.id)
+                matchUserIds.push(companyUser.userId)
             }
         }
 
         let users = []
         for (id of matchUserIds) {
-            const fetchedUser = db.get(`SELECT * FROM user WHERE id='${id}'`)
+            const fetchedUser = await db.get(`SELECT * FROM user WHERE id='${id}'`)
             users.push(fetchedUser)
         }
 

@@ -32,7 +32,12 @@ router.get('/user/me', userAuth, async (req, res) => {
             `SELECT * FROM skill INNER JOIN userSkill ON userSkill.skillId=skill.id WHERE userSkill.userId='${req.user.id}'`
         )
 
+        const myAddress = await db.get(
+            `SELECT address.* FROM address INNER JOIN user ON address.id=user.userAddressId WHERE user.id='${req.user.id}'`
+        )
+
         req.user.skills = mySkills
+        req.user.address = myAddress
 
         await db.close()
         res.send(req.user)
@@ -161,8 +166,6 @@ router.post('/user/login', async (req, res) => {
         res.status(400).send(err.message)
     }
 })
-
-
 
 router.get('/user/getCompanies', userAuth, async (req, res) => {
     try {

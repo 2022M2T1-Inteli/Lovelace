@@ -21,7 +21,7 @@ $(document).ready(() => {
                 elements += `</div>
                                 <div class="iconsContainer">
                                     <a><img src="../../assets/icons/edit.svg" class="icon" alt="" /></a>
-                                    <a href="/views/candidates/candidates.html?jobId=${job.id}}"
+                                    <a href="/views/candidates/candidates.html?jobId=${job.id}"
                                         ><img src="../../assets/icons/person.svg" class="icon" alt=""
                                     /></a>
                                     <button onClick="deleteJob(${job.id})"><img src="../../assets/icons/trashIcon.png" class="icon" alt=""
