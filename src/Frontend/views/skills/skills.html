@@ -16,7 +16,9 @@
             <div class="sidebar">
                 <div class="listTitle">Aprovação</div>
                 <ul class="list">
-                    <li class="listItem"><a href="/views/companyApproval/companyApproval.html">Aprovação de empresas</a></li>
+                    <li class="listItem">
+                        <a href="/views/companyApproval/companyApproval.html">Aprovação de empresas</a>
+                    </li>
                 </ul>
                 <div class="listTitle">Padronizações</div>
                 <ul class="list">
@@ -33,8 +35,20 @@
             </div>
             <div class="content">
                 <div class="title">Competências</div>
-
-                <div class="skillGrid">
+                <button id="modalBtn" class="createSkillBtn">Criar competência</button>
+                <table class="skillTable">
+                    <tr class="row">
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Ações</th>
+                    </tr>
+                    <tr class="row">
+                        <td>Html</td>
+                        <td>Hardskill</td>
+                        <td><img class="trashIcon" src="../../assets/skills/trashIcon.png" alt="Lixo" /></td>
+                    </tr>
+                </table>
+                <!-- <div class="skillGrid">
                     <div class="skillContainer">
                         <p class="skillName">Html</p>
                         <img class="trashIcon" src="../../assets/skills/trashIcon.png" alt="Lixo" />
@@ -79,7 +93,7 @@
                         <p class="skillName">Html</p>
                         <img class="trashIcon" src="../../assets/skills/trashIcon.png" alt="Lixo" />
                     </div>
-                </div>
+                </div> -->
 
                 <!-- <table id="table_id" class="display">
                     <thead>
@@ -110,6 +124,25 @@
             </div>
         </div>
 
+        <div class="backdrop"></div>
+
+        <div class="modal">
+            <div class="modalHead">Criar competência</div>
+            <div class="modalBody">
+                <input type="text" class="skillInput" placeholder="Nome" id="skillName" />
+                <select class="skillInput" id="skillType">
+                    <option disabled selected>Tipo</option>
+                    <option value="0">Competência técnica</option>
+                    <option value="1">Competência interpessoal</option>
+                </select>
+                <button class="createSkillBtn" id="createSkill">Criar</button>
+            </div>
+        </div>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
         <script src="./skills.js"></script>
     </body>
 </html>

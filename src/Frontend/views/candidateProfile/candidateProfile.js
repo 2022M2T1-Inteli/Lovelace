@@ -20,7 +20,6 @@ $(document).ready(() => {
         type: 'GET',
         contentType: 'application/json',
         success: function (user) {
-            console.log(user)
             $('#title').html(user.firstName + ' ' + user.lastName)
             $('#age').html(getAge(user.birthDate) + ' anos')
             $('#location').html(user.address.city + ' / ' + user.address.state)
