@@ -166,8 +166,11 @@ router.get('/job/getUsers/:userId', companyAuth, async (req, res) => {
         })
 
         const user = await db.get(
-            `SELECT id, firstName, lastName, country, aboutYou, email, phone FROM user WHERE id='${req.params.userId}'`
+            `SELECT id, firstName, lastName, country, aboutYou, email, phone, birthDate, userAddressId FROM user WHERE id='${req.params.userId}'`
         )
+
+        const address = await db.get(`SELECT city, state FROM address WHERE id='${user.userAddressId}'`)
+        user.address = address
 
         const userSkills = await db.all(
             `SELECT * FROM userSkill INNER JOIN skill ON userSkill.skillId = skill.id WHERE userSkill.userId = '${req.params.userId}'`
