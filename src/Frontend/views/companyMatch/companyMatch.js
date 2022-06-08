@@ -4,7 +4,6 @@ $(document).ready(() => {
         type: 'GET',
         contentType: 'application/json',
         success: function (res) {
-            console.log(res)
             let elements = ''
             for (company of res) {
                 elements += `<div class="gridBox">

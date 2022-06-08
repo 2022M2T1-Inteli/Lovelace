@@ -12,7 +12,7 @@
     <body>
         <div class="navbar">
             <h3 class="navbarTitle">Brazilians In Tech</h3>
-           
+
             <div class="navItem">
                 <a href="/views/landingPage/landingPage.html">Logout</a>
             </div>
@@ -21,7 +21,9 @@
             <div class="sidebar">
                 <div class="listTitle">Aprovação</div>
                 <ul class="list">
-                    <li class="listItem active"><a href="../companyApproval/companyApproval.html">Aprovação de empresas</a></li>
+                    <li class="listItem active">
+                        <a href="../companyApproval/companyApproval.html">Aprovação de empresas</a>
+                    </li>
                 </ul>
                 <div class="listTitle">Padronizações</div>
                 <ul class="list">
@@ -37,80 +39,71 @@
                 </ul>
             </div>
             <div class="content">
-                <div class="title">Nome da Empresa</div>
+                <div class="title" id="title"></div>
                 <div class="containerBody">
                     <div class="left">
                         <div class="textContainer">
                             <p class="textTitle">Filosofia</p>
-                            <p class="text">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type and scrambled it to make a type specimen book. It has
-                                survived not only five centuries, but also the leap into electronic typesetting,
-                                remaining essentially unchanged. It was popularised in the 1960s with the release of
-                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
+                            <p class="text" id="companyPhilosophy"></p>
                         </div>
                         <div class="textContainer">
                             <p class="textTitle">Cultura</p>
-                            <p class="text">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type and scrambled it to make a type specimen book. It has
-                                survived not only five centuries, but also the leap into electronic typesetting,
-                                remaining essentially unchanged. It was popularised in the 1960s with the release of
-                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
+                            <p class="text" id="companyCulture"></p>
                         </div>
                         <div class="textContainer">
                             <p class="textTitle">Conquistas da empresa</p>
-                            <p class="text">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type and scrambled it to make a type specimen book. It has
-                                survived not only five centuries, but also the leap into electronic typesetting,
-                                remaining essentially unchanged. It was popularised in the 1960s with the release of
-                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
+                            <p class="text" id="badges"></p>
                         </div>
                     </div>
                     <div class="right">
-                        <img class="img logo" src="../../assets/companyProfile/microsoftLogo.png" alt="Logo" />
                         <div>
                             <p class="textTitle">Informações da empresa</p>
                             <div class="informations">
-                                <p class="informationParagraph"><span>Email: </span> contato@outlook.com</p>
-                                <p class="informationParagraph"><span>CNPJ: </span> XX. XXX. XXX/0001-XX.</p>
-                                <p class="informationParagraph"><span>Data de abertura: </span> 07/02/2016</p>
-                                <p class="informationParagraph"><span>Telefone: </span> 31 99565-2645</p>
-                                <p class="informationParagraph"><span>Localização: </span> Minas Gerais</p>
-                                <p class="informationParagraph"><span>Nicho de mercado: </span> Tecnologia</p>
-                                <p class="informationParagraph">
-                                    <span>Endereço: </span> Rua Desembargador Jorge Fontana
-                                </p>
-                                <p class="informationParagraph"><span>NIT/PIS/PASEP: </span> XX. XXX. XXX/0001-XX.</p>
+                                <p class="informationParagraph">Email: <span id="email"></span></p>
+                                <p class="informationParagraph">CNPJ: <span id="cnpj"></span></p>
+                                <p class="informationParagraph">Data de abertura: <span id="openingDate"></span></p>
+                                <p class="informationParagraph">Telefone: <span id="phone"></span></p>
+
+                                <p class="informationParagraph">Nicho de mercado: <span id="marketNiche"></span></p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="textTitle">Endereço</p>
+                            <div class="informations">
+                                <p class="informationParagraph">Rua / Avenida: <span id="companyAddress"></span></p>
+                                <p class="informationParagraph">Bairro: <span id="neighborhood"></span></p>
+                                <p class="informationParagraph">Cidade: <span id="city"></span></p>
+                                <p class="informationParagraph">Estado: <span id="state"></span></p>
+                                <p class="informationParagraph">cep: <span id="cep"></span></p>
+                                <p class="informationParagraph">Complement: <span id="complement"></span></p>
                             </div>
                         </div>
                         <div>
                             <p class="textTitle">Informações do recrutador</p>
                             <div class="informations">
-                                <p class="informationParagraph"><span>Nome: </span> Alberto Fonseca</p>
-                                <p class="informationParagraph"><span>Cargo: </span> CEO</p>
-                                <p class="informationParagraph"><span>Email: </span> alberto@gmail.com</p>
-                                <p class="informationParagraph"><span>Telefone: </span> 31 99565-2645</p>
-                                <p class="informationParagraph"><span>País / Estado: </span> Brasil, Minas Gerais</p>
+                                <p class="informationParagraph">Nome: <span id="recruterName"></span></p>
+                                <p class="informationParagraph">Email: <span id="recruterEmail"></span></p>
+                                <p class="informationParagraph">Cargo: <span id="recruterRole"></span></p>
+                                <p class="informationParagraph">phone: <span id="recruterPhone"></span></p>
+                                <p class="informationParagraph">phone: <span id="recruterLocation"></span></p>
+                              
                             </div>
                         </div>
                         <div class="buttonContainer">
-                            <button class="btn btn-green">Aprovar</button>
-                            <button class="btn btn-grey">Excluir</button>
+                            <button class="btn btn-green" id="approveButton">Aprovar</button>
+                            <button class="btn btn-grey" id="deleteCompany">Excluir</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+        <script src="../../global/global.js"></script>
+
+        <script src="./viewCompany.js"></script>
     </body>
 </html>

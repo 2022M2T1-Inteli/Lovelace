@@ -64,6 +64,53 @@ router.post('/admin/login', async (req, res) => {
     }
 })
 
+router.get('/admin/companyApproval', adminAuth, async (req, res) => {
+    try {
+        // CONECTAR AO BANCO DE DADOS
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        const companies = await db.all(`SELECT * FROM company WHERE isApproved=0`)
+
+        for (i in companies) {
+            const address = await db.get(`SELECT * FROM address WHERE id='${companies[i].companyAddressId}'`)
+            companies[i].address = address
+        }
+
+        await db.close()
+
+        res.send(companies)
+    } catch (err) {
+        res.status(400).send()
+    }
+})
+
+router.get('/admin/companyApproval/:id', adminAuth, async (req, res) => {
+    try {
+        // CONECTAR AO BANCO DE DADOS
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        const company = await db.get(`SELECT * FROM company WHERE isApproved=0 AND id='${req.params.id}'`)
+
+        const address = await db.get(`SELECT * FROM address WHERE id='${company.companyAddressId}'`)
+        company.address = address
+
+        const recruter = await db.get(`SELECT * FROM recruter WHERE id='${company.recruterId}'`)
+        company.recruter = recruter
+
+        await db.close()
+
+        res.send(company)
+    } catch (err) {
+        res.status(400).send()
+    }
+})
+
 router.patch('/admin/companyApproval/:id', adminAuth, async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
@@ -73,6 +120,28 @@ router.patch('/admin/companyApproval/:id', adminAuth, async (req, res) => {
         })
 
         await db.run(`UPDATE company SET isApproved='1' WHERE id='${req.params.id}'`)
+
+        await db.close()
+
+        res.send()
+    } catch (err) {
+        res.status(400).send()
+    }
+})
+
+router.delete('/admin/company/:id', adminAuth, async (req, res) => {
+    try {
+        // CONECTAR AO BANCO DE DADOS
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        const company = await db.get(`SELECT * FROM company WHERE id='${req.params.id}'`)
+
+        await db.run(`DELETE FROM address WHERE id='${company.companyAddressId}'`)
+        await db.run(`DELETE FROM recruter WHERE id='${company.recruterId}'`)
+        await db.run(`DELETE FROM company WHERE id='${req.params.id}'`)
 
         await db.close()
 

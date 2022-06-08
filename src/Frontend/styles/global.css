@@ -167,3 +167,10 @@ body {
     margin-bottom: 1rem;
     display: none;
 }
+
+.noDataFound {
+    font-size: 2rem;
+    margin-top: 4rem;
+    text-align: center;
+    font-weight: 700;
+}

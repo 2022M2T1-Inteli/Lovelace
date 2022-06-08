@@ -144,8 +144,13 @@
     font-size: 1.5rem;
 }
 
-.informationParagraph > span {
+.informationParagraph {
     font-weight: 700;
+
+}
+
+.informationParagraph > span {
+    font-weight: 400;
 }
 
 .buttonContainer {

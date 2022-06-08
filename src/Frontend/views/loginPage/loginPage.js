@@ -30,7 +30,9 @@ $(document).ready(() => {
 
     loginButton.click(() => {
         errorBadge.css('display', 'none')
-        if (termInput.is(":checked")) {
+        errorBadge.html('')
+
+        if (termInput.is(':checked')) {
             $.ajax({
                 url,
                 type: 'POST',
@@ -41,8 +43,12 @@ $(document).ready(() => {
                 },
                 error: function (err) {
                     errorBadge.css('display', 'block')
+                    errorBadge.html(err.responseText)
                 },
             })
+        } else {
+            errorBadge.css('display', 'block')
+            errorBadge.html('É necessário que você concorde com os termos de uso!')
         }
     })
 })

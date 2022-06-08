@@ -137,7 +137,7 @@
 }
 
 .gridBox:hover {
-    transform: scale(1.05);
+    transform: translateY(-.4rem);
 }
 
 .boxTitle {
@@ -183,7 +183,7 @@
 }
 
 .btn:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
 .btn-yellow {
