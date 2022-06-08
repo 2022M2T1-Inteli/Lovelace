@@ -5,47 +5,7 @@ const router = express.Router()
 const sqlite3 = require('sqlite3')
 const { open } = require('sqlite')
 
-const {adminAuth} = require('../middlewares/auth')
-
-router.get('/softSkills', async (req, res) => {
-    try {
-        // CONECTAR AO BANCO DE DADOS
-        const db = await open({
-            filename: './database/bit.db',
-            driver: sqlite3.Database,
-        })
-
-        // GET SOFT SKILLS
-        const softSkills = await db.all(`SELECT * FROM skill WHERE type='1'`)
-
-        // FECHAR O BANCO DE DADOS
-        await db.close()
-
-        res.send(softSkills)
-    } catch (err) {
-        res.status(400).send(err.message)
-    }
-})
-
-router.get('/hardSkills', async (req, res) => {
-    try {
-        // CONECTAR AO BANCO DE DADOS
-        const db = await open({
-            filename: './database/bit.db',
-            driver: sqlite3.Database,
-        })
-
-        // GET SOFT SKILLS
-        const hardSkills = await db.all(`SELECT * FROM skill WHERE type='0'`)
-
-        // FECHAR O BANCO DE DADOS
-        await db.close()
-
-        res.send(hardSkills)
-    } catch (err) {
-        res.status(400).send(err.message)
-    }
-})
+const { adminAuth } = require('../middlewares/auth')
 
 router.get('/skills', async (req, res) => {
     try {
@@ -92,7 +52,6 @@ router.post('/skill/create', adminAuth, async (req, res) => {
         res.status(400).send(err.message)
     }
 })
-
 
 router.delete('/skill/:id', adminAuth, async (req, res) => {
     try {
