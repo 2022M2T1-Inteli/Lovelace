@@ -116,8 +116,10 @@
 
 .skillTable {
     width: 100%;
-    border: 1px solid #000;
-    padding: 1rem;
+    border: 1px solid #333;
+    padding: 2rem;
+    border-radius: 3px;
+    border-collapse: collapse;
     border-radius: 3px;
 }
 
@@ -127,10 +129,23 @@
     padding: 1.2rem;
     font-size: 1.8rem;
     margin-bottom: 1rem;
+    /* display: table-row; */
+    border: 1px solid var(--color-grey-dark-2);
+    border-radius: 3px;
 }
 
 .row th {
     text-align: start;
+    color: var(--color-grey-dark-1);
+    padding-bottom: 1rem;
+    padding: 1rem;    
+
+}
+.row td {
+    text-align: start;
+    color: var(--color-grey-dark-2);
+    padding-bottom: 0.6rem;
+    padding: 1rem;    
 }
 
 .trashIcon {

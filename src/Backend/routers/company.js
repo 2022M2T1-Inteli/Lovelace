@@ -23,11 +23,11 @@ const generateAuthToken = async (id) => {
 router.post('/company/signUp', async (req, res) => {
     try {
         const {
-            street, //
-            cep, //
-            neighborhood, //
-            city, //
-            state, //
+            street,
+            cep,
+            neighborhood,
+            city,
+            state,
             complement,
             email,
             name,
@@ -36,9 +36,9 @@ router.post('/company/signUp', async (req, res) => {
             phone2,
             openingDate,
             marketNiche,
-            companyPhilosophy, //
-            companyCulture, //
-            badges, //
+            companyPhilosophy,
+            companyCulture,
+            badges,
             recruterFirstName,
             recruterSecondName,
             recruterRole,

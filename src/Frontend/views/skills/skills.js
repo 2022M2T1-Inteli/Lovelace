@@ -39,12 +39,14 @@ $(document).ready(() => {
     $('#createSkill').click(() => {
         const skillName = $('#skillName').val()
         const skillType = $('#skillType').val()
+        console.log(skillName, skillType)
+
         if (skillName && skillType) {
             $.ajax({
                 url: '/skill/create',
                 type: 'POST',
                 contentType: 'application/json',
-                body: JSON.stringify({ name: skillName, type: skillType }),
+                data: JSON.stringify({ name: skillName, type: skillType }),
                 success: function (res) {
                     window.location.reload()
                 },
