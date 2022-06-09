@@ -16,12 +16,12 @@ router.get('/skills', async (req, res) => {
         })
 
         // GET SOFT SKILLS
-        const hardSkills = await db.all(`SELECT * FROM skill`)
+        const skills = await db.all(`SELECT * FROM skill`)
 
         // FECHAR O BANCO DE DADOS
         await db.close()
 
-        res.send(hardSkills)
+        res.send(skills)
     } catch (err) {
         res.status(400).send(err.message)
     }
