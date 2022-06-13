@@ -180,37 +180,42 @@ router.get('/user/getCompanies', userAuth, async (req, res) => {
             `SELECT userSkill.* FROM userSkill INNER JOIN user ON userSkill.userId=user.id WHERE user.id='${req.user.id}'`
         )
 
-        // GET ALL JOBS
+        // PEGAR TODOS AS VAGAS
         const jobs = await db.all(`SELECT id, companyId FROM job`)
         let companiesIdMatch = []
 
-        //Loop para analisar um job por vez
+        // FAZER UM LOOP NAS VAGAS
         for (job of jobs) {
             let equalSkills = []
 
-            // SKILLS DO JOB
+            // PEGAR SKILLS DA VAGA
             const jobSkills = await db.all(
                 `SELECT jobSkill.* FROM jobSkill INNER JOIN job ON jobSkill.jobId=job.id WHERE job.id = '${job.id}' `
             )
 
             if (jobSkills.length > 0) {
-                //Loop para analisar um jobSkill por vez
+                // FAZER UM LOOP EM CADA COMPETÊNCIA DA VAGA
                 for (jobSkill of jobSkills) {
-                    //Loop para analisar individualmente cada userSkill
+
+                    // FAZER UM LOOP EM CADA COMPETÊNCIA DA USUÁRIA
                     for (userSkill of userSkills) {
-                        //Verirficar se a skill do usuário bate com a skill da oferta, se bater, armazenar o id da skill em um array
+
+                        // COMPARAR A COMPETÊNCIA DA USUÁRIA COM A COMPETÊNCIA DA VAGA
                         if (jobSkill.skillId == userSkill.skillId) {
+                            
+                            // ADICIONAR O ID DA COMPETÊNCIA NO ARRAY EQUALSKILLS
                             equalSkills.push(jobSkill.id)
                         }
                     }
                 }
             }
 
-            //Realizar a porcentagem de match das skills da usuária e do job
+            // ARMAZENAR NESSA VARIÁVEL A PORCENTAGEM DE MATCH
             let matchPercentage = equalSkills.length / jobSkills.length
-            //Checagem se a taxa de match das skills supera 50%
+
+            // CHECAR SE ESSE MATCH ULTRAPASSA 50%
             if (matchPercentage >= 0.5) {
-                //Se superar, armazenamos a companyId em um array
+                // ADICIONAR O ID DA EMPRESA QUE CRIOU A VAGA EM UM ARRAY
                 if (!companiesIdMatch.includes(job.companyId)) {
                     companiesIdMatch.push(job.companyId)
                 }
@@ -218,9 +223,9 @@ router.get('/user/getCompanies', userAuth, async (req, res) => {
         }
 
         let companies = []
-        // GET COMPANIES ONE BY ONE
+
+        // PEGAR AS INFORMAÇÕES DE TODAS AS EMPRESAS
         for (id of companiesIdMatch) {
-            //Pegamos todas as informações das empresas as quais possuem o mesmo id da company armazenada em um array anteriormente.
             const fetchedCompany = await db.get(
                 `SELECT company.id, company.name, company.marketNiche, company.companyAddressId, company.companyPhilosophy, address.state, address.city FROM company INNER JOIN address ON company.companyAddressId=address.id WHERE company.id='${id}'`
             )
@@ -229,8 +234,8 @@ router.get('/user/getCompanies', userAuth, async (req, res) => {
 
         // FECHAR O BANCO DE DADOS
         await db.close()
-        //Mandamos como resposta apenas as companies que possuem um match de 70% ou mais com as skills da usuária
 
+        // RETORNAR AS EMPRESAS PARA O FRONT
         res.send(companies)
     } catch (err) {
         res.status(400).send(err.message)
