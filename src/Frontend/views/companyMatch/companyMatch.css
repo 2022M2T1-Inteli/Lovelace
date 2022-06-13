@@ -88,6 +88,11 @@
     color: var(--color-primary);
     margin-bottom: 4rem;
 }
+.errorMessage {
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+}
 
 .grid {
     display: grid;
