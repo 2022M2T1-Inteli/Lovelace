@@ -198,3 +198,4 @@ const previousStage = () => {
 // Linkar as funções ao aperto dos botões
 $('.nextButton').click(nextStage)
 $('.backButton').click(previousStage)
+
