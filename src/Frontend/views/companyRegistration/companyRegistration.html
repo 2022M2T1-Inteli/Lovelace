@@ -55,10 +55,10 @@
                     <div class="inputContainer">
                         <form id="companyInfo">
                             <input type="text" class="input" placeholder="Nome da empresa" name="name" />
-                            <input type="text" class="input" placeholder="CNPJ" name="cnpj" />
-                            <input type="text" class="input" placeholder="Data de abertura" name="openingDate" />
-                            <input type="text" class="input" placeholder="Telefone" name="phone" />
-                            <input type="text" class="input" placeholder="Telefone 2" name="phone2" />
+                            <input type="text" class="input" placeholder="CNPJ" name="cnpj" id="cnpj" />
+                            <input type="text" class="input" placeholder="Data de abertura" name="openingDate" id="date" />
+                            <input type="text" class="input" placeholder="Telefone" name="phone" id="phone_with_ddd" />
+                            <input type="text" class="input" placeholder="Telefone 2" name="phone2" id="phone_with_ddd2" />
                             <input type="text" class="input" placeholder="Nicho de mercado" name="marketNiche" />
                         </form>
                     </div>
@@ -68,7 +68,7 @@
                     <div class="inputContainer">
                         <form id="companyAddress">
                             <input type="text" class="input" placeholder="Logradouro" name="street" />
-                            <input type="text" class="input" placeholder="CEP" name="cep" />
+                            <input type="text" class="input" placeholder="CEP" name="cep" id="cep" />
                             <input type="text" class="input" placeholder="Bairro" name="neighborhood" />
                             <input type="text" class="input" placeholder="Cidade" name="city" />
                             <input type="text" class="input" placeholder="Estado" name="state" />
@@ -85,7 +85,7 @@
                             <input type="text" class="input" placeholder="Sobrenome" name="recruterSecondName" />
                             <input type="text" class="input" placeholder="Cargo" name="recruterRole" />
                             <input type="text" class="input" placeholder="E-Mail" name="recruterEmail" />
-                            <input type="text" class="input" placeholder="Telefone" name="recruterPhone" />
+                            <input type="text" class="input" placeholder="Telefone" name="recruterPhone" id="cellphone" />
                             <input type="text" class="input" placeholder="País / Estado" name="recruterLocation" />
                         </form>
                     </div>
@@ -156,6 +156,7 @@
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"
         ></script>
+        <script src="../../assets/jqueryMask/jquery.mask.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <script src="./companyRegistration.js"></script>

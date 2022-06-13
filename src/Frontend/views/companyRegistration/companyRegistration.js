@@ -1,5 +1,13 @@
 // Função executada quando a página é carregada
 $(document).ready(() => {
+
+    $('#cnpj').mask('00.000.000/0000-00', {reverse: true});
+    $('#date').mask('00/00/0000');
+    $('#phone_with_ddd').mask('(00) 0000-0000');
+    $('#phone_with_ddd2').mask('(00) 0000-0000');
+    $('#cep').mask('00000-000');
+    $('#cellphone').mask('0 0000-0000')
+
     $('#finalButton').click(() => {
         const form = {}
 
