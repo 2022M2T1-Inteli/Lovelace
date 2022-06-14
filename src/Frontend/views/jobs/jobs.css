@@ -8,6 +8,12 @@
     color: var(--color-primary);
 }
 
+.errorMessage {
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+}
+
 .createJobContainer {
     display: flex;
     justify-content: flex-end;

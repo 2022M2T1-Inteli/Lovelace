@@ -6,7 +6,7 @@ $(document).ready(() => {
         success: function (res) {
             let elements = ''
             if (res.length == 0) {
-                elements = "<a class='errorMessage'>Nennhuma empresa encontrada.<br> Ainda não temos vagas que condizem com seu perfil!</a>"
+                elements = "<a class='errorMessage'>Nenhuma empresa encontrada.<br> Ainda não temos vagas que condizem com seu perfil!</a>"
             }
             else {
                 for (company of res) {

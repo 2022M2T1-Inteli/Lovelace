@@ -5,6 +5,10 @@ $(document).ready(() => {
         contentType: 'application/json',
         success: function (res) {
             let elements = ''
+            if (res.length == 0) {
+                elements = "<a class='errorMessage'>Você ainda não cadastrou nenhuma vaga. <br> Clique em 'Criar vaga' para disponibilizar uma nova vaga. </a>"
+            }
+            else {
             for (job of res) {
                 elements += `<div class="gridBox">
                                 <h4 class="boxTitle">${job.area}</h4>
@@ -28,6 +32,7 @@ $(document).ready(() => {
                                 </div>
                             </div>`
             }
+        }
             $('.grid').html(elements)
         },
         error: function (err) {
