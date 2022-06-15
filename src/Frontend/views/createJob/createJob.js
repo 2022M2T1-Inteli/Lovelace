@@ -50,3 +50,16 @@ $(document).ready(() => {
         })
     })
 })
+const validate = (inputs) => {
+    let error = false;
+  
+    inputs.each(function (index) {
+      if ($(this).val() == "") {
+        $(this).css("border", "1px solid red");
+        error = true;
+      }
+    });
+  
+    return error;
+  };
+  
