@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Perfil</title>
+
+        <link rel="stylesheet" href="../../styles/global.css" />
+        <link rel="stylesheet" href="./userProfileEdit.css" />
+    </head>
+    <body>
+        <div class="navbar">
+            <h3 class="navbarTitle">Brazilians In Tech</h3>
+            <div class="navItem">
+                <a href="/views/companyMatch/companyMatch.html">Empresas</a>
+            </div>
+            <div class="navItem active">
+                <a href="/views/userProfile/userProfile.html">Perfil</a>
+            </div>
+            <div class="navItem">
+                <button id="logoutButton">Logout</button>
+            </div>
+        </div>
+        <div class="container">
+            <a href="../companyMatch/companyMatch.html" class="backBtn">
+                <img src="../../assets/icons/back.png" alt="Voltar"
+            /></a>
+            <div class="title" id="name"></div>
+            <p class="subTitle" id="birthDate"></p>
+            <p class="subTitle mb-2" id="location"></p>
+
+            <div class="containerBody">
+                <div class="sectionContainer">
+                    <p class="textTitle">História</p>
+                    <p class="text" id="history"></p>
+                    <div class="aboutYouContainer">
+                        <textarea
+                            placeholder="Descreva em poucas palavras o que você não poderia deixar de contar em uma apresentação sobre você."
+                            name="aboutYou"
+                            id="aboutYou"
+                            cols="30"
+                            rows="10"
+                            class="aboutYou"
+                        ></textarea>
+                    </div>
+                </div>
+                <div class="sectionContainer skillContainer">
+                    <div class="flex-50">
+                        <p class="textTitle">Competências técnicas</p>
+                        <div class="skills">
+                            <div class="badgeContainer" id="hardSkills"></div>
+                        </div>
+                        <div class="skillInputContainer">
+                            <select class="skillSelect" id="hardSkills" name="skills[]" multiple>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex-50">
+                        <p class="textTitle">Competências interpessoais</p>
+                        <div class="skills">
+                            <div class="badgeContainer" id="softSkills"></div>
+                        </div>
+                        <div class="skillInputContainer">
+                            <select class="skillSelect" id="softSkills" name="skills[]" multiple>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="sectionContainer">
+                    <p class="textTitle">Informações</p>
+                    <div class="grid">
+                        <div class="contactGroup">
+                            <label for="" class="contactLabel">Email: <span></span></label>
+                            <!-- <span class="contact" id="email"></span> -->
+                            <input type="email" class="input"/>
+                        </div>
+                        <div class="contactGroup">
+                            <label for="" class="contactLabel">Telefone:</label>
+                            <!-- <span class="contact" id="phone"></span> -->
+                            <input type="text" class="input" name="phone" id="phone"/>
+                        </div>
+                        <div class="contactGroup">
+                            <label for="" class="contactLabel">Naturalidade:</label>
+                            <!-- <span class="contact" id="country"></span> -->
+                            <input type="text" class="input" name="country" id="country">
+                        </div>
+                        <div class="contactGroup">
+                            <label for="" class="contactLabel">Estado Civil:</label>
+                            <!-- <span class="contact" id="civilState"></span> -->
+                            <input type="text" class="input" name="civilState" id="civilState"/>
+                        </div>
+                        <div class="contactGroup">
+                            <label for="" class="contactLabel">Data de nascimento:</label>
+                            <!-- <span class="contact" id="birthDate"></span> -->
+                            <input type="text" class="input" name="birthDate" id="birthDate"/>
+                        </div>
+                        <div class="contactGroup">
+                            <label for="" class="contactLabel">CPF:</label>
+                            <!-- <span class="contact" id="cpf"></span> -->
+                            <input type="text" class="input" name="cpf" id="cpf"/>
+                        </div>
+                        <div class="contactGroup">
+                            <label for="" class="contactLabel">RG:</label>
+                            <!-- <span class="contact" id="rg"></span> -->
+                            <input type="text" class="input" name="rg" id="rg"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="sectionContainer">
+                    <p class="textTitle">Endereço</p>
+                    <div class="grid">
+                        <div class="contactGroup">
+                            <label for="" class="contactLabel">Logradouro:</label>
+                            <!-- <span class="contact" id="street"></span> -->
+                            <input type="text" class="input" name="street" id="street"/>
+                        </div>
+                        <div class="contactGroup">
+                            <label for="" class="contactLabel">CEP:</label>
+                            <!-- <span class="contact" id="cep"></span> -->
+                            <input type="text" class="input" name="cep" id="cep"/>
+                        </div>
+                        <div class="contactGroup">
+                            <label for="" class="contactLabel">Bairro:</label>
+                            <!-- <span class="contact" id="neighborhood"></span> -->
+                            <input type="text" class="input" name="neighborhood" id="neighborhood"/>
+                        </div>
+                        <div class="contactGroup">
+                            <label for="" class="contactLabel">Cidade:</label>
+                            <!-- <span class="contact" id="city"></span> -->
+                            <input type="text" class="input" name="city" id="city"/>
+                        </div>
+                        <div class="contactGroup">
+                            <label for="" class="contactLabel">Estado:</label>
+                            <!-- <span class="contact" id="state"></span> -->
+                            <input type="text" class="input" name="state" id="state"/>
+                        </div>
+                        <div class="contactGroup">
+                            <label for="" class="contactLabel">Complemento:</label>
+                            <!-- <span class="contact" id="complement"></span> -->
+                            <input type="text" class="input" name="complement" id="complement"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="saveChangesContainer">
+                    <a href="" class="saveChangesButton" id="saveChangesButton">Salvar alterações</a>
+                </div>
+            </div>
+        </div>
+
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script src="../../assets/jqueryMask/jquery.mask.min.js"></script>
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+        <script src="../../global/global.js"></script>
+        <script src="./userProfileEdit.js"></script>
+    </body>
+</html>
