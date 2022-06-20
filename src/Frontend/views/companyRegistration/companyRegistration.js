@@ -92,9 +92,39 @@ const containers = [$('.stage0'), $('.stage1'), $('.stage2')]
 containers[0].css('opacity', 100)
 containers[1].css('display', 'none')
 containers[2].css('display', 'none')
+const validate = (inputs) => {
+    let error = false;
+  
+    inputs.each(function (index) {
+      if ($(this).val() == "") {
+        $(this).css("border", "1px solid red");
+        error = true;
+      }
+    });
+  
+    return error;
+  };
 
 // Função executada quando o usuário aperta no botão "próximo"
 const nextStage = () => {
+
+    if (stage == 0) {
+        let inputs = $("#companyAccount input, #companyInfo input, #companyAddress input, #companyRecruter input");
+        if (validate(inputs) == true) {
+          return;
+        }
+      } else if (stage == 1) {
+        let inputs = $("#companyPhilosophy, #companyCulture");
+        if (validate(inputs) == true) {
+          return;
+        }
+      } else if (stage == 2) {
+        let inputs = [$("#badges")];
+        if (validate(inputs) == true) {
+          return;
+        }
+      }
+
     // Checar se o estágio é menor que 2
     if (stage < 2) {
         // Função que anima a opacidade do container
