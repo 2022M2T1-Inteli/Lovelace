@@ -1,3 +1,41 @@
+
+
+const validate = (inputs) => {
+    let error = false;
+
+    inputs.each(function (index) {
+
+        if (inputs[index].value == "") {
+            $(this).css("border", "1px solid red");
+            error = true;
+        }
+    });
+
+    return error;
+};
+
+const createJob = () => {
+    const form = {
+        type: $('#jobType').val(),
+        workModel: $('#jobModel').val(),
+        area: $('#jobArea').val(),
+        skills: $('#hardSkills').val().concat($('#softSkills').val())
+    }
+
+    $.ajax({
+        url: '/job/create',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(form),
+        success: function (res) {
+            window.location.replace('/views/jobs/jobs.html')
+        },
+        error: function (err) {
+            console.log(err)
+        },
+    })
+}
+
 // Função executada quando a página é carregada
 $(document).ready(() => {
     // Permitir a busca e a seleção múltipla do select
@@ -29,37 +67,13 @@ $(document).ready(() => {
     })
 
     $('#createJobButton').click(() => {
-        const form = {
-            type : $('#jobType').val(),
-            workModel: $('#jobModel').val(),
-            area: $('#jobArea').val(),
-            skills: $('#hardSkills').val().concat( $('#softSkills').val())
+        let inputs = $("#jobType, #jobModel, #jobArea, #hardSkills, #softSkills");
+
+        if (validate(inputs) == true) {
+            return;
         }
 
-        $.ajax({
-            url: '/job/create',
-            type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(form),
-            success: function (res) {
-                window.location.replace('/views/jobs/jobs.html')
-            },
-            error: function (err) {
-                console.log(err)
-            },
-        })
+        createJob()
     })
 })
-const validate = (inputs) => {
-    let error = false;
-  
-    inputs.each(function (index) {
-      if ($(this).val() == "") {
-        $(this).css("border", "1px solid red");
-        error = true;
-      }
-    });
-  
-    return error;
-  };
-  
+

@@ -139,7 +139,7 @@ const nextStage = () => {
       return;
     }
   } else if (stage == 2) {
-    let inputs = [$("#aboutYou")];
+    let inputs = [$("#aboutYou input")];
     if (validate(inputs) == true) {
       return;
     }

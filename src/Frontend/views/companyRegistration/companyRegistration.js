@@ -92,6 +92,7 @@ const containers = [$('.stage0'), $('.stage1'), $('.stage2')]
 containers[0].css('opacity', 100)
 containers[1].css('display', 'none')
 containers[2].css('display', 'none')
+
 const validate = (inputs) => {
     let error = false;
   
