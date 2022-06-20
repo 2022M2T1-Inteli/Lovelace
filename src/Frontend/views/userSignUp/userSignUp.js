@@ -234,21 +234,3 @@ const previousStage = () => {
     );
   }
 };
-
-// // Linkar as funções ao aperto dos botões
-// $("#addressForm").validate({
-//   rules: {
-//     street: {
-//       required: true,
-//       minlenth: 4,
-//     },
-//     messages: {
-//       street: {
-//         required: "coloque o nome da rua",
-//         minlength: jQuery.validator.format(
-//           "Please, at least 4 characters are necessary"
-//         ),
-//       },
-//     },
-//   },
-// });
