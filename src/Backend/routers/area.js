@@ -33,6 +33,11 @@ router.post('/area/create', adminAuth, async (req, res) => {
             driver: sqlite3.Database,
         })
 
+        const area = await db.get(`SELECT * FROM area WHERE name='${req.body.name}'`)
+        if (area) {
+            throw new Error('Essa área já existe!')
+        }
+
         await db.run(`INSERT INTO area (name) VALUES ('${req.body.name}')`)
 
         await db.close()

@@ -7,14 +7,15 @@ $(document).ready(() => {
         type: 'GET',
         contentType: 'application/json',
         success: function (res) {
-            let skillElements = '';
+            let skillElements = ''
             for (skill of res) {
-                skillElements +=
-                    `<tr class="row">
+                skillElements += `<tr class="row">
                     <td>${skill.name}</td>
-                    <td>${skill.type == 0 ? "Técnica" : "Interpessoal"}</td>
-                    <td><img class="trashIcon" src="../../assets/skills/trashIcon.png" alt="Lixo" onclick="deleteSkill(${skill.id})" /></td>
-                </tr>`;
+                    <td>${skill.type == 0 ? 'Técnica' : 'Interpessoal'}</td>
+                    <td><img class="trashIcon" src="../../assets/skills/trashIcon.png" alt="Lixo" onclick="deleteSkill(${
+                        skill.id
+                    })" /></td>
+                </tr>`
             }
             $('.skillTable').append(skillElements)
         },
@@ -39,7 +40,6 @@ $(document).ready(() => {
     $('#createSkill').click(() => {
         const skillName = $('#skillName').val()
         const skillType = $('#skillType').val()
-        console.log(skillName, skillType)
 
         if (skillName && skillType) {
             $.ajax({
@@ -51,7 +51,12 @@ $(document).ready(() => {
                     window.location.reload()
                 },
                 error: function (err) {
-                    console.log(err)
+                    closeModal()
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: err.responseText,
+                    })
                 },
             })
         }
@@ -77,15 +82,19 @@ $(document).ready(() => {
 
 function deleteSkill(id) {
     $.ajax({
-        url: '/skill/'+id,
+        url: '/skill/' + id,
         type: 'DELETE',
         contentType: 'application/json',
-        
+
         success: function (res) {
             window.location.reload()
         },
         error: function (err) {
-            console.log(err)
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: err.responseText,
+            })
         },
     })
 }

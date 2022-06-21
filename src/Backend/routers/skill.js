@@ -77,7 +77,7 @@ router.delete('/skill/:id', adminAuth, async (req, res) => {
 
         res.send()
     } catch (err) {
-        res.status(400).send()
+        res.status(400).send(err.message)
     }
 })
 

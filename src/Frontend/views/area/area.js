@@ -48,7 +48,12 @@ $(document).ready(() => {
                     window.location.reload()
                 },
                 error: function (err) {
-                    console.log(err)
+                    closeModal()
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: err.responseText,
+                    })
                 },
             })
         }
@@ -65,7 +70,11 @@ function deleteArea(id) {
             window.location.reload()
         },
         error: function (err) {
-            console.log(err)
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: err.responseText,
+            })
         },
     })
 }
