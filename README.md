@@ -11,7 +11,15 @@
 
 ## Lovelace
 
-## Integrantes: <a href="https://www.linkedin.com/in/amanda-fontes/">Amanda Fontes</a>, <a href="https://www.linkedin.com/in/antonioribeiro893/">Antônio Ribeiro</a>, <a href="https://www.linkedin.com/in/erikfreundt/">Erik Bonn</a>, <a href="https://www.linkedin.com/in/felipe-pereira-campos-250aa2231/">Felipe Campos</a>, <a href="https://www.linkedin.com/in/henriquemarlon/">Henrique Marlon</a> <a href="https://www.linkedin.com/in/lyorreisquintao/">Lyorrei Quintão</a> <a href="https://www.linkedin.com/in/sophia-dias/">Sophia Dias</a>
+## Integrantes: 
+- <a href="https://www.linkedin.com/in/amanda-fontes/">Amanda Ribeiro Fontes 1</a>
+- <a href="https://www.linkedin.com/in/antonioribeiro893/">Antônio Ribeiro Cavalcante 2</a>
+- <a href="https://www.linkedin.com/in/erikfreundt/">Erik Bonn Freundt 3</a> 
+- <a href="https://www.linkedin.com/in/felipe-pereira-campos-250aa2231/">Felipe Pereira Campos 4</a> 
+- <a href="https://www.linkedin.com/in/henriquemarlon/">Henrique Marlon Conceição Santos 5</a>
+- <a href="https://www.linkedin.com/in/lyorreisquintao/">Lyorrei Shono Quintão 6</a>
+- <a href="https://www.linkedin.com/in/sophia-dias/">Sophia Mello Dias 7</a> 
+
 
 ## Descrição
 
@@ -66,9 +74,9 @@ Portanto, desenvolvemos uma ferramenta que possibilita o encontro mais fácil de
             |job.js<br>
             |skill.js<br>
             |user.js<br>
-         |index.js<br>
-         |package-lock.json<br>
-         |package.json<br>
+            |index.js<br>
+            |package-lock.json<br>
+            |package.json<br>
   &emsp;|--><a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend">Frontend</a><br>
           |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/assets">assets</a><br>
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/assets/companyRegistration">comapnyRegistration</a><br>
@@ -184,85 +192,66 @@ Portanto, desenvolvemos uma ferramenta que possibilita o encontro mais fácil de
 
 A pasta raiz contem dois arquivos que devem ser alterados:
 
-## 🛠 Instalação
+## 💻 Configuração para desenvolvimento
 
-<b>Android:</b>
+Aqui encontram-se todas as instruções necessárias para a instalação de todos os programas, bibliotecas e ferramentas imprescindíveis para a configuração do ambiente de desenvolvimento.
 
-Faça o Download do JOGO.apk no seu celular.
-Execute o APK e siga as instruções de seu telefone.
+1.  Baixar e instalar o node.js:  [https://nodejs.org/pt-br/](https://nodejs.org/pt-br/) (versão 16.15.1 LTS)
+2. Clone o repositório em questão.
+3.  No modo administrador, abra o "prompt de comando" ou o "terminal" e, após,  abra a pasta "src/backend" no diretório raiz do repositório clonado e digite o segundo comando:
 
 ```sh
-Coloque código do prompt de comnando se for necessário
+npm install
+npm install sqlite3
+npm install express --save
+npm install -g nodemon
 ```
 
-<b>Windows:</b>
-
-Não há instalação! Apenas executável! Encontre o index na pasta views e execute-o como qualquer outro programa.
+Isso instalará todas as dependências definidas no arquivo <b>package.json</b> que são necessárias para rodar o projeto. Agora o projeto já está pronto para ser modificado. Caso ainda deseje iniciar a aplicação, digite o comando abaixo no terminal:
 
 ```sh
-npm install sqlite3
-node app.js
+cd src
+cd BackEnd
+npm rum start ou node index.js
 ```
+5. Agora você pode acessar a aplicação através do link http://localhost:3000/
+6. O servidor está online.
 
-<b>HTML:</b>
 
-Não há instalação!
-Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
-
-## 📈 Exemplo de uso
-
-Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado.
-
-Adicione blocos de códigos e, se necessário, screenshots.
-
-Este modelo pode ser copiado e utilizado à vontade.
-
-Através da cópia/clone/ download do repositório, altere os dados do readme.md e carregue os arquivos de seu projeto.
-
-## 💻 Configuração para Desenvolvimento
-  
-Para abrir este projeto você necessita das seguintes ferramentas:
-
--<a href="https://code.visualstudio.com/download">VisualStudio Code</a>
--<a href="https://sqlitebrowser.org/dl/">DB Browser for SQLite</a>
--<a href="https://nodejs.org/en/download/">Node.js</a>
--Json
-
-```sh
-make install
-npm test
-npm install sqlite3
-npm install express  --save
-node app.js
 ```
 
 ## 🗃 Histórico de lançamentos
 
 A cada atualização os detalhes devem ser lançados aqui.
 
-* 0.2.1 - 25/01/2022
-    * MUDANÇA: Atualização de docs (código do módulo permanece inalterado)
-* 0.2.0 - 15/01/2022
-    * MUDANÇA: Remove `setDefaultXYZ()`
-    * ADD: Adiciona `init()`
-* 0.1.1 - 11/01/2022
-    * CONSERTADO: Crash quando chama `baz()` (Obrigado @NomeDoContribuidorGeneroso!)
-* 0.1.0 - 10/01/2022
-    * O primeiro lançamento adequado
-    * MUDANÇA: Renomeia `foo()` para `bar()`
-* 0.0.1 - 01/01/2022
-    * Trabalho em andamento
+* 0.2.1 - 13/06/2022
+    *Refinamento do site
+* 0.2.1 - 30/05/2022
+    *Término da criação das rotas
+    *Início da incrementação da integração das páginas
+* 0.2.0 - 16/05/2022
+    * Modelagem e implementação do banco de dados
+    *Início à criação das rotas
+* 0.1.1 - 02/05/2022
+    * Implementação do Javascript nas páginas
+* 0.1.0 - 25/04/2022
+    * Criação das páginas e estilização
+* 0.0.1 - 20/04/2022
+    * Trabalho iniciado
 
 ## 📋 Licença/License
 
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Spidus/Teste_Final_1">MODELO GIT INTELI</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.yggbrasil.com.br/vr">INTELI, VICTOR BRUNO ALEXANDER ROSETTI DE QUIROZ</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Spidus/Teste_Final_1">MODELO GIT INTELI</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.yggbrasil.com.br/vr">Inteli, Nome do integrante 1, Nome do integrante 2, Nome do integrante 3, Nome do integrante 4, Nome do integrante 5, Nome do integrante 6, Nome do integrante 7</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
 
 ## 🎓 Referências
 
 Aqui estão as referências usadas no projeto.
 
-1. <https://github.com/iuricode/readme-template>
-2. <https://github.com/gabrieldejesus/readme-model>
-3. <https://creativecommons.org/share-your-work/>
-4. <https://freesound.org/>
-5. Músicas por: <a href="https://freesound.org/people/DaveJf/sounds/616544/"> DaveJf </a> e <a href="https://freesound.org/people/DRFX/sounds/338986/"> DRFX </a> ambas com Licença CC 0.
+1. <https://nodejs.org/en/download/>
+2. <https://www.sqlite.org/download.html>
+3. <https://www.postman.com/downloads/>
+4. <https://sqlitebrowser.org/dl/>
+5. <https://www.flaticon.com/uicons/3>
+6. <https://fontawesome.com/>
+7. <https://coolors.co/f3c42e-530084-280044-ffffff-4563cd>
+
