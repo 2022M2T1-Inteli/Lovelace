@@ -77,7 +77,17 @@ containers[2].css('display', 'none')
 const createUser = () => {
     const form = {}
 
-    $('#accountForm :input').each(function () {
+    $('#accountForm input').each(function () {
+        var input = $(this)[0] // This is the jquery object of the input, do what you will
+        form[input.name] = input.value
+    })
+
+    $('#infoForm input').each(function () {
+        var input = $(this)[0] // This is the jquery object of the input, do what you will
+        form[input.name] = input.value
+    })
+
+    $('#addressForm input').each(function () {
         var input = $(this)[0] // This is the jquery object of the input, do what you will
         form[input.name] = input.value
     })
