@@ -24,7 +24,7 @@ router.get('/user/me', userAuth, async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: 'src/backend/database/bit.db',
+            filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -71,7 +71,7 @@ router.post('/user/signUp', async (req, res) => {
 
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: 'src/backend/database/bit.db',
+            filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -126,7 +126,7 @@ router.post('/user/login', async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: 'src/backend/database/bit.db',
+            filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -171,7 +171,7 @@ router.get('/user/getCompanies', userAuth, async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: 'src/backend/database/bit.db',
+            filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -243,7 +243,7 @@ router.get('/user/getCompanies/:id', userAuth, async (req, res) => {
     try {
         //Abrir banco de dados
         const db = await open({
-            filename: 'src/backend/database/bit.db',
+            filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -265,7 +265,7 @@ router.get('/user/likeCompany/:id', userAuth, async (req, res) => {
     try {
         //Abrir banco de dados
         const db = await open({
-            filename: 'src/backend/database/bit.db',
+            filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -288,7 +288,7 @@ router.delete('/user/likeCompany/:id', userAuth, async (req, res) => {
     try {
         //Abrir banco de dados
         const db = await open({
-            filename: 'src/backend/database/bit.db',
+            filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -324,7 +324,7 @@ router.patch('/user/edit', userAuth, async (req, res) => {
         } = req.body
 
         const db = await open({
-            filename: 'src/backend/database/bit.db',
+            filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -349,7 +349,7 @@ router.post('/user/editSkills', userAuth, async (req, res) => {
         const { skills } = req.body
 
         const db = await open({
-            filename: 'src/backend/database/bit.db',
+            filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 

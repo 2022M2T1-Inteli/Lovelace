@@ -23,7 +23,7 @@ router.get('/companies', async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: 'src/backend/database/bit.db',
+            filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -68,7 +68,7 @@ router.post('/company/signUp', async (req, res) => {
 
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: 'src/backend/database/bit.db',
+            filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -124,7 +124,7 @@ router.post('/company/login', async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: 'src/backend/database/bit.db',
+            filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -173,7 +173,7 @@ router.delete('/company/:id', adminAuth, async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: 'src/backend/database/bit.db',
+            filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
