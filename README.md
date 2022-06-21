@@ -4,61 +4,185 @@
 <a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
-# Nome do Projeto
+#Brazilians in Tech
+<p align="center">
+<a href= https://braziliansintech.com/><img src="https://braziliansintech.com/static/img/logo.png" alt="BiT - Brazilians in Tech" border="0" width="312px"></a>
+</p>
 
-## Nome do Grupo
+## Lovelace
 
-## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Goku Sayajin</a>, <a href="https://www.linkedin.com/in/victorbarq/">Saitama One</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ikki de Fenix</a>, <a href="https://www.linkedin.com/in/victorbarq/">Yusuke Urameshi</a>, <a href="https://www.linkedin.com/in/victorbarq/">Roronoa Zoro</a>
+## Integrantes: <a href="https://www.linkedin.com/in/amanda-fontes/">Amanda Fontes</a>, <a href="https://www.linkedin.com/in/antonioribeiro893/">Antônio Ribeiro</a>, <a href="https://www.linkedin.com/in/erikfreundt/">Erik Bonn</a>, <a href="https://www.linkedin.com/in/felipe-pereira-campos-250aa2231/">Felipe Campos</a>, <a href="https://www.linkedin.com/in/henriquemarlon/">Henrique Marlon</a> <a href="https://www.linkedin.com/in/lyorreisquintao/">Lyorrei Quintão</a> <a href="https://www.linkedin.com/in/sophia-dias/">Sophia Dias</a>
 
 ## Descrição
 
 📜 Descrição curta sobre o que seu projeto faz.
 <br><br>
-Meu projeto é um exemplo de como utilizar o github.
+Nosso intuito é desenvolver uma ferramenta que viabilize diminuir o abismo entre mulheres que se interessem pela área de tecnologia e vagas na área STEM de forma fácil e simples, utilizando a estratégia de Employer Branding como principal diferencial.
 <br><br>
 <p align="center">
-<img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
+<img src="blob:https://web.whatsapp.com/554eb23b-154a-4276-8cb5-8df440630882" alt="LANDING PAGE DO SITE" border="0">
 </p>
 
 
 💡 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 <br><br>
-Meu projeto ajuda estudantes inteli a configurarem seus githubs.
+Tendo em vista o grande gap existente entre as mulheres e o mercado de trabalho e, por outro lado, um crescente aumento na necessidade de mão de obra tech, nosso sistema foi criado com o intúito de ser uma via de solução à essas duas problemáticas.
 <br><br>
-May the force be with you!
+Com um algoritmo baseado nas hard e soft skills da candidata e da vaga, o match é realizado pela porcentagem de semelhança entre as duas (pelo menos 50%), mas só é finalizado a partir de quando a candidata realiza um like no perfil da empresa, este baseado na sua cultura e valores. Ou seja, o like é realizado a partir da identificação da usuária de seus valores com a cultura e valores da empresa que possui vagas compatíveis a suas competências.
+<br><br>
+Portanto, desenvolvemos uma ferramenta que possibilita o encontro mais fácil de candidatas compatíveis a vagas disponíveis tanto em competências de mercado (técnicas e interpessoais), quanto em alinhamento de valores pessoais ao da empresa, possibilitando uma maior inserção de mulheres no mercado de trabalho.
+<br><br>
 <br><br>
 
 ## 🛠 Estrutura de pastas
 
--Raiz<br>
-|<br>
-|-->documentos<br>
-  &emsp;|-->antigos<br>
+-Projeto4<br>
+|<a href="https://github.com/2022M2T1/Projeto4/tree/main/.vscode">
+|-->.vscode</a><br>
+  &emsp;|-->settings.json<br>
+|<a href="https://github.com/2022M2T1/Projeto4/tree/main/documentos">
+|-->documentos</a><br>
+  &emsp;|--><a hre="https://github.com/2022M2T1/Projeto4/tree/main/documentos/antigos">antigos</a><br>
+    |WAD - Documento Aplicação Web (GRUPO 04).docx.pdf<br>
+    |WAD - Documento Aplicação Web (Grupo 04) - Versão 4.2<br>
+    |WAD - Grupo 04 - Versão 3.2.pdf<br>
+    |WAD - Versão 2.pdf<br>
+  &emsp;|--><a href="https://github.com/2022M2T1/Projeto4/blob/main/documentos/WAD%20-%20Documento%20Aplica%C3%A7%C3%A3o%20Web%20(Grupo%2004)%20-%20Vers%C3%A3o%205.2.pdf>WAD - Documento Aplicação Web (Grupo 04) - Versão 5.2</a><br>
   &emsp;|Documentação.docx<br>
-|-->executáveis<br>
-  &emsp;|-->windows<br>
-  &emsp;|-->android<br>
-  &emsp;|-->HTML<br>
-|-->imagens<br>
-|-->src<br>
-  &emsp;|-->Backend<br>
-  &emsp;|-->Frontend<br>
-|readme.md<br>
+|<a href=https://github.com/2022M2T1/Projeto4/tree/main/imagens><br>
+|-->imagens</a><br>
+  &emsp;|-->Bootstrap_5.0_Screenshot.png<br>
+|<a href="https://github.com/2022M2T1/Projeto4/tree/main/src"><br>
+|-->src</a><br>
+  &emsp;|--><a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Backend">Backend</a><br>
+         |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Backend/database">database</a><br>
+            |bit.db<br>
+         |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Backend/middlewares">middlewares</a><br>
+            |auth.js<br>
+         |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Backend/routers">routers</a><br>
+            |admin.js<br>
+            |area.js<br>
+            |company.js<br>
+            |job.js<br>
+            |skill.js<br>
+            |user.js<br>
+         |index.js<br>
+         |package-lock.json<br>
+         |package.json<br>
+  &emsp;|--><a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend">Frontend</a><br>
+          |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/assets">assets</a><br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/assets/companyRegistration">comapnyRegistration</a><br>
+              |likeIcon.png<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/assets/companyProfile">comapnyProfile</a><br>
+              |infoWhite.png<br>
+              |infoYellow.png<br>
+              |saveWhite.png<br>
+              |saveYellow.png<br>
+              |uploadWhite.png<br>
+              |uploadYellow.png<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/assets/companySignUpCompleted">comapnySingUpCompleted</a><br>
+              |logo.png<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/assets/icons">icons</a><br>
+              |back.png<br>
+              |edit.png<br>
+              |eye.png<br>
+              |person.png<br>
+              |person.png<br>
+              |trachIcon.png<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/assets/jqueryMask">jqueryMask</a><br>
+              |jquery.mask.min.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/assets/landingPage">landingPage</a><br>
+              |bitLogo.png<br>
+              |hand.gif<br>
+              |womanSearching.gif<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/assets/loginPage">loginPage</a><br>
+              |login.gif<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/assets/skills">skills</a><br>
+              |trashIcon/png<br>
+          |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/global">global</a><br>
+            |global.js<br>
+          |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/styles">styles</a><br>
+            |global.css<br>
+          |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views">views</a><br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/area">area</a><br>
+              |area.css<br>
+              |area.html<br>
+              |area.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/candidateProfile">candidateProfile</a><br>
+              |candidateProfile.css<br>
+              |candidateProfile.html<br>
+              |candidateProfile.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/candidates">candidates</a><br>
+              |candidates.css<br>
+              |candidate.html<br>
+              |candidate.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/companies">companies</a><br>
+              |companies.css<br>
+              |companies.html<br>
+              |companies.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/companyApproval">companyApproval</a><br>
+              |companyApproval.css<br>
+              |companyApproval.html<br>
+              |companyApproval.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/companyMatch">companyMatch</a><br>
+              |companyMatch.css<br>
+              |companyMatch.html<br>
+              |companyMatch.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/companyProfile">companyProfile</a><br>
+              |companyProfile.css<br>
+              |companyProfile.html<br>
+              |companyProfile.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/companyRegistration">companyRegistration</a><br>
+              |companyRegistration.css<br>
+              |companyRegistration.html<br>
+              |companyRehistration.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/companySignUpCompleted">companySignUpCompleted</a><br>
+              |companySignUpCompleted.css<br>
+              |companySignUpCompleted.html<br>
+              |companySignUpCompleted.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/createJob">createJob</a><br>
+              |createJob.css<br>
+              |createJob.html<br>
+              |createJob.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/jobs">jobs</a><br>
+              |jobs.css<br>
+              |jobs.html<br>
+              |jobs.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/landingPage">landingPage</a><br>
+              |landingPage.css<br>
+              |landingPage.html<br>
+              |landingPage.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/loginPage">loginPage</a><br>
+              |loginPage.css<br>
+              |loginPage.html<br>
+              |loginPage.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/skills">skills</a><br>
+              |skills.css<br>
+              |skisls.html<br>
+              |skills.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/userProfile">userProfile</a><br>
+              |userProfile.css<br>
+              |userProfile.html<br>
+              |userProfile.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/userProfileEdit/descarte">userProfileEdit/descarte</a><br>
+              |userProfileEdit.css<br>
+              |userProfileEdit`.html<br>
+              |userProfileEdit.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/userSignUp">userSignUp</a><br>
+              |userSignUp.css<br>
+              |userSignUp.html<br>
+              |userSignUp.js<br>
+            |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/viewCompany">viewCompany</a><br>
+              |viewCompany.css<br>
+              |viewCompany.html<br>
+              |viewCompany.js<br>
+|.gitattributes<br>
+|.gitignore<br>
+|Procfile<br>
+|README.md<br>
+|README.md.bak<br>
 
 A pasta raiz contem dois arquivos que devem ser alterados:
-
-<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
-
-Há também 4 pastas que seguem da seguinte forma:
-
-<b>documentos</b>: Aqui estarão todos os documentos do projeto, mas principalmente o <b>Documentação do Sistema</b>. Há uma pasta <b>antigos</b> onde estarão todas as versões antigas da documentação.
-
-<b>executáveis</b>: Aqui estarão todos os executáveis do jogo, prontos para rodar. Há no mínimo 3 pastas, uma para binários <b>Windows</b>, uma para binários <b>android</b> e uma para a <b>Web/HTML</b>
-
-<b>imagens</b>: Algumas imagens do jogo/sistema e logos prontos para serem utilizados e visualizados.
-
-<b>src</b>: Nesta pasta irá todo o código fonte do sistema, pronto para para ser baixado e modificado. Existem duas pastas, <b>Backend</b> e <b>Frintend</b> que devem conter, respectivamente, o código do servidor e o código da página web.
 
 ## 🛠 Instalação
 
@@ -73,11 +197,11 @@ Coloque código do prompt de comnando se for necessário
 
 <b>Windows:</b>
 
-Não há instalação! Apenas executável!
-Encontre o JOGO.exe na pasta executáveis e execute-o como qualquer outro programa.
+Não há instalação! Apenas executável! Encontre o index na pasta views e execute-o como qualquer outro programa.
 
 ```sh
-Coloque código do prompt de comnando se for necessário
+npm install sqlite3
+node app.js
 ```
 
 <b>HTML:</b>
@@ -96,17 +220,20 @@ Este modelo pode ser copiado e utilizado à vontade.
 Através da cópia/clone/ download do repositório, altere os dados do readme.md e carregue os arquivos de seu projeto.
 
 ## 💻 Configuração para Desenvolvimento
-
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
-
+  
 Para abrir este projeto você necessita das seguintes ferramentas:
 
--<a href="https://godotengine.org/download">GODOT</a>
+-<a href="https://code.visualstudio.com/download">VisualStudio Code</a>
+-<a href="https://sqlitebrowser.org/dl/">DB Browser for SQLite</a>
+-<a href="https://nodejs.org/en/download/">Node.js</a>
+-Json
 
 ```sh
 make install
 npm test
-Coloque código do prompt de comnando se for necessário
+npm install sqlite3
+npm install express  --save
+node app.js
 ```
 
 ## 🗃 Histórico de lançamentos
