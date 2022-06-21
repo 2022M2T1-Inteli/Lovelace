@@ -1,4 +1,5 @@
 // Função executada quando a página é carregada
+
 $(document).ready(() => {
   $(".nextButton").click(nextStage);
   $(".backButton").click(previousStage);

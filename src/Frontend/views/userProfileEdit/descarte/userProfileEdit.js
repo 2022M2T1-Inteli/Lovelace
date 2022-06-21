@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-    $(".nextButton").click(nextStage);
+    $(".saveChangesButton").click(nextStage);
     $(".backButton").click(previousStage);
     $("#phone").mask("(00) 0000-0000");
     $("#birthDate").mask("00/00/0000");
@@ -49,7 +49,59 @@ $(document).ready(() => {
         error: function (err) {
             console.log(err)
         },
-    })
+    });
 
+    $("#saveChangesButton").click(() => {
+        const form = {};
     
+        $("#accountForm :input").each(function () {
+          var input = $(this)[0]; // This is the jquery object of the input, do what you will
+          form[input.name] = input.value;
+        });
+    
+        $("#infoForm :input").each(function () {
+          var input = $(this)[0]; // This is the jquery object of the input, do what you will
+          form[input.name] = input.value;
+        });
+    
+        $("#addressForm :input").each(function () {
+          var input = $(this)[0]; // This is the jquery object of the input, do what you will
+          form[input.name] = input.value;
+        });
+    
+        form.aboutYou = $(".aboutYou").val();
+    
+        form.skills = $("#hardSkills").val().concat($("#softSkills").val());
+    
+        $.ajax({
+          url: "/user/userProfileEdit",
+          type: "POST",
+          contentType: "application/json",
+          data: JSON.stringify(form),
+          success: function (res) {
+            window.location.replace("/views/userProfile/userProfile.html");
+          },
+          error: function (err) {
+            console.log(err);
+          },
+        });
+
+        let inputs = $("#aboutYou input, #addressForm input, #accountForm input, #hardSkills, #softSkills");
+        if (validate(inputs) == true) {
+            return;
+        }
+    });
+
+    const validate = (inputs) => {
+        let error = false;
+      
+        inputs.each(function (index) {
+          if ($(this).val() == "") {
+            $(this).css("border", "1px solid red");
+            error = true;
+          }
+        });
+      
+        return error;
+      };
 })

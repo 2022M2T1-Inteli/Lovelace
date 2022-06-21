@@ -17,10 +17,14 @@
 }
 
 .aboutYouContainer {
-    /* padding: 3rem 4rem; */
-    background-color: var(--color-white);
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    border: 1px solid var(--color-primary);
     border-radius: var(--border-radius);
-    position: relative;
+    outline: none;
+    resize: none;
 }
 
 .mb-2 {
@@ -130,4 +134,11 @@
         flex-direction: column;
         grid-gap: 2rem;
     }
+}
+.input {
+    background: none;
+    border: 1px solid var(--color-primary);
+    padding: 1.2rem 1.5rem;
+    border-radius: var(--border-radius);
+    outline: none;
 }
