@@ -95,7 +95,11 @@ const createUser = () => {
             window.location.replace('/views/companyMatch/companyMatch.html')
         },
         error: function (err) {
-            console.log(err)
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: err.responseText,
+            })
         },
     })
 }

@@ -45,7 +45,11 @@ $(document).ready(() => {
                 window.location.replace('/views/companySignUpCompleted/companySignUpCompleted.html')
             },
             error: function (err) {
-                console.log(err)
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: err.responseText,
+                })
             },
         })
     })
