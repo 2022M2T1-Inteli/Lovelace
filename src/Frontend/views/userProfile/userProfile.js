@@ -1,11 +1,24 @@
 $(document).ready(() => {
+
+    function getAge(dateString) {
+        var today = new Date();
+        var birthDate = new Date(dateString);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age + ' anos';
+    }
+
+    
     $.ajax({
         url: '/user/me',
         type: 'GET',
         contentType: 'application/json',
         success: function (user) {
             $('#name').html(user.firstName + ' ' + user.lastName)
-            $('#birthDate').html(user.birthDate)
+            $('#birthDate').html(getAge(user.birthDate))
             $('#location').html(user.country)
             $('#history').html(user.aboutYou)
 
@@ -25,7 +38,6 @@ $(document).ready(() => {
             $('#phone').html(user.phone)
             $('#country').html(user.country)
             $('#civilState').html(user.civilState)
-            $('#birthDate').html(user.birthDate)
             $('#cpf').html(user.cpf)
             $('#rg').html(user.rg)
 
@@ -36,7 +48,6 @@ $(document).ready(() => {
             $('#state').html(user.address.state)
             $('#complement').html(user.address.complement)
 
-            console.log( $('#editButton'))
             $('#editButton').attr('href', `/views/userProfileEdit/userProfileEdit.html`)
         },
         error: function (err) {
