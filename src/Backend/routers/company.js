@@ -177,10 +177,22 @@ router.delete('/company/:id', adminAuth, async (req, res) => {
             driver: sqlite3.Database,
         })
 
+        // Pegar a empresa
+        const company = await db.get(`SELECT * FROM company WHERE id='${req.params.id}'`)
+
+        // Deletar as vagas da empresa
         await db.run(`DELETE FROM job WHERE companyId='${req.params.id}'`)
 
+        // Deletar o recrutador da empresa
+        await db.run(`DELETE FROM recruter WHERE id='${company.recruterId}'`)
+
+        // Deletar o endereço da empresa
+        await db.run(`DELETE FROM address WHERE id='${company.companyAddressId}'`)
+
+        // Deletar os likes das usuárias com a empresa
         await db.run(`DELETE FROM userCompany WHERE companyId='${req.params.id}'`)
 
+        // Deletar a empresa
         await db.run(`DELETE FROM company WHERE id='${req.params.id}'`)
 
         // FECHAR O BANCO DE DADOS
