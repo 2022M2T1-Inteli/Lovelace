@@ -21,7 +21,9 @@ router.get('/job', companyAuth, async (req, res) => {
         })
 
         // GET VAGAS
-        const jobs = await db.all(`SELECT * FROM job WHERE companyId='${req.company.id}'`)
+        const jobs = await db.all(
+            `SELECT * FROM job WHERE companyId='${req.company.id}'`
+        )
 
         const jobArray = []
 
@@ -29,6 +31,9 @@ router.get('/job', companyAuth, async (req, res) => {
             job.skills = await db.all(
                 `SELECT * FROM skill INNER JOIN jobSkill ON skill.id=jobSkill.skillId WHERE jobSkill.jobId=${job.id}`
             )
+
+            job.area = await db.get(`select * from area WHERE id='${job.areaId}'`)
+
             jobArray.push(job)
         }
 
@@ -55,7 +60,7 @@ router.post('/job/create', companyAuth, async (req, res) => {
 
         // INSERIR VAGA
         const job = await db.run(
-            `INSERT INTO job (companyId, workModel, type, area) VALUES ('${req.company.id}', '${workModel}', '${type}', '${area}')`
+            `INSERT INTO job (companyId, workModel, type, areaId) VALUES ('${req.company.id}', '${workModel}', '${type}', '${area}')`
         )
 
         // INSERIR COMPETÊNCIAS TÉCNICAS

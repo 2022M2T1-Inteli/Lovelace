@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken')
 const sqlite3 = require('sqlite3')
 const { open } = require('sqlite')
 
-const { companyAuth } = require('../middlewares/auth')
+const { companyAuth, adminAuth } = require('../middlewares/auth')
 
 // EXPRESS ROUTER
 const router = express.Router()
@@ -18,6 +18,25 @@ const generateAuthToken = async (id) => {
     })
     return token
 }
+
+router.get('/companies', async (req, res) => {
+    try {
+        // CONECTAR AO BANCO DE DADOS
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        const companies = await db.all(`SELECT * FROM company WHERE isApproved=1`)
+
+        // FECHAR O BANCO DE DADOS
+        await db.close()
+
+        res.send(companies)
+    } catch (err) {
+        res.status(400).send(err.message)
+    }
+})
 
 // ROTA DE CRIAR CONTA
 router.post('/company/signUp', async (req, res) => {
@@ -96,7 +115,6 @@ router.post('/company/signUp', async (req, res) => {
         // res.redirect('/views/companySignUpCompleted/companySignUpCompleted.html')
         res.send()
     } catch (err) {
-        console.log(err)
         res.status(400).send(err.message)
     }
 })
@@ -125,7 +143,7 @@ router.post('/company/login', async (req, res) => {
         }
 
         if (!company.isApproved) {
-            throw new Error('Empresa ainda não aprovada')
+            throw new Error('Empresa ainda não aprovada (aguardar aprovação)')
         }
 
         // FECHAR O BANCO DE DADOS
@@ -145,6 +163,29 @@ router.post('/company/login', async (req, res) => {
 
         // RESPOSTA
         // res.redirect('/views/companySignUpCompleted/companySignUpCompleted.html')
+        res.send()
+    } catch (err) {
+        res.status(400).send(err.message)
+    }
+})
+
+router.delete('/company/:id', adminAuth, async (req, res) => {
+    try {
+        // CONECTAR AO BANCO DE DADOS
+        const db = await open({
+            filename: './database/bit.db',
+            driver: sqlite3.Database,
+        })
+
+        await db.run(`DELETE FROM job WHERE companyId='${req.params.id}'`)
+
+        await db.run(`DELETE FROM userCompany WHERE companyId='${req.params.id}'`)
+
+        await db.run(`DELETE FROM company WHERE id='${req.params.id}'`)
+
+        // FECHAR O BANCO DE DADOS
+        await db.close()
+
         res.send()
     } catch (err) {
         res.status(400).send(err.message)

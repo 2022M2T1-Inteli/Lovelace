@@ -1,25 +1,22 @@
-
-
 const validate = (inputs) => {
-    let error = false;
+    let error = false
 
     inputs.each(function (index) {
-
-        if (inputs[index].value == "") {
-            $(this).css("border", "1px solid red");
-            error = true;
+        if (inputs[index].value == '') {
+            $(this).css('border', '1px solid red')
+            error = true
         }
-    });
+    })
 
-    return error;
-};
+    return error
+}
 
 const createJob = () => {
     const form = {
         type: $('#jobType').val(),
         workModel: $('#jobModel').val(),
         area: $('#jobArea').val(),
-        skills: $('#hardSkills').val().concat($('#softSkills').val())
+        skills: $('#hardSkills').val().concat($('#softSkills').val()),
     }
 
     $.ajax({
@@ -66,14 +63,30 @@ $(document).ready(() => {
         },
     })
 
+    $.ajax({
+        url: '/area',
+        type: 'GET',
+        contentType: 'application/json',
+        success: function (res) {
+            let areaOptions = ''
+            for (area of res) {
+                areaOptions += `<option value="${area.id}">${area.name}</option>`
+            }
+
+            $('#jobArea').append(areaOptions)
+        },
+        error: function (err) {
+            console.log(err)
+        },
+    })
+
     $('#createJobButton').click(() => {
-        let inputs = $("#jobType, #jobModel, #jobArea, #hardSkills, #softSkills");
+        let inputs = $('#jobType, #jobModel, #jobArea, #hardSkills, #softSkills')
 
         if (validate(inputs) == true) {
-            return;
+            return
         }
 
         createJob()
     })
 })
-

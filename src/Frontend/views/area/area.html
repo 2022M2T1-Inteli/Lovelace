@@ -4,14 +4,13 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Aprovação de empresas</title>
+        <title>Áreas</title>
         <link rel="stylesheet" href="../../styles/global.css" />
-        <link rel="stylesheet" href="./companyApproval.css" />
+        <link rel="stylesheet" href="./area.css" />
     </head>
     <body>
         <div class="navbar">
             <h3 class="navbarTitle">Brazilians In Tech</h3>
-
             <div class="navItem">
                 <button id="logoutButton">Logout</button>
             </div>
@@ -20,7 +19,7 @@
             <div class="sidebar">
                 <div class="listTitle">Aprovação</div>
                 <ul class="list">
-                    <li class="listItem active">
+                    <li class="listItem">
                         <a href="/views/companyApproval/companyApproval.html">Aprovação de empresas</a>
                     </li>
                 </ul>
@@ -29,7 +28,7 @@
                     <li class="listItem"><a href="/views/skills/skills.html">Competências</a></li>
                 </ul>
                 <ul class="list">
-                    <li class="listItem"><a href="/views/area/area.html">Áreas</a></li>
+                    <li class="listItem active"><a href="/views/area/area.html">Áreas</a></li>
                 </ul>
                 <div class="listTitle">Visualizar</div>
                 <ul class="list">
@@ -40,10 +39,25 @@
                 </ul>
             </div>
             <div class="content">
-                <div class="companiesContainer">
-                    <h1 class="title">Empresas</h1>
-                    <div class="grid"></div>
-                </div>
+                <div class="title">Áreas</div>
+                <button id="modalBtn" class="createAreaBtn">Criar área</button>
+                <table class="areaTable">
+                    <tr class="row">
+                        <th>Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="backdrop"></div>
+
+        <div class="modal">
+            <div class="modalHead">Criar área</div>
+            <div class="modalBody">
+                <input type="text" class="areaInput" placeholder="Nome" id="areaName" />
+
+                <button class="createAreaBtn" id="createArea">Criar</button>
             </div>
         </div>
         <script
@@ -52,7 +66,6 @@
             crossorigin="anonymous"
         ></script>
         <script src="../../global/global.js"></script>
-
-        <script src="./companyApproval.js"></script>
+        <script src="./area.js"></script>
     </body>
 </html>

@@ -61,6 +61,16 @@ router.delete('/skill/:id', adminAuth, async (req, res) => {
             driver: sqlite3.Database,
         })
 
+        const userSkill = await db.get(`SELECT * FROM userSkill WHERE skillId='${req.params.id}'`)
+        if (userSkill) {
+            throw new Error('Competência atrelada a uma usuária')
+        }
+
+        const jobSkill = await db.get(`SELECT * FROM jobSkill WHERE skillId='${req.params.id}'`)
+        if (jobSkill) {
+            throw new Error('Competência atrelada a uma vaga')
+        }
+
         await db.run(`DELETE FROM skill WHERE id='${req.params.id}'`)
 
         await db.close()

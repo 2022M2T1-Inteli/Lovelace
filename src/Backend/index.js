@@ -61,6 +61,10 @@ app.use(jobRoutes)
 const skillRoutes = require('./routers/skill')
 app.use(skillRoutes)
 
+// ROTAS DE AREAS
+const areaRoutes = require('./routers/area')
+app.use(areaRoutes)
+
 // CRIAR SERVIDOR
 app.listen(port, () => {
     console.log(`Example app listening on port http://localhost:${port}`)

@@ -4,7 +4,7 @@ $(document).ready(() => {
     function renderCompanies() {
         let elements = ''
         if (companies.length == 0) {
-            elements = "<a class='errorMessage'>Nenhuma empcompaniesa encontrada.<br> Ainda não temos vagas que condizem com seu perfil!</a>"
+            elements = "<a class='errorMessage'>Nenhuma empresa encontrada.<br> Ainda não temos vagas que condizem com seu perfil!</a>"
         }
         else {
             for (company of companies) {

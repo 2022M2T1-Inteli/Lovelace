@@ -29,7 +29,7 @@ $(document).ready(() => {
                 }
                 $('.grid').html(elements)
             } else {
-                $('.grid').html(`<p class="noDataFound">Nenhuma empresa necessita aprovação!</p>`)
+                $('.grid').html(`<p class="noDataFound">Nenhuma empresa necessita de aprovação!</p>`)
             }
         },
         error: function (err) {
