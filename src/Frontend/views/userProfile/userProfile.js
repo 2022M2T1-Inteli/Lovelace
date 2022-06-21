@@ -36,7 +36,8 @@ $(document).ready(() => {
             $('#state').html(user.address.state)
             $('#complement').html(user.address.complement)
 
-            // $('#editButton').attr('href', `/views/`)
+            console.log( $('#editButton'))
+            $('#editButton').attr('href', `/views/userProfileEdit/userProfileEdit.html`)
         },
         error: function (err) {
             console.log(err)
