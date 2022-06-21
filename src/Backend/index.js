@@ -66,6 +66,6 @@ const areaRoutes = require('./routers/area')
 app.use(areaRoutes)
 
 // CRIAR SERVIDOR
-app.listen(port, () => {
+app.listen(process.env.PORT | port, () => {
     console.log(`Example app listening on port http://localhost:${port}`)
 })
