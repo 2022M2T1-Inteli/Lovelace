@@ -12,13 +12,13 @@
 ## Lovelace
 
 ## Integrantes: 
-- <a href="https://www.linkedin.com/in/amanda-fontes/">Amanda Ribeiro Fontes 1</a>
-- <a href="https://www.linkedin.com/in/antonioribeiro893/">Antônio Ribeiro Cavalcante 2</a>
-- <a href="https://www.linkedin.com/in/erikfreundt/">Erik Bonn Freundt 3</a> 
-- <a href="https://www.linkedin.com/in/felipe-pereira-campos-250aa2231/">Felipe Pereira Campos 4</a> 
-- <a href="https://www.linkedin.com/in/henriquemarlon/">Henrique Marlon Conceição Santos 5</a>
-- <a href="https://www.linkedin.com/in/lyorreisquintao/">Lyorrei Shono Quintão 6</a>
-- <a href="https://www.linkedin.com/in/sophia-dias/">Sophia Mello Dias 7</a> 
+- <a href="https://www.linkedin.com/in/amanda-fontes/">Amanda Ribeiro Fontes </a>
+- <a href="https://www.linkedin.com/in/antonioribeiro893/">Antônio Ribeiro Cavalcante </a>
+- <a href="https://www.linkedin.com/in/erikfreundt/">Erik Bonn Freundt </a> 
+- <a href="https://www.linkedin.com/in/felipe-pereira-campos-250aa2231/">Felipe Pereira Campos </a> 
+- <a href="https://www.linkedin.com/in/henriquemarlon/">Henrique Marlon Conceição Santos </a>
+- <a href="https://www.linkedin.com/in/lyorreisquintao/">Lyorrei Shono Quintão </a>
+- <a href="https://www.linkedin.com/in/sophia-dias/">Sophia Mello Dias </a> 
 
 
 ## Descrição
