@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 const path = require('path')
 
 // SETUP DE VARIÁVEIS ENV
@@ -66,6 +66,7 @@ const areaRoutes = require('./routers/area')
 app.use(areaRoutes)
 
 // CRIAR SERVIDOR
-app.listen(process.env.PORT | port, () => {
+app.listen(port, () => {
     console.log(`Example app listening on port http://localhost:${port}`)
 })
+

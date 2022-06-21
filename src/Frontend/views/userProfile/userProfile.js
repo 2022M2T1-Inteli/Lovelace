@@ -1,24 +1,22 @@
 $(document).ready(() => {
-
     function getAge(dateString) {
-        var today = new Date();
-        var birthDate = new Date(dateString);
-        var age = today.getFullYear() - birthDate.getFullYear();
-        var m = today.getMonth() - birthDate.getMonth();
+        var today = new Date()
+        var birthDate = new Date(dateString)
+        var age = today.getFullYear() - birthDate.getFullYear()
+        var m = today.getMonth() - birthDate.getMonth()
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-            age--;
+            age--
         }
-        return age + ' anos';
+        return age + ' anos'
     }
 
-    
     $.ajax({
         url: '/user/me',
         type: 'GET',
         contentType: 'application/json',
         success: function (user) {
             $('#name').html(user.firstName + ' ' + user.lastName)
-            $('#birthDate').html(getAge(user.birthDate))
+            $('#age').html(getAge(user.birthDate))
             $('#location').html(user.country)
             $('#history').html(user.aboutYou)
 
@@ -35,6 +33,7 @@ $(document).ready(() => {
             $('#hardSkills').html(hardSkills)
             $('#softSkills').html(softSkills)
             $('#email').html(user.email)
+            $('#birthDate').html(user.birthDate)
             $('#phone').html(user.phone)
             $('#country').html(user.country)
             $('#civilState').html(user.civilState)
