@@ -12,7 +12,7 @@ const router = express.Router()
 router.get('/area', async (req, res) => {
     try {
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -29,7 +29,7 @@ router.get('/area', async (req, res) => {
 router.post('/area/create', adminAuth, async (req, res) => {
     try {
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -51,7 +51,7 @@ router.post('/area/create', adminAuth, async (req, res) => {
 router.delete('/area/:id', adminAuth, async (req, res) => {
     try {
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 

@@ -24,7 +24,7 @@ router.get('/user/me', userAuth, async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -71,7 +71,7 @@ router.post('/user/signUp', async (req, res) => {
 
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -126,7 +126,7 @@ router.post('/user/login', async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -171,7 +171,7 @@ router.get('/user/getCompanies', userAuth, async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -196,13 +196,10 @@ router.get('/user/getCompanies', userAuth, async (req, res) => {
             if (jobSkills.length > 0) {
                 // FAZER UM LOOP EM CADA COMPETÊNCIA DA VAGA
                 for (jobSkill of jobSkills) {
-
                     // FAZER UM LOOP EM CADA COMPETÊNCIA DA USUÁRIA
                     for (userSkill of userSkills) {
-
                         // COMPARAR A COMPETÊNCIA DA USUÁRIA COM A COMPETÊNCIA DA VAGA
                         if (jobSkill.skillId == userSkill.skillId) {
-                            
                             // ADICIONAR O ID DA COMPETÊNCIA NO ARRAY EQUALSKILLS
                             equalSkills.push(jobSkill.id)
                         }
@@ -246,7 +243,7 @@ router.get('/user/getCompanies/:id', userAuth, async (req, res) => {
     try {
         //Abrir banco de dados
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -268,7 +265,7 @@ router.get('/user/likeCompany/:id', userAuth, async (req, res) => {
     try {
         //Abrir banco de dados
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -291,7 +288,7 @@ router.delete('/user/likeCompany/:id', userAuth, async (req, res) => {
     try {
         //Abrir banco de dados
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -327,7 +324,7 @@ router.patch('/user/edit', userAuth, async (req, res) => {
         } = req.body
 
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -352,7 +349,7 @@ router.post('/user/editSkills', userAuth, async (req, res) => {
         const { skills } = req.body
 
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 

@@ -11,7 +11,7 @@ router.get('/skills', async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -31,7 +31,7 @@ router.post('/skill/create', adminAuth, async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
@@ -57,7 +57,7 @@ router.delete('/skill/:id', adminAuth, async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
         const db = await open({
-            filename: './database/bit.db',
+            filename: 'src/backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
