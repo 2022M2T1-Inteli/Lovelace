@@ -1,7 +1,9 @@
+// IMPORTAR BIBLIOTECAS
 const express = require('express')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
+// IMPORTAR MIDDLEWARE DE USUÁRIA
 const { userAuth } = require('../middlewares/auth')
 
 // DATABASE SETUP
@@ -28,20 +30,27 @@ router.get('/user/me', userAuth, async (req, res) => {
             driver: sqlite3.Database,
         })
 
+        // GET DE TODAS AS SKILLS DA USUÁRIA LOGADA
         const mySkills = await db.all(
             `SELECT * FROM skill INNER JOIN userSkill ON userSkill.skillId=skill.id WHERE userSkill.userId='${req.user.id}'`
         )
 
+        // GET DO ENDEREÇO DA USUÁRIA LOGADA
         const myAddress = await db.get(
             `SELECT address.* FROM address INNER JOIN user ON address.id=user.userAddressId WHERE user.id='${req.user.id}'`
         )
 
+        // PREENCHER OS CAMPOS SKILLS E ADDRESS COM OS REGISTROS ENCONTRADOS
         req.user.skills = mySkills
         req.user.address = myAddress
 
+        // FEHCAR O BANCO DE DADOS
         await db.close()
+
+        // DEVOLVER O USUÁRIO
         res.send(req.user)
     } catch (err) {
+        // DEVOLVER MENSAGEM DE ERRO
         res.status(400).send(err.message)
     }
 })
@@ -49,6 +58,7 @@ router.get('/user/me', userAuth, async (req, res) => {
 // ROTA DE CRIAR CONTA
 router.post('/user/signUp', async (req, res) => {
     try {
+        // DESESTRUTURAR O REQ.BODY PARA FORMAR VARIÁVEIS
         const {
             street,
             cep,
@@ -117,6 +127,7 @@ router.post('/user/signUp', async (req, res) => {
         // RESPOSTA
         res.redirect('/views/companyMatch/companyMatch.html')
     } catch (err) {
+        // DEVOLVER MENSAGEM DE ERRO
         res.status(400).send(err.message)
     }
 })
@@ -163,6 +174,7 @@ router.post('/user/login', async (req, res) => {
         res.redirect('/views/companyMatch/companyMatch.html')
         // res.send()
     } catch (err) {
+        // DEVOLVER MENSAGEM DE ERRO
         res.status(400).send(err.message)
     }
 })
@@ -219,6 +231,7 @@ router.get('/user/getCompanies', userAuth, async (req, res) => {
             }
         }
 
+        // CRIAR ARRAY VAZIO DE EMPRESAS
         let companies = []
 
         // PEGAR AS INFORMAÇÕES DE TODAS AS EMPRESAS
@@ -226,6 +239,7 @@ router.get('/user/getCompanies', userAuth, async (req, res) => {
             const fetchedCompany = await db.get(
                 `SELECT company.id, company.name, company.marketNiche, company.companyAddressId, company.companyPhilosophy, address.state, address.city FROM company INNER JOIN address ON company.companyAddressId=address.id WHERE company.id='${id}'`
             )
+            // PREENCHER ARRAY COM TODAS AS INFORMAÇÕES DE CADA EMPRESA
             companies.push(fetchedCompany)
         }
 
@@ -235,6 +249,7 @@ router.get('/user/getCompanies', userAuth, async (req, res) => {
         // RETORNAR AS EMPRESAS PARA O FRONT
         res.send(companies)
     } catch (err) {
+        // DEVOLVER MENSAGEM DE ERRO
         res.status(400).send(err.message)
     }
 })
@@ -247,16 +262,21 @@ router.get('/user/getCompanies/:id', userAuth, async (req, res) => {
             driver: sqlite3.Database,
         })
 
+        // CHECAR SE EMPRESA JÁ RECEBEU LIKE
         const isLiked = await db.get(
             `SELECT * FROM userCompany WHERE userCompany.companyId='${req.params.id}' AND userCompany.userId= '${req.user.id}'`
         )
 
+        // GET DA EMPRESA
         const company = await db.get(`SELECT * FROM company WHERE id = ${req.params.id}`)
 
+        // FECHAR O BANCO DE DADOS
         await db.close()
 
+        // DEVOLVER RESPOSTA COM A EMPRESA E SE ELA JÁ FOI GOSTADA PELA USUÁRIA
         res.send({ company, isLiked: isLiked ? true : false })
     } catch (err) {
+        // DEVOLVER MENSAGEM DE ERRO
         res.status(400).send(err.message)
     }
 })
@@ -269,41 +289,53 @@ router.get('/user/likeCompany/:id', userAuth, async (req, res) => {
             driver: sqlite3.Database,
         })
 
+        // VER SE EMPRESA JÁ FOI GOSTADA
         const ifLiked = await db.get(`SELECT * FROM userCompany WHERE userId='${req.user.id}'`)
+
+        // DAR ERRO SE EMPRESA JÁ FOI GOSTADA
         if (ifLiked) {
             throw new Error('Like já realizado!')
         }
 
+        // DAR LIKE NA EMPRESA
         await db.run(`INSERT INTO userCompany (userId, companyId) VALUES ('${req.user.id}', '${req.params.id}')`)
 
+        // FECHAR O BANCO DE DADOS
         await db.close()
 
+        // DEVOLVER RESPOSTA
         res.send()
     } catch (err) {
+        // DEVOLVER STATUS DE ERRO
         res.status(400).send()
     }
 })
 
 router.delete('/user/likeCompany/:id', userAuth, async (req, res) => {
     try {
-        //Abrir banco de dados
+        // ABRIR BANCO DE DADOS
         const db = await open({
             filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
+        // DELETAR LIKE NA EMPRESA
         await db.run(`DELETE FROM userCompany WHERE userId='${req.user.id}' AND companyId='${req.params.id}'`)
 
+        // FECHAR BANCO DE DADOS
         await db.close()
 
+        // DEVOLVER RESPOSTA
         res.send()
     } catch (err) {
+        // DEVOLVER STATUS DE ERRO
         res.status(400).send()
     }
 })
 
 router.patch('/user/edit', userAuth, async (req, res) => {
     try {
+        // DESESTRUTURAR REQ.BODY E FORMAR VARIÁVEIS
         const {
             street,
             cep,
@@ -323,48 +355,62 @@ router.patch('/user/edit', userAuth, async (req, res) => {
             aboutYou,
         } = req.body
 
+        // ABRIR O BANCO DE DADOS
         const db = await open({
             filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
+        // ATUALIZAR INFORMAÇÕES DA USUÁRIA
         await db.run(
             `UPDATE user SET email = '${email}', firstName = '${firstName}', lastName = '${lastName}', country = '${country}', phone = '${phone}', civilState = '${civilState}', birthDate = '${birthDate}', cpf = '${cpf}', rg = '${rg}', aboutYou = '${aboutYou}', userAddressId = '${userAddress.lastID} WHERE id = ${req.user.id}'`
         )
 
+        // ATUALIZAR ENDEREÇO DA USUÁRIA
         await db.run(
             `UPDATE address SET street ='${street}', cep= '${cep}', neighborhood= '${neighborhood}', city= '${city}', state= '${state}', complement= '${complement}' WHERE id= '${req.user.userAddressId}'`
         )
 
+        // FECHAR O BANCO DE DADOS
         await db.close()
 
+        // DEVOLVER RESPOSTA
         res.send()
     } catch (err) {
+        // DEVOLVER STATUS DE ERRO
         res.status(400).send()
     }
 })
 
 router.post('/user/editSkills', userAuth, async (req, res) => {
     try {
+        // DESESTRUTURAR REQ.BODY E FORMAR VARIÁVEIS
         const { skills } = req.body
 
+        // ABRIR BANCO DE DADOS
         const db = await open({
             filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
 
+        // DELETAR TODAS AS SKILLS DA USUÁRIA QUE JÁ EXISTEM
         await db.run(`DELETE FROM userSkill WHERE userId='${req.user.id}'`)
 
+        // ADICIONAR CADA SKILL DO USUÁRIO COM BASE NAS SKILLS DO REQ.BODY
         for (skill of skills) {
             await db.run(`INSERT INTO userSkill (skillId, userId) VALUES ('${skill}', '${req.user.id}')`)
         }
 
+        // FECHAR O BANCO DE DADOS
         await db.close()
 
+        // DEVOLVER RESPOSTA
         res.send()
     } catch (err) {
+        // DEVOLVER STATUS DE ERRO
         res.status(400).send()
     }
 })
 
+// EXPORTAR ROUTER
 module.exports = router
