@@ -26,7 +26,7 @@
 Nosso intuito é desenvolver uma ferramenta que viabilize diminuir o abismo entre mulheres que se interessem pela área de tecnologia e vagas na área STEM de forma fácil e simples, utilizando a estratégia de Employer Branding como principal diferencial.
 <br><br>
 <p align="center">
-<img src="blob:https://web.whatsapp.com/554eb23b-154a-4276-8cb5-8df440630882" alt="LANDING PAGE DO SITE" border="0">
+<img src="C:\Users\Inteli\OneDrive\Documentos\GitHub\M2\Projeto4\Projeto4\imagens\landingPageImg" alt="LANDING PAGE DO SITE" border="0">
 </p>
 
 
