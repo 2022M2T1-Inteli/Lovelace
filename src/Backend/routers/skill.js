@@ -52,7 +52,7 @@ router.post('/skill/create', adminAuth, async (req, res) => {
         res.status(400).send(err.message)
     }
 })
-
+// DELETAR SKILL DO BANCO DE DADOS
 router.delete('/skill/:id', adminAuth, async (req, res) => {
     try {
         // CONECTAR AO BANCO DE DADOS
@@ -60,19 +60,19 @@ router.delete('/skill/:id', adminAuth, async (req, res) => {
             filename: './src/Backend/database/bit.db',
             driver: sqlite3.Database,
         })
-
+        // CONFERIR SE A SKILL ESTÁ ATRELADA A UMA USUÁRIA CADASTRADA
         const userSkill = await db.get(`SELECT * FROM userSkill WHERE skillId='${req.params.id}'`)
         if (userSkill) {
             throw new Error('Competência atrelada a uma usuária')
         }
-
+        // CONFERIR SE A SKILL ESTÁ ATRELADA A UMA VAGA CADASTRADA
         const jobSkill = await db.get(`SELECT * FROM jobSkill WHERE skillId='${req.params.id}'`)
         if (jobSkill) {
             throw new Error('Competência atrelada a uma vaga')
         }
-
+        // DELETAR SKILL
         await db.run(`DELETE FROM skill WHERE id='${req.params.id}'`)
-
+        // FECHAR BANCO DE DADOS
         await db.close()
 
         res.send()
