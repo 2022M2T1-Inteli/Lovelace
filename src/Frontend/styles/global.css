@@ -167,3 +167,11 @@ body {
     text-align: center;
     font-weight: 700;
 }
+
+
+/* 600 px */
+@media screen and (max-width: 37.5em) {
+    .navbarTitle {
+        font-size: 2rem;
+    }
+}
