@@ -16,22 +16,12 @@
     </head>
 
     <body>
-        <div class="cookies-container">
-            <div class="cookies-content">
-                <p>Permito o uso de cookies para:</p>
-                <div class="cookies-pref">
-                    <label
-                        ><input type="checkbox" checked data-function="analytics" />Funções essenciais do sistema</label
-                    >
-                </div>
-                <button class="cookies-save">Salvar e Continuar</button>
-            </div>
-        </div>
-        <script src="./landingPage.js"></script>
-
         <main class="container">
             <div class="imageContainer">
                 <img src="../../assets/landingPage/bitLogo.png" />
+            </div>
+            <div class="adminContainer">
+                <a class="adminLink" href="/views/loginPage/loginPage.html?type=admin">Admin</a>
             </div>
             <div class="rightContainer">
                 <div class="box">
@@ -66,5 +56,14 @@
                 </div>
             </div>
         </main>
+        <div class="cookies-container">
+            <p>Nosso sistema utiliza cookies apenas para funções essenciais.</p>
+            <!-- <div class="cookies-pref">
+                <input type="checkbox" id="analytics" checked data-function="analytics" />
+                <label for="analytics">Funções essenciais do sistema</label>
+            </div> -->
+            <button class="cookies-save">Aceitar e fechar</button>
+        </div>
+        <script src="./landingPage.js"></script>
     </body>
 </html>
