@@ -1,6 +1,6 @@
-// Função executada quando a página é carregada
+// FUNÇÃO EXECUTADA QUANDO A PÁGINA É CARREGADA
 $(document).ready(() => {
-    // Obter parâmetro type da url
+    // OBTER PARÂMETRO TYPE DA URL
     const queryString = window.location.search
     const urlParams = new URLSearchParams(queryString)
     const type = urlParams.get('type')
@@ -13,7 +13,7 @@ $(document).ready(() => {
     let url = ''
     let nextPage = ''
 
-    // Checar o parâmetro da url e setar o atributo src dos botões
+    // CHECAR O PARAÊMTRO DA URL E SETAR O ATRIBUTO SRC DOS BOTÕES
     if (type == 'user') {
         url = '/user/login'
         nextPage = '/views/companyMatch/companyMatch.html'
@@ -28,17 +28,21 @@ $(document).ready(() => {
         $('.noAccountLink').css('display', 'none')
     }
 
+    // FUNÇÃO EXECUTADA QUANDO APERTA O BOTÃO DE LOGIN
     loginButton.click(() => {
         errorBadge.css('display', 'none')
         errorBadge.html('')
 
+        // CHECAR SE O USUÁRIO CONCORDO COM OS TERMO DE USO
         if (termInput.is(':checked')) {
+            // REQUISIÇÃO 'POST' 
             $.ajax({
                 url,
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify({ email: $('#email').val(), password: $('#password').val() }),
                 success: function (res) {
+                    // MANDA O USUÁRIO PARA SUA RECPECTIVA PÁGINA 
                     window.location.replace(nextPage)
                 },
                 error: function (err) {
@@ -47,6 +51,7 @@ $(document).ready(() => {
                 },
             })
         } else {
+            // MENSAGEM ERRO PARA CONCORDAR COM OS TERMOS DE USO
             errorBadge.css('display', 'block')
             errorBadge.html('É necessário que você concorde com os termos de uso!')
         }

@@ -1,7 +1,9 @@
+// FUNÇÃO EXECUTADA QUANDO A PÁGINA É CARREGADA
 $(document).ready(() => {
     const backdrop = $('.backdrop')
     const modal = $('.modal')
 
+    // REQUISIÇÃO 'GET' PARA DISPOR A SKILLS NA ´´AGINA HTML
     $.ajax({
         url: '/skills',
         type: 'GET',
@@ -24,34 +26,45 @@ $(document).ready(() => {
         },
     })
 
+    // FUNÇÃO QUE ABRE O MODAL
     const openModal = () => {
         backdrop.css('display', 'block')
         modal.css('display', 'block')
     }
 
+    // FUNÇÃO QUE FECHA O MODAL
     const closeModal = () => {
         backdrop.css('display', 'none')
         modal.css('display', 'none')
     }
 
+    // EXECUTAR A FUNÇÃO DE ABRIR O MODAL AO APERTAR O BOTÃO
     $('#modalBtn').click(openModal)
+
+    // EXECUTAR A FUNÇÃO DE FECHAR O MODAL AO CLICAR FORA DO MODAL
     $('.backdrop').click(closeModal)
 
+    // FUNÇÃO EXECUTADA AO CLICAR NO BOTÃO
     $('#createSkill').click(() => {
         const skillName = $('#skillName').val()
         const skillType = $('#skillType').val()
 
+        // CHECA A EXISTÊNCIA DA SKILL
         if (skillName && skillType) {
+            // REQUISIÇÃO 'POST' QUE ADICIONA A SKILL AO BANCO DE DADOS
             $.ajax({
                 url: '/skill/create',
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify({ name: skillName, type: skillType }),
                 success: function (res) {
+                    // RECARREGA A PÁGINA
                     window.location.reload()
                 },
                 error: function (err) {
+                    // FECHAR O MODAL
                     closeModal()
+                    // MOSTRAR ALERTA DE ERRO
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
@@ -61,35 +74,22 @@ $(document).ready(() => {
             })
         }
     })
-
-    // // $('#deleteSkill').click (() => {
-    // //     const skillName = $('#skillName').val()
-    // //     const skillType = $('#skillType').val()
-    // //     $.ajax({
-    // //         url: '/skill/:id',
-    // //         type: 'DELETE',
-    // //         contentType: 'application/json',
-    // //         body: JSON.stringify({ name: skillName, type: skillType }),
-    // //         success: function (res) {
-    // //             window.location.reload()
-    // //         },
-    // //         error: function (err) {
-    // //             console.log(err)
-    // //         },
-    // //     })
-    // // })
 })
 
+// FUNÇÃO AO CLICAR NO BOTÃO DE DELETE
 function deleteSkill(id) {
+    // REQUISIÇÃO DE 'DELETE' PARA REMOVER A SKILL DO BANCO DE DADOS
     $.ajax({
         url: '/skill/' + id,
         type: 'DELETE',
         contentType: 'application/json',
 
         success: function (res) {
+            // RECARREGA A PÁGINA
             window.location.reload()
         },
         error: function (err) {
+            // MOSTRAR ALERTA DE ERRO
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',

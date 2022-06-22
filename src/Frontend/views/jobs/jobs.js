@@ -1,15 +1,19 @@
 // FUNÇÃO EXECUTADA QUANDO A PÁGINA CARREGA
 $(document).ready(() => {
+    // REQUISIÇÃO 'GET' PARA PEGAR OS DADOS DAS VAGAS NO BANCO DE DADOS
     $.ajax({
         url: '/job',
         type: 'GET',
         contentType: 'application/json',
         success: function (res) {
             let elements = ''
+            // CHECAR SE ALGUMA VAGA FOI CRIADA JÁ
             if (res.length == 0) {
+                // MENSAGEM CASO NÃO TENHA VAGAS CRIADAS
                 elements =
                     "<a class='errorMessage'>Você ainda não cadastrou nenhuma vaga. <br> Clique em 'Criar vaga' para disponibilizar uma nova vaga. </a>"
-            } else {
+                // ADICINA À PAGINA HTML OS DADOS
+                } else {
                 for (job of res) {
                     elements += `<div class="gridBox">
                                 <h4 class="boxTitle">${job.area ? job.area.name : '-'}</h4>
@@ -41,13 +45,14 @@ $(document).ready(() => {
         },
     })
 })
-
+// REQUISIÇÃO DE 'DELETE' PARA REMOVER A VAGA DO BANCO DE DADOS 
 const deleteJob = (id) => {
     $.ajax({
         url: '/job/' + id,
         type: 'DELETE',
         contentType: 'application/json',
         success: function (res) {
+            // RECARREGA A PÁGINA
             window.location.reload()
         },
         error: function (err) {
