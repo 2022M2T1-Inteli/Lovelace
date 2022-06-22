@@ -1,12 +1,17 @@
 // FUNÇÃO QUE OBTÉM A IDADE POR MEIO DA DATA DE NASCIMENTO
 function getAge(dateString) {
     var today = new Date()
-    var birthDate = new Date(dateString)
+
+    var dateParts = dateString.split('/')
+
+    var birthDate = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0])
+
     var age = today.getFullYear() - birthDate.getFullYear()
     var m = today.getMonth() - birthDate.getMonth()
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
         age--
     }
+    
     return age
 }
 // FUNÇÃO EXECUTADA QUANDO A PÁGINA CARREGADA
@@ -14,7 +19,6 @@ $(document).ready(() => {
     var url_string = window.location.href
     var url = new URL(url_string)
     var id = url.searchParams.get('id')
-    console.log(id)
 
     // REQUISIÇÃO 'GET' QUE ADICIONA OS DADOS DA CANDIDATA À PÁGINA HTML
     $.ajax({
