@@ -1,4 +1,6 @@
+// FUNÇÃO EXECUTADA QUANDO A PÁGINA É CARREGADA
 $(document).ready(() => {
+    // FUNÇÃO QUE CALCULA A IDADE POR MEIO DA DATE DE NASCIMENTO
     function getAge(dateString) {
         var today = new Date()
 
@@ -16,6 +18,7 @@ $(document).ready(() => {
     }
 
 
+    // REQUISIÇÃO 'GET' QUE DISPÕE OS DADOS DA USUÁRIA NA PÁGINA HTML
     $.ajax({
         url: '/user/me',
         type: 'GET',
@@ -29,6 +32,8 @@ $(document).ready(() => {
             let hardSkills = ''
             let softSkills = ''
             for (skill of user.skills) {
+
+                //CHECAR QUAL O TIPO DA SKILL
                 if (skill.type == 0) {
                     hardSkills += `<span class="badge badge-yellow">${skill.name}</span>`
                 } else {

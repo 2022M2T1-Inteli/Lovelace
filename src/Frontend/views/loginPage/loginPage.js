@@ -13,7 +13,7 @@ $(document).ready(() => {
     let url = ''
     let nextPage = ''
 
-    // CHECAR O PARAÊMTRO DA URL E SETAR O ATRIBUTO SRC DOS BOTÕES
+    // CHECAR O PARÂMETRO DA URL E SETAR O ATRIBUTO SRC DOS BOTÕES
     if (type == 'user') {
         url = '/user/login'
         nextPage = '/views/companyMatch/companyMatch.html'
@@ -33,7 +33,7 @@ $(document).ready(() => {
         errorBadge.css('display', 'none')
         errorBadge.html('')
 
-        // CHECAR SE O USUÁRIO CONCORDO COM OS TERMO DE USO
+        // CHECAR SE O USUÁRIO CONCORDA COM OS TERMO DE USO
         if (termInput.is(':checked')) {
             // REQUISIÇÃO 'POST' 
             $.ajax({
@@ -42,7 +42,7 @@ $(document).ready(() => {
                 contentType: 'application/json',
                 data: JSON.stringify({ email: $('#email').val(), password: $('#password').val() }),
                 success: function (res) {
-                    // MANDA O USUÁRIO PARA SUA RECPECTIVA PÁGINA 
+                    // MANDAR O USUÁRIO PARA SUA RESCPECTIVA PÁGINA 
                     window.location.replace(nextPage)
                 },
                 error: function (err) {
@@ -51,7 +51,7 @@ $(document).ready(() => {
                 },
             })
         } else {
-            // MENSAGEM ERRO PARA CONCORDAR COM OS TERMOS DE USO
+            // MENSAGEM DE ERRO PARA CONCORDAR COM OS TERMOS DE USO
             errorBadge.css('display', 'block')
             errorBadge.html('É necessário que você concorde com os termos de uso!')
         }

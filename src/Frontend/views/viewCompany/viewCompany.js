@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    // Obter parâmetro id da url
+    // OBTER PARÂMETRO ID DA URL
     const queryString = window.location.search
     const urlParams = new URLSearchParams(queryString)
     const id = urlParams.get('id')
@@ -44,13 +44,16 @@ $(document).ready(() => {
         },
     })
 
+    // FUNÇÃO EXECUTADA QUANDO APERTA O BOTÃO DE APROVAR
     $('#approveButton').click(() => {
+        // REQUISIÇÃO 'PATCH' PARA ENVIAR A APROVAÇÃO AO BANCO DE DADOS
         $.ajax({
             url: '/admin/companyApproval/' + id,
             type: 'PATCH',
             contentType: 'application/json',
 
             success: function (res) {
+                // ADMINISTRADOR É REDIRECIONADO PARA A PÁGINA DE APROVAÇÃO
                 window.location.replace('/views/companyApproval/companyApproval.html')
             },
             error: function (err) {
@@ -59,13 +62,16 @@ $(document).ready(() => {
         })
     })
 
+    // FUNÇÃO EXECUTADA QUANDO APERTA O BOTÃO DE REJEITAR A EMPRESA
     $('#deleteCompany').click(() => {
+        // REQUISIÇÃO 'DELETE' PARA REMOVAR A EMPRESA DO BANCO DE DADOS
         $.ajax({
             url: '/admin/company/' + id,
             type: 'DELETE',
             contentType: 'application/json',
 
             success: function (res) {
+                // ADMINISTRADOR É REDIRECIONADO PARA A PÁGINA DE APROVAÇÃO
                 window.location.replace('/views/companyApproval/companyApproval.html')
             },
             error: function (err) {

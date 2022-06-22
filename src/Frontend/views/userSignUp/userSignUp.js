@@ -1,4 +1,4 @@
-// Função executada quando a página é carregada
+// FUNÇÃO EXECUTADA QUANDO A PÁGINA É CARREGADA
 
 $(document).ready(() => {
     $('.nextButton').click(nextStage)
@@ -8,6 +8,7 @@ $(document).ready(() => {
     $('#cpf').mask('000.000.000-00', { reverse: true })
     $('#cep').mask('00000-000')
 
+    // REQUISIÇÃO 'GET' QUE DISPÕE AS SKILLS NO SELECT
     $.ajax({
         url: '/skills',
         type: 'GET',
@@ -16,6 +17,7 @@ $(document).ready(() => {
             let hardSkillOptions = ''
             let softSkillOptions = ''
             for (skill of res) {
+                // CHECAR QUAL O TIPO DE SKILL
                 if (skill.type == 0) {
                     hardSkillOptions += `<option value="${skill.id}">${skill.name}</option>`
                 } else {
@@ -31,23 +33,23 @@ $(document).ready(() => {
         },
     })
 
-    // Permitir a busca e a seleção múltipla do select
+    // PERMITIR A BUSCA E A SELEÇÃO MÚLTIPLA DO SELECT
     $('.skillSelect').select2({
         allowClear: true,
         theme: 'classic',
     })
 })
 
-// Variável de controle de estágio do cadastro
+// VARIÁVEL DE CONTROLE DE ESTÁGIO DO CADASTRO 
 let stage = 0
 
-// Url inicial dos icones
+// URL INICIAL DOS ICONES 
 const assetsInitialPath = '../../../assets/companyRegistration/'
 
-// Array com container de icones
+// ARRAY COM CONTAINER DE ICONES 
 const iconContainers = [$('.iconImageBox0'), $('.iconImageBox1'), $('.iconImageBox2')]
 
-// Array de objetos com as urls dos diferentes icones e elementos
+// ARRAY DE PBJETOS COM AS URLS DOS DIFERENTES ICONES E ELEMENTOS 
 const icons = [
     {
         yellowIcon: assetsInitialPath + 'infoYellow.png',
@@ -66,29 +68,33 @@ const icons = [
     },
 ]
 
-// Array com containers
+// ARRAY COM CONTAINERS 
 const containers = [$('.stage0'), $('.stage1'), $('.stage2')]
 
-// Setar a opacidade ou o display de cada container
+// SETAR A OPACIDADE OU O DISPLAY DE CADA CONTAINER 
 containers[0].css('opacity', 100)
 containers[1].css('display', 'none')
 containers[2].css('display', 'none')
 
+// FUNÇÃO DE CRIAR USUÁRIO
 const createUser = () => {
+
+    // CRIA UM OBJETO PARA ARMAZENAR OS VALORES
     const form = {}
 
+    // ATRIBUI OS VALORES DOS INPUTS A ESSE OBJETO
     $('#accountForm input').each(function () {
-        var input = $(this)[0] // This is the jquery object of the input, do what you will
+        var input = $(this)[0]
         form[input.name] = input.value
     })
 
     $('#infoForm input').each(function () {
-        var input = $(this)[0] // This is the jquery object of the input, do what you will
+        var input = $(this)[0]
         form[input.name] = input.value
     })
 
     $('#addressForm input').each(function () {
-        var input = $(this)[0] // This is the jquery object of the input, do what you will
+        var input = $(this)[0]
         form[input.name] = input.value
     })
 
@@ -96,6 +102,7 @@ const createUser = () => {
 
     form.skills = $('#hardSkills').val().concat($('#softSkills').val())
 
+    // REQUISIÇÃO 'POST' QUE REGISTRA OS DADOS DO USUÁRIO NO BANCO DE DADOS
     $.ajax({
         url: '/user/signUp',
         type: 'POST',
@@ -114,11 +121,14 @@ const createUser = () => {
     })
 }
 
+// FUNÇÃO PARA CHECAR SE OS CAMPOS FORAM PREENCHIDOS
 const validate = (inputs) => {
     let error = false
 
     inputs.each(function (index) {
+        // CHECAR SE OS CAMPOS ESTÃO PREENCHIDOS
         if ($(this).val() == '') {
+            // DEIXA O CAMPO VERMELHO
             $(this).css('border', '1px solid red')
             error = true
         }
@@ -127,8 +137,9 @@ const validate = (inputs) => {
     return error
 }
 
-// Função executada quando o usuário aperta no botão "próximo"
+// FUNÇÃO EXECUTADA QUANDO O USUÁRIO APERTA NO BOTÃO "PRÓXIMO" 
 const nextStage = () => {
+    // CHECAR EM QUAL ESTÁGIO O USUÁRIO ESTÁ
     if (stage == 0) {
         let inputs = $('#infoForm input, #addressForm input, #accountForm input')
         if (validate(inputs) == true) {
@@ -148,38 +159,38 @@ const nextStage = () => {
         createUser()
     }
 
-    // Checar se o estágio é menor que 2
+    // CHECAR SE O ESTÁGIO É MENOR QUE 2
     if (stage < 2) {
-        // Função que anima a opacidade do container
+        // FUNÇÃO QUE ANIMA A OPACIDADE DO CONTAINER 
         containers[stage].animate(
             {
                 opacity: 0,
             },
             400,
-            // Função executada quando a animação acaba
+            // FUNÇÃO EXECUTADA QUANDO A ANIMAÇÃO ACABA
             function () {
-                // Setar o display do container animado para none
+                // SETAR O DISPLAY DO CONTAINER ANIMADO PARA NONE
                 containers[stage].css('display', 'none')
 
-                // Remover a classe ativo do container do icone
+                // REMOVER A CLASSE ATIVO DO CONTAINER DO ICONE
                 iconContainers[stage].removeClass('active')
 
-                // Mudar a cor do icone
+                // MUDAR A COR DO ICONE
                 icons[stage].element.attr('src', icons[stage].whiteIcon)
 
-                // Passar para o próximo estágio
+                // PASSAR PARA O PRÓXIMO ESTÁGIO 
                 stage++
 
                 // Setar o display do próximo container como flex (visível)
                 containers[stage].css('display', 'flex')
 
-                // Adicionar a classe ativa ao próximo container de icone
+                // SETAR O DISPLAY DO PRÓXIMO CONTAINER COMO FLEX (VISÍVEL)
                 iconContainers[stage].addClass('active')
 
-                // Mudar a cor do icone
+                // MUDAR A COR DO ICONE
                 icons[stage].element.attr('src', icons[stage].yellowIcon)
 
-                // Animar a opacidade do próximo container
+                // ANIMAR A OPACIDADE DO PRÓXIMO CONTAINER
                 containers[stage].animate(
                     {
                         opacity: 1,
@@ -191,42 +202,42 @@ const nextStage = () => {
     }
 }
 
-// Função executada quando o usuário aperta no botão "voltar"
+// FUNÇÃO EXECUTADA QUANDO O USUÁRIO APERTA NO BOTÃO "VOLTAR"
 const previousStage = () => {
-    // Checar se o estágio é maior que 0
-
+    
+    // CHECAR SE O ESTÁGIO É MENOR QUE 0
     if (stage > 0) {
-        // Função que anima a opacidade do container
 
+        // FUNÇÃO QUE ANIMA A OPACIDADE DO CONTAINER
         containers[stage].animate(
             {
                 opacity: 0,
             },
             400,
-            // Função executada quando a animação acaba
+            // FUNÇÃO EXECUTADA QUANDO A ANIMAÇÃO ACABA 
             function () {
-                // Setar o display do container animado para none
+                // SETAR O DISPLAY DO CONTAINER ANIMADO PARA NONE
                 containers[stage].css('display', 'none')
 
-                // Remover a classe ativo do container do icone
+                // REMOVER A CLASSE ATIVO DO CONTAINER DO ICONE
                 iconContainers[stage].removeClass('active')
 
-                // Mudar a cor do icone
+                // MUDAR A COR DO ICONE
                 icons[stage].element.attr('src', icons[stage].whiteIcon)
 
-                // Passar para o estágio anterior
+                // PASSAR PARA O ESTÁGIO ANTERIOR 
                 stage--
 
-                // Adicionar a classe ativa ao novo container ativo de icone
+                // ADICIONAR A CLASSSE ATIVA AO PRÓXIMO CONTAINER DO ICONE
                 iconContainers[stage].addClass('active')
 
-                // Setar o display do novo container ativo como flex (visível)
+                // SETAR O DISPLAY DO PRÓXIMO CONTAINER COMO FLEX (VISÍVEL)
                 containers[stage].css('display', 'flex')
 
-                // Mudar a cor do icone
+                // MUDAR A COR DO ICONE
                 icons[stage].element.attr('src', icons[stage].yellowIcon)
 
-                // Animar a opacidade do próximo container
+                // ANIMAR A OPACIDADE DO PRÓXIMO CONTAINER
                 containers[stage].animate(
                     {
                         opacity: 1,

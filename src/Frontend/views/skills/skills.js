@@ -49,7 +49,7 @@ $(document).ready(() => {
         const skillName = $('#skillName').val()
         const skillType = $('#skillType').val()
 
-        // CHECA A EXISTÊNCIA DA SKILL
+        // CHECAR A EXISTÊNCIA DA SKILL
         if (skillName && skillType) {
             // REQUISIÇÃO 'POST' QUE ADICIONA A SKILL AO BANCO DE DADOS
             $.ajax({

@@ -8,27 +8,31 @@ $(document).ready(() => {
     $('#cep').mask('00000-000');
     $('#cellphone').mask('0 0000-0000')
 
+    // FUNÇÃO EXECUTADA QUANDO SE CLICA NO BOTÃO
     $('#finalButton').click(() => {
+
+        // CRIA UM OBJETO PARA ARMAZENAR OS VALORES
         const form = {}
 
+        // ATRIBUI OS VALORES DOS INPUTS A ESSE OBJETO
         $('#companyAccount :input').each(function () {
-            var input = $(this)[0] // This is the jquery object of the input, do what you will
+            var input = $(this)[0]
             console.log(input)
             form[input.name] = input.value
         })
 
         $('#companyInfo :input').each(function () {
-            var input = $(this)[0] // This is the jquery object of the input, do what you will
+            var input = $(this)[0] 
             form[input.name] = input.value
         })
 
         $('#companyAddress :input').each(function () {
-            var input = $(this)[0] // This is the jquery object of the input, do what you will
+            var input = $(this)[0]
             form[input.name] = input.value
         })
 
         $('#companyRecruter :input').each(function () {
-            var input = $(this)[0] // This is the jquery object of the input, do what you will
+            var input = $(this)[0]
             form[input.name] = input.value
         })
 
@@ -36,15 +40,18 @@ $(document).ready(() => {
         form.companyCulture = $('#companyCulture').val()
         form.badges = $('#badges').val()
         
+        // RESQUISIÇÃO 'POST' QUE ADICIONA OS DADOS DA EMPRESA AO BANCO DE DADOS
         $.ajax({
             url: '/company/signUp',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(form),
             success: function (res) {
+                // ENVIAR A EMPRESA PARA A PÁGINA DE AGUARDAR
                 window.location.replace('/views/companySignUpCompleted/companySignUpCompleted.html')
             },
             error: function (err) {
+                // MOSTRAR ALERTA COMO ERRO
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
@@ -113,6 +120,7 @@ const validate = (inputs) => {
 // FUNÇÃO EXECUTADA QUANDO O USUÁRIO APERTA NO BOTÃO "PRÓXIMO"
 const nextStage = () => {
 
+    // CHECAR EM QUAL ESTÁGIO ESTÁ
     if (stage == 0) {
         let inputs = $("#companyAccount input, #companyInfo input, #companyAddress input, #companyRecruter input");
         if (validate(inputs) == true) {
