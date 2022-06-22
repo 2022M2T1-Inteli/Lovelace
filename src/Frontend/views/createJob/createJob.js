@@ -1,9 +1,14 @@
+// FUNÇÃO EXECUTADA QUANDO OS CAMPOS NÃO SÃO PREENCHIDOS
 const validate = (inputs) => {
     let error = false
 
     inputs.each(function (index) {
         if (inputs[index].value == '') {
+
+            // DEIXA OS CAMPOS NÃO PREENCHIDOS VERMELHOS
             $(this).css('border', '1px solid red')
+
+            // JOGA UM ERRO
             error = true
         }
     })
@@ -11,6 +16,7 @@ const validate = (inputs) => {
     return error
 }
 
+// FUNÇÃO QUE RECEBE OS VALORES DOS INPUTS E OS ARMAZENA EM UMA CONSTANTE
 const createJob = () => {
     const form = {
         type: $('#jobType').val(),
@@ -19,6 +25,7 @@ const createJob = () => {
         skills: $('#hardSkills').val().concat($('#softSkills').val()),
     }
 
+    // INTEGRAÇÃO POST QUE ADICIONA A CONSTANTE COM OS VALORES DOS INPUTS AO BANCO DE DADOS
     $.ajax({
         url: '/job/create',
         type: 'POST',
@@ -33,13 +40,14 @@ const createJob = () => {
     })
 }
 
-// Função executada quando a página é carregada
+// FUNÇÃO EXECUTADA QUANDO A PÁGINA É CARREGADA
 $(document).ready(() => {
-    // Permitir a busca e a seleção múltipla do select
+    // PERMITIR A BUSCA E A SELEÇÃO MÚLTIPLA DO SELECT 
     $('.skillSelect').select2({
         allowClear: true,
     })
 
+    // REQUISIÇÃO 'GET' QUE DISPÕE AS HARDSKILLS E SOFTSKILLS NO SELECT
     $.ajax({
         url: '/skills',
         type: 'GET',
@@ -48,6 +56,7 @@ $(document).ready(() => {
             let hardSkillOptions = ''
             let softSkillOptions = ''
             for (skill of res) {
+                // CHECAR SE É UMA HARDSKILL OU SOFTSKILL
                 if (skill.type == 0) {
                     hardSkillOptions += `<option value="${skill.id}">${skill.name}</option>`
                 } else {
@@ -63,6 +72,7 @@ $(document).ready(() => {
         },
     })
 
+    // REQUISIÇÃO 'GET' QUE DISPÕE AS OPÇÕES DE ÁREA DO MERCADO NO SELECT
     $.ajax({
         url: '/area',
         type: 'GET',
@@ -80,13 +90,16 @@ $(document).ready(() => {
         },
     })
 
+    // FUNÇÃO EXECUTADA QUANDO CLICA NO BOTÃO
     $('#createJobButton').click(() => {
         let inputs = $('#jobType, #jobModel, #jobArea, #hardSkills, #softSkills')
 
+        // CHECA SE OS CAMPOS NÃO ESTÃO VAZIOS
         if (validate(inputs) == true) {
             return
         }
 
+        // CRIA A VAGA
         createJob()
     })
 })

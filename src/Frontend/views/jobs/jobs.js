@@ -1,3 +1,4 @@
+// FUNÇÃO EXECUTADA QUANDO A PÁGINA CARREGA
 $(document).ready(() => {
     $.ajax({
         url: '/job',

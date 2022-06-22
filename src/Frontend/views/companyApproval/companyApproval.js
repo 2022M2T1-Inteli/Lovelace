@@ -1,4 +1,6 @@
+// FUNÇÃO EXECUTADA QUANDO CARREGA A PÁGINA
 $(document).ready(() => {
+    // REQUISIÇÃO 'GET' QUE DISPÕE OS DADOS DA EMPRESA NA PÁGINA HTML
     $.ajax({
         url: '/admin/companyApproval',
         type: 'GET',
@@ -6,6 +8,7 @@ $(document).ready(() => {
         success: function (res) {
             if (res.length > 0) {
                 let elements = ''
+                // LOOP PARA ADICINAR CADA EMPRESA E SEUS DADOS
                 for (company of res) {
                     elements += `<div class="gridBox">
                                     <h4 class="boxTitle">${company.name}</h4>
@@ -28,6 +31,8 @@ $(document).ready(() => {
                                 </div>`
                 }
                 $('.grid').html(elements)
+
+            // MENSAGEM PARA A EMPRESA CASO NÃO TENHA EMPRESA A SEREM APROVADAS
             } else {
                 $('.grid').html(`<p class="noDataFound">Nenhuma empresa necessita de aprovação!</p>`)
             }

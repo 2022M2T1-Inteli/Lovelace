@@ -1,9 +1,11 @@
+// FUNÇÃO EXECUTDA QUANDO CARREGA A PÁGINA
 $(document).ready(() => {
-    // Obter parâmetro id da url
+    // OBTER O PARÂMETRO ID DA URL
     const queryString = window.location.search
     const urlParams = new URLSearchParams(queryString)
     const jobId = urlParams.get('jobId')
 
+    // REQUISIÇÃO GET QUE ADICIONA AS CANDIDATAS E SEUS DADOS À PÁGINA HTML 
     $.ajax({
         url: `/job/${jobId}/getUsers`,
         type: 'GET',
@@ -29,6 +31,7 @@ $(document).ready(() => {
                 }
                 $('.grid').html(elements)
 
+            // MENSAGEM PARA A EMPRESA CASO NÃO TENHA CANDIDATAS PARA A VAGA
             } else {
                 $('.grid').html('<p class="noCandidate">Nenhuma candidata deu match nessa vaga!</p>')
             }

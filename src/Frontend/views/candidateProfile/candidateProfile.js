@@ -1,3 +1,4 @@
+// FUNÇÃO QUE OBTÉM A IDADE POR MEIO DA DATA DE NASCIMENTO
 function getAge(dateString) {
     var today = new Date()
     var birthDate = new Date(dateString)
@@ -8,13 +9,14 @@ function getAge(dateString) {
     }
     return age
 }
-
+// FUNÇÃO EXECUTADA QUANDO A PÁGINA CARREGADA
 $(document).ready(() => {
     var url_string = window.location.href
     var url = new URL(url_string)
     var id = url.searchParams.get('id')
     console.log(id)
 
+    // REQUISIÇÃO 'GET' QUE ADICIONA OS DADOS DA CANDIDATA À PÁGINA HTML
     $.ajax({
         url: '/job/getUsers/' + id,
         type: 'GET',
@@ -28,6 +30,7 @@ $(document).ready(() => {
             let hardSkills = ''
             let softSkills = ''
 
+            // CHECAR SE É UMA HARDSKILL OU SOFTSKILL
             for (skill of user.skills) {
                 if (skill.type == 0) {
                     hardSkills += `<span class="badge badge-yellow">${skill.name}</span>`
