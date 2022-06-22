@@ -4,7 +4,7 @@
 <a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
-#Brazilians in Tech
+## Brazilians in Tech
 <p align="center">
 <a href= https://braziliansintech.com/><img src="https://braziliansintech.com/static/img/logo.png" alt="BiT - Brazilians in Tech" border="0" width="312px"></a>
 </p>
@@ -22,8 +22,6 @@
 
 
 ## Descrição
-
-📜 Descrição curta sobre o que seu projeto faz.
 <br><br>
 Nosso intuito é desenvolver uma ferramenta que viabilize diminuir o abismo entre mulheres que se interessem pela área de tecnologia e vagas na área STEM de forma fácil e simples, utilizando a estratégia de Employer Branding como principal diferencial.
 <br><br>
@@ -32,7 +30,6 @@ Nosso intuito é desenvolver uma ferramenta que viabilize diminuir o abismo entr
 </p>
 
 
-💡 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 <br><br>
 Tendo em vista o grande gap existente entre as mulheres e o mercado de trabalho e, por outro lado, um crescente aumento na necessidade de mão de obra tech, nosso sistema foi criado com o intúito de ser uma via de solução à essas duas problemáticas.
 <br><br>
@@ -68,7 +65,7 @@ Portanto, desenvolvemos uma ferramenta que possibilita o encontro mais fácil de
          |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Backend/middlewares">📂middlewares</a><br>
             ⚡auth.js<br>
          |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Backend/routers">📂routers</a><br>
-            ⚡admin.js<br>
+            <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> admin.js
             ⚡area.js<br>
             ⚡company.js<br>
             ⚡job.js<br>
