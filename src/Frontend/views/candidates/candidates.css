@@ -93,7 +93,8 @@
 /* 900 px */
 @media screen and (max-width: 56.25em) {
     .container {
-        margin: 2rem 6rem;
+        padding: 6rem 4rem;
+        margin: 0;
     }
 
     .grid {

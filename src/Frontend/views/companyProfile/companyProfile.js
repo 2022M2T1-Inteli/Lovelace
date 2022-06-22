@@ -30,8 +30,8 @@ $(document).ready(() => {
             $('#culture').html(company.companyCulture)
             $('#openingDate').html('Data de Abertura: ' + company.openingDate)
             $('#marketNiche').html('Nicho: ' + company.marketNiche)
-            $('#badges').html('Mais detalhes: ' + company.badges)
-            console.log(isLiked)
+            $('#badges').html('Premiações e programas: ' + company.badges)
+            
             // CHECA SE JÁ FOI DADO LIKE
             if (isLiked) {
                 // DÁ LIKE 
