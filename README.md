@@ -63,15 +63,15 @@ Portanto, desenvolvemos uma ferramenta que possibilita o encontro mais fácil de
          |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Backend/database">📂database</a><br>
             🔘bit.db<br>
          |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Backend/middlewares">📂middlewares</a><br>
-            ⚡auth.js<br>
+            <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> auth.js
          |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Backend/routers">📂routers</a><br>
             <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> admin.js
-            ⚡area.js<br>
-            ⚡company.js<br>
-            ⚡job.js<br>
-            ⚡skill.js<br>
-            ⚡user.js<br>
-            ⚡index.js<br>
+            <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> area.js
+            <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> company.js
+            <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> job.js
+            <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> skill.js
+            <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> user.js
+            <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> index.js
             🔘package-lock.json<br>
             🔘package.json<br>
   &emsp;|--><a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend">📂Frontend</a><br>
@@ -95,7 +95,7 @@ Portanto, desenvolvemos uma ferramenta que possibilita o encontro mais fácil de
               📷person.png<br>
               📷trachIcon.png<br>
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/assets/jqueryMask">📂jqueryMask</a><br>
-              ⚡jquery.mask.min.js<br>
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> jquery.mask.min.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/assets/landingPage">📂landingPage</a><br>
               📷bitLogo.png<br>
               📷hand.gif<br>
@@ -105,89 +105,86 @@ Portanto, desenvolvemos uma ferramenta que possibilita o encontro mais fácil de
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/assets/skills">📂skills</a><br>
               📷trashIcon/png<br>
           |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/global">📂global</a><br>
-            ⚡global.js<br>
+            <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> global.js
           |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/styles">📂styles</a><br>
-            💧global.css<br>
+            <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> global.css
           |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views">📂views</a><br>
           |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/area">📂area</a><br>
-              💧area.css<br>
-              🔥area.html<br>
-              ⚡area.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> area.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> area.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> area.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/candidateProfile">📂candidateProfile</a><br>
-              💧candidateProfile.css<br>
-              🔥candidateProfile.html<br>
-              ⚡candidateProfile.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> candidateProfile.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> candidateProfile.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> candidateProfile.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/candidates">📂candidates</a><br>
-              💧candidates.css<br>
-              🔥candidate.html<br>
-              ⚡candidate.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> candidates.css
+              <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> candidate.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> candidate.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/companies">📂companies</a><br>
-              💧companies.css<br>
-              🔥companies.html<br>
-              ⚡companies.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> companies.css
+              <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> companies.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> companies.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/companyApproval">📂companyApproval</a><br>
-              💧companyApproval.css<br>
-              🔥companyApproval.html<br>
-              ⚡companyApproval.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> companyApproval.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> companyApproval.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> companyApproval.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/companyMatch">📂companyMatch</a><br>
-              💧companyMatch.css<br>
-              🔥companyMatch.html<br>
-              ⚡companyMatch.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> companyMatch.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> companyMatch.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> companyMatch.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/companyProfile">📂companyProfile</a><br>
-              💧companyProfile.css<br>
-              🔥companyProfile.html<br>
-              ⚡companyProfile.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> companyProfile.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> companyProfile.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> companyProfile.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/companyRegistration">📂companyRegistration</a><br>
-              💧companyRegistration.css<br>
-              🔥companyRegistration.html<br>
-              ⚡companyRehistration.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> companyRegistration.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> companyRegistration.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> companyRehistration.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/companySignUpCompleted">📂companySignUpCompleted</a><br>
-              💧companySignUpCompleted.css<br>
-              🔥companySignUpCompleted.html<br>
-              ⚡companySignUpCompleted.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> companySignUpCompleted.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> companySignUpCompleted.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> companySignUpCompleted.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/createJob">📂createJob</a><br>
-              💧createJob.css<br>
-              🔥createJob.html<br>
-              ⚡createJob.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> createJob.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> createJob.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> createJob.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/jobs">📂jobs</a><br>
-              💧jobs.css<br>
-              🔥jobs.html<br>
-              ⚡jobs.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> jobs.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> jobs.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> jobs.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/landingPage">📂landingPage</a><br>
-              💧landingPage.css<br>
-              🔥landingPage.html<br>
-              ⚡landingPage.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> landingPage.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> landingPage.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> landingPage.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/loginPage">📂loginPage</a><br>
-              💧loginPage.css<br>
-              🔥loginPage.html<br>
-              ⚡loginPage.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> loginPage.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> loginPage.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> loginPage.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/skills">📂skills</a><br>
-              💧skills.css<br>
-              🔥skisls.html<br>
-              ⚡skills.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> skills.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> skisls.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> skills.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/userProfile">📂userProfile</a><br>
-              💧userProfile.css<br>
-              🔥userProfile.html<br>
-              ⚡userProfile.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> userProfile.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> userProfile.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> userProfile.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/userProfileEdit/descarte">📂userProfileEdit/descarte</a><br>
-              💧userProfileEdit.css<br>
-              🔥userProfileEdit`.html<br>
-              ⚡userProfileEdit.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> userProfileEdit.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> userProfileEdit`.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> userProfileEdit.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/userSignUp">📂userSignUp</a><br>
-              💧userSignUp.css<br>
-              🔥userSignUp.html<br>
-              ⚡userSignUp.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> userSignUp.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> userSignUp.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> userSignUp.js
             |<a href="https://github.com/2022M2T1/Projeto4/tree/main/src/Frontend/views/viewCompany">📂viewCompany</a><br>
-              💧viewCompany.css<br>
-              🔥viewCompany.html<br>
-              ⚡viewCompany.js<br>
+              <a href="https://emoji.gg/emoji/8517-css"><img src="https://cdn3.emoji.gg/emojis/8517-css.png" width="24px" height="24px" alt="css"></a> viewCompany.css
+               <a href="https://emoji.gg/emoji/GoogleChrome"><img src="https://cdn3.emoji.gg/emojis/GoogleChrome.png" width="24px" height="24px" alt="GoogleChrome"></a> viewCompany.html
+              <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="16px" height="16px" alt="Java_Js"></a> viewCompany.js
 ⚙️.gitattributes<br>
 ⚙️.gitignore<br>
 |Procfile<br>
 🌐README.md<br>
-
-
-A pasta raiz contem dois arquivos que devem ser alterados:
 
 ## 💻 Configuração para desenvolvimento
 
@@ -222,18 +219,24 @@ npm rum start ou node index.js
 A cada atualização os detalhes devem ser lançados aqui.
 
 * 0.2.1 - 13/06/2022
+<br><br>
     *Refinamento do site
 * 0.2.1 - 30/05/2022
+<br><br>
     *Término da criação das rotas
     *Início da incrementação da integração das páginas
 * 0.2.0 - 16/05/2022
+<br><br>
     * Modelagem e implementação do banco de dados
     *Início à criação das rotas
 * 0.1.1 - 02/05/2022
+<br><br>
     * Implementação do Javascript nas páginas
 * 0.1.0 - 25/04/2022
+<br><br>
     * Criação das páginas e estilização
 * 0.0.1 - 20/04/2022
+<br><br>
     * Trabalho iniciado
 
 ## 📋 Licença/License
