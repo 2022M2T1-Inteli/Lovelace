@@ -1,5 +1,6 @@
 body {
     background-color: var(--color-primary);
+    position: relative;
 }
 
 .pageContainer {
@@ -44,6 +45,7 @@ body {
     grid-gap: 2rem;
     position: relative;
     flex: 1 0 40%;
+    justify-content: center;
 }
 
 .rightContainer form {
@@ -140,6 +142,25 @@ body {
 
 /* 600 px */
 @media screen and (max-width: 37.5em) {
+    .container {
+        padding: 3rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        height: 50vh;
+        background-color: var(--color-white);
+        min-width: 80vw;
+        border-radius: 0.6rem;
+    }
+
+    .rightContainer {
+        padding: 0;
+        background-color: none;
+        box-shadow: none;
+    }
+
     .noAccountContainer {
         flex-direction: column;
     }

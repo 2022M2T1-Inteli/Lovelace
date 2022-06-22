@@ -44,6 +44,10 @@
     grid-gap: 4rem;
 }
 
+.gridLink {
+    text-decoration: none;
+}
+
 .gridBox {
     display: flex;
     flex-direction: column;
@@ -51,7 +55,7 @@
     background-color: #f7f7f7;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
     padding: 2rem;
-
+    text-decoration: none;
     transition: all 0.4s;
 }
 
@@ -61,10 +65,12 @@
 
 .boxTitle {
     font-size: 2rem;
+    color: var(--color-grey-dark-1);
 }
 
 .boxSubTitle {
     font-size: 1.4rem;
+    color: var(--color-grey-dark-2);
 }
 
 .badgeContainer {

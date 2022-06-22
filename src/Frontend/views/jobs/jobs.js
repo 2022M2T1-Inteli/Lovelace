@@ -13,9 +13,11 @@ $(document).ready(() => {
                 elements =
                     "<a class='errorMessage'>Você ainda não cadastrou nenhuma vaga. <br> Clique em 'Criar vaga' para disponibilizar uma nova vaga. </a>"
                 // ADICINA À PAGINA HTML OS DADOS
-                } else {
+            } else {
                 for (job of res) {
-                    elements += `<div class="gridBox">
+                    elements += `
+                            <a class="gridLink" href="/views/candidates/candidates.html?jobId=${job.id}">
+                                <div class="gridBox">
                                 <h4 class="boxTitle">${job.area ? job.area.name : '-'}</h4>
                                 <p class="boxSubTitle">${job.type}</p>
                                 <div class="badgeContainer">
@@ -29,13 +31,12 @@ $(document).ready(() => {
 
                     elements += `</div>
                                 <div class="iconsContainer">
-                                    <a href="/views/candidates/candidates.html?jobId=${job.id}"
-                                        ><img src="../../assets/icons/person.svg" class="icon" alt=""
-                                    /></a>
+                                    
                                     <button onClick="deleteJob(${job.id})"><img src="../../assets/icons/trashIcon.png" class="icon" alt=""
                                     /></button>
                                 </div>
-                            </div>`
+                            </div>
+                        </a>`
                 }
             }
             $('.grid').html(elements)
@@ -45,7 +46,7 @@ $(document).ready(() => {
         },
     })
 })
-// REQUISIÇÃO DE 'DELETE' PARA REMOVER A VAGA DO BANCO DE DADOS 
+// REQUISIÇÃO DE 'DELETE' PARA REMOVER A VAGA DO BANCO DE DADOS
 const deleteJob = (id) => {
     $.ajax({
         url: '/job/' + id,

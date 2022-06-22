@@ -90,7 +90,7 @@
 /* 600 px */
 @media screen and (max-width: 37.5em) {
     .container {
-        padding: 6rem 4rem;
+        padding: 8rem 4rem;
     }
 
     .skillContainer {
