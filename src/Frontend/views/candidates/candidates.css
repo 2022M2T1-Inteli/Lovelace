@@ -48,8 +48,11 @@
 }
 
 .badgeContainer {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    align-items: center;
     grid-gap: 1.5rem;
+    text-align: center;
 }
 
 .badge {

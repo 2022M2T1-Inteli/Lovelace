@@ -152,6 +152,8 @@ router.get('/job/:id/getUsers', companyAuth, async (req, res) => {
         // FAZER LOOP EM CADA USUÁRIA DO ARRAY MATCHUSERIDS E ADICIONAR TODAS AS INFORMAÇÕES DAQUELA USUÁRIA AO ARRAY USERS
         for (id of matchUserIds) {
             const fetchedUser = await db.get(`SELECT * FROM user WHERE id='${id}'`)
+            fetchedUser.skills = await db.all(`SELECT skill.name FROM userSkill INNER JOIN skill ON skill.id=userSkill.skillId WHERE userSkill.userId='${id}'`)
+
             users.push(fetchedUser)
         }
 
