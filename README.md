@@ -52,7 +52,7 @@ Portanto, desenvolvemos uma ferramenta que possibilita o encontro mais fácil de
     📃WAD - Documento Aplicação Web (Grupo 04) - Versão 4.2<br>
     📃WAD - Grupo 04 - Versão 3.2.pdf<br>
     📃WAD - Versão 2.pdf<br>
-  &emsp;|--><a href="https://github.com/2022M2T1/Projeto4/blob/main/documentos/WAD%20-%20Documento%20Aplica%C3%A7%C3%A3o%20Web%20(Grupo%2004)%20-%20Vers%C3%A3o%205.2.pdf>WAD - Documento Aplicação Web (Grupo 04) - Versão 5.2</a><br>
+  &emsp;|--><a href="https://github.com/2022M2T1/Projeto4/blob/main/documentos/WAD%20-%20Documento%20Aplica%C3%A7%C3%A3o%20Web%20(Grupo%2004)%20-%20Vers%C3%A3o%205.5.pdf">WAD - Documento Aplicação Web (Grupo 04) - Versão 5.5</a><br>
   &emsp;📃Documentação.docx<br>
 |<a href=https://github.com/2022M2T1/Projeto4/tree/main/imagens><br>
 📂Imagens</a><br>
