@@ -172,9 +172,8 @@ body {
     padding: 2rem;
     border-radius: 3px;
     font-size: 1.4rem;
-    display: flex;
+    display: none;
     align-items: center;
-    /* flex-direction: column; */
     grid-gap: 2rem;
     color: var(--color-white);
 }

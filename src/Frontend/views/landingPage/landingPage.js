@@ -1,40 +1,19 @@
-function cookies(functions) {
-    const container = document.querySelector('.cookies-container')
-    const save = document.querySelector('.cookies-save')
-    if (!container || !save) return null
+// FUNÇÃO EXECUTADA QUANDO A PÁGINA É CARREGADA
+$(document).ready(() => {
 
-    const localPref = JSON.parse(window.localStorage.getItem('cookies-pref'))
-    if (localPref) activateFunctions(localPref)
+    // FUNÇÃO EXECUTADA NO CLIQUE DO BOTÃO DE ACEITAR COOKIES
+    $('.cookies-save').click(() => {
+        // SETAR VARIÁVEL NO LOCALSTORAGE
+        window.localStorage.setItem('cookieEnable', true)
 
-    function getFormPref() {
-        return [...document.querySelectorAll('[data-function]')]
-            .filter((el) => el.checked)
-            .map((el) => el.getAttribute('data-function'))
-    }
+        // ESCONDER CONTAINER DE COOKIES
+        $('.cookies-container').css('display', 'none')
+    })
+    
+    // CHECAR SE VARIÁVEL DE COOKIES NÃO EXISTE NO LOCALSTORAGE
+    if (!window.localStorage.getItem('cookieEnable')) {
 
-    function activateFunctions(pref) {
-        pref.forEach((f) => functions[f]())
-        container.style.display = 'none'
-        window.localStorage.setItem('cookies-pref', JSON.stringify(pref))
-    }
-
-    function handleSave() {
-        const pref = getFormPref()
-        activateFunctions(pref)
-    }
-
-    save.addEventListener('click', handleSave)
-}
-
-function marketing() {
-    console.log('Função de marketing')
-}
-
-function analytics() {
-    console.log('Função de analytics')
-}
-
-cookies({
-    marketing,
-    analytics,
+        // MOSTRAR CONTAINER DE COOKIES
+        $('.cookies-container').css('display', 'flex')
+    } 
 })
