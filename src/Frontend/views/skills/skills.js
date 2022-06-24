@@ -3,7 +3,7 @@ $(document).ready(() => {
     const backdrop = $('.backdrop')
     const modal = $('.modal')
 
-    // REQUISIÇÃO 'GET' PARA DISPOR A SKILLS NA ´´AGINA HTML
+    // REQUISIÇÃO 'GET' PARA DISPOR A SKILLS NA PÁGINA HTML
     $.ajax({
         url: '/skills',
         type: 'GET',

@@ -397,8 +397,8 @@ router.post('/user/editSkills', userAuth, async (req, res) => {
         await db.run(`DELETE FROM userSkill WHERE userId='${req.user.id}'`)
 
         // ADICIONAR CADA SKILL DO USUÁRIO COM BASE NAS SKILLS DO REQ.BODY
-        for (skill of skills) {
-            await db.run(`INSERT INTO userSkill (skillId, userId) VALUES ('${skill}', '${req.user.id}')`)
+        for (skillId of skills) {
+            await db.run(`INSERT INTO userSkill (skillId, userId) VALUES ('${skillId}', '${req.user.id}')`)
         }
 
         // FECHAR O BANCO DE DADOS
